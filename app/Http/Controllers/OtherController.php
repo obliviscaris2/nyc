@@ -57,11 +57,11 @@ class OtherController extends Controller
         ]); 
 
         $newImage = time() . "-" . $request->title . "-" . $request->image->extension();
-        $request->image->move(public_path('uploads/information/image'), $newImage);
+        $request->image->move(public_path('uploads/other/image'), $newImage);
 
         if ($request->hasFile('file')){
             $postPath = $request->title . '.' .$request->file->extension();
-            $request->file->move(public_path('uploads/information/file'), $postPath );
+            $request->file->move(public_path('uploads/other/file'), $postPath );
         }else{
                 $postPath = "NoFile";
         }

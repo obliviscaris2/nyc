@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -23,7 +24,8 @@ class PostController extends Controller
     {
         $categories = Category::all();
         return view('admin.post.create', [
-            "categories" => $categories
+            "categories" => $categories,
+            "page_title" => "Create Post"
         ]);
     }
 
@@ -49,6 +51,58 @@ class PostController extends Controller
             $post->get_categories()->sync($request->categories);
             return redirect('admin/posts/index');
         }
+    }
+
+    public function edit(Post $post, $id)
+    {
+        $post = Post::find($id);
+        $categories = Category::all();
+
+        return view('admin.post.update', [
+            'post' => $post,
+            "categories" => $categories,
+            'page_title' => "Post Update"
+        ]);
+    }
+
+    public function update(Request $request, Post $post)
+    {
+        $request->validate([
+            'title' => 'required|string',
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:3000',
+            'content' => 'required|string',
+            'categories' => 'required'
+        ]);
+
+        $post = Post::find($request->id);
+
+        $newImageName = time() . "-" . $request->title . "-" . $request->image->extension();
+        $request->image->move(public_path('uploads/posts/image'), $newImageName);
+
+        $post->title = $request->title;
+        $post->image = $newImageName;
+        $post->content = $request->content;
+
+
+        if ($post->save()){
+            $post->get_categories()->sync($request->categories);
+            return redirect('admin/posts/index');
+        }
+        
+
+
+    }
+
+    public function destroy($id)
+    {
+        $post = Post::find($id);
+        if($post->delete()){
+            $post->get_categories()->detach();
+            Storage::delete('uploads/posts/image/' . $post->image);
+            return redirect("admin/posts/index");
+        }
+
+        
     }
     
 }
