@@ -1,0 +1,228 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SignupController;
+use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SingleController;
+use App\Http\Controllers\SiteSettingController;
+use App\Http\Controllers\TeamController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CommitteeDetailController;
+use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\LinkController;
+use App\Http\Controllers\VideoController;
+use App\Http\Controllers\ImageController;
+use App\Http\Controllers\InformationController;
+use App\Http\Controllers\OtherController;
+use App\Http\Controllers\OtherPostController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\PublicationController;
+use App\Http\Controllers\RenderController;
+use App\Http\Controllers\UserController;
+use App\Models\ContactUs;
+use App\Models\Information;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+
+
+Route::get('/single/{id}', [SingleController::class, 'index']);
+
+Route::get('login', function(){
+    return view('auth.login');
+})->name('login');
+
+Route::get('signup', function(){
+    return view('auth.signup');
+})->middleware('auth');
+
+
+
+
+Route::post('login', [LoginController::class, 'save']);
+Route::get('/logout', [LoginController::class, 'destroy']);
+Route::post('signup', [SignupController::class, 'save']);
+
+Route::get('admin', [AdminController::class, 'index'])->middleware('auth')->name('admin.index');
+
+
+Route::get('admin/committeedetails/index', [CommitteeDetailController::class, 'index'])->name('admin.committeedetails.index');
+Route::get('file-import-export', [CommitteeDetailController::class, 'fileImportExport']);
+Route::post('file-import', [CommitteeDetailController::class, 'fileImport'])->name('file-import');
+Route::get('file-export', [CommitteeDetailController::class, 'fileExport'])->name('file-export');
+
+
+// FOR POSTS 
+
+Route::get('admin/posts/index', [PostController::class, 'index'])->middleware('auth')->name("admin.posts.index");
+Route::get('admin/posts/create', [PostController::class, 'create'])->middleware('auth')->name("admin.posts.create");
+Route::Post('admin/posts/store', [PostController::class, 'store'])->middleware('auth')->name("admin.posts.store");
+
+
+// FOR CATEGORIES 
+
+Route::get('admin/categories/index', [CategoryController::class, "index"])->middleware('auth')->name("admin.categories.index");
+Route::get('admin/categories/create', [CategoryController::class, "create"])->middleware('auth')->name("admin.categories.create");
+Route::Post('admin/categories/store', [CategoryController::class, "store"])->middleware('auth')->name("admin.categories.store");
+Route::get('admin/categories/edit/{id}', [CategoryController::class, "edit"])->middleware('auth')->name("admin.categories.edit");
+Route::Post('admin/categories/update', [CategoryController::class, "update"])->middleware('auth')->name("admin.categories.update");
+Route::get('admin/categories/destroy/{id}', [CategoryController::class, "destroy"])->middleware('auth')->name("admin.categories.destroy");
+
+
+
+// FOR USERS
+Route::get('admin/users/index', [UserController::class, 'index'])->middleware('auth')->name('admin.users.index');
+
+
+Route::get('admin/team', [App\Http\Controllers\TeamController::class, 'index'])->middleware('auth');
+Route::get('admin/team/index', [App\Http\Controllers\TeamController::class, 'index'])->middleware('auth')->name('admin.team.index');
+
+Route::get('admin/team/create', [App\Http\Controllers\TeamController::class, 'create'])->middleware('auth');
+Route::post('admin/team/store', [App\Http\Controllers\TeamController::class, 'store'])->name('Team.store');
+
+Route::get('admin/team/edit/{id}', [App\Http\Controllers\TeamController::class, 'edit'])->middleware('auth');
+Route::post('admin/team/update', [App\Http\Controllers\TeamController::class, 'update'])->name('Team.update');
+Route::get('admin/team/delete/{id}', [App\Http\Controllers\TeamController::class, 'destroy'])->middleware('auth');
+
+
+
+Route::get('admin/sitesetting', [App\Http\Controllers\SiteSettingController::class, 'index'])->middleware('auth');
+Route::get('admin/sitesetting/index', [App\Http\Controllers\SiteSettingController::class, 'index'])->name('Sitesetting.index');
+
+Route::get('admin/sitesetting/create', [App\Http\Controllers\SiteSettingController::class, 'create'])->middleware('auth');
+Route::post('admin/sitesetting/store', [App\Http\Controllers\SiteSettingController::class, 'store'])->name('Sitesetting.store');
+
+Route::get('admin/sitesetting/edit/{id}', [App\Http\Controllers\SiteSettingController::class, 'edit'])->middleware('auth');
+Route::post('admin/sitesetting/update', [App\Http\Controllers\SiteSettingController::class, 'update'])->name('Sitesetting.update');
+Route::get('admin/sitesetting/delete/{id}', [App\Http\Controllers\SiteSettingController::class, 'destroy'])->middleware('auth');
+
+
+
+Route::get('admin/about', [App\Http\Controllers\AboutController::class, 'index'])->middleware('auth');
+Route::get('admin/about/index', [App\Http\Controllers\AboutController::class, 'index'])->name('About.index');
+
+Route::get('admin/about/create', [App\Http\Controllers\AboutController::class, 'create'])->middleware('auth');
+Route::post('admin/about/store', [App\Http\Controllers\AboutController::class, 'store'])->name('About.store');
+
+Route::get('admin/about/edit/{id}', [App\Http\Controllers\AboutController::class, 'edit'])->middleware('auth');
+Route::post('admin/about/update', [App\Http\Controllers\AboutController::class, 'update'])->name('About.update');
+Route::get('admin/about/delete/{id}', [App\Http\Controllers\AboutController::class, 'destroy'])->middleware('auth');
+
+
+
+
+
+
+Route::get('admin/link', [App\Http\Controllers\LinkController::class, 'index'])->middleware('auth');
+Route::get('admin/link/index', [App\Http\Controllers\LinkController::class, 'index'])->middleware('auth')->name("admin.link.index");
+
+Route::get('admin/link/create', [App\Http\Controllers\LinkController::class, 'create'])->middleware('auth');
+Route::post('admin/link/store', [App\Http\Controllers\LinkController::class, 'store'])->name('Link.store');
+
+Route::get('admin/link/edit/{id}', [App\Http\Controllers\LinkController::class, 'edit'])->middleware('auth');
+Route::post('admin/link/update', [App\Http\Controllers\LinkController::class, 'update'])->name('Link.update');
+Route::get('admin/link/delete/{id}', [App\Http\Controllers\LinkController::class, 'destroy'])->middleware('auth');
+
+
+
+Route::get('admin/video', [App\Http\Controllers\VideoController::class, 'index'])->middleware('auth');
+Route::get('admin/video/index', [App\Http\Controllers\VideoController::class, 'index'])->middleware('auth')->name('admin.video.index');
+
+Route::get('admin/video/create', [App\Http\Controllers\VideoController::class, 'create'])->middleware('auth');
+Route::post('admin/video/store', [App\Http\Controllers\VideoController::class, 'store'])->name('Video.store');
+
+Route::get('admin/video/edit/{id}', [App\Http\Controllers\VideoController::class, 'edit'])->middleware('auth');
+Route::post('admin/video/update', [App\Http\Controllers\VideoController::class, 'update'])->name('Video.update');
+Route::get('admin/video/delete/{id}', [App\Http\Controllers\VideoController::class, 'destroy'])->middleware('auth');
+
+
+Route::get('admin/image', [App\Http\Controllers\ImageController::class, 'index'])->middleware('auth');
+Route::get('admin/image/index', [App\Http\Controllers\ImageController::class, 'index'])->middleware('auth')->name('admin.image.index');
+
+Route::get('admin/image/create', [App\Http\Controllers\ImageController::class, 'create'])->middleware('auth');
+Route::post('admin/image/store', [App\Http\Controllers\ImageController::class, 'store'])->name('Image.store');
+
+Route::get('admin/image/edit/{id}', [App\Http\Controllers\ImageController::class, 'edit'])->middleware('auth');
+Route::post('admin/image/update', [App\Http\Controllers\ImageController::class, 'update'])->name('Image.update');
+Route::get('admin/image/delete/{id}', [App\Http\Controllers\ImageController::class, 'destroy'])->middleware('auth');
+
+
+// FOR DOCUMENTS 
+
+Route::get('admin/documents/index', [DocumentController::class, 'index'])->middleware('auth')->name('admin.documents.index');
+Route::get('admin/documents/create', [DocumentController::class, 'create'])->middleware('auth')->name('admin.documents.create');
+Route::post('admin/documents/store', [DocumentController::class, 'store'])->middleware('auth')->name("admin.documents.store");
+Route::post('admin/documents/update', [DocumentController::class, 'update'])->middleware('auth')->name("admin.documents.update");
+Route::get('admin/documents/edit/{id}', [DocumentController::class, 'edit'])->middleware('auth')->name("admin.documents.edit");
+Route::get('admin/documents/destroy/{id}', [DocumentController::class, 'destroy'])->middleware('auth')->name("admin.documents.destroy");
+
+
+// FOR INFORMATION 
+
+Route::get('admin/information/index', [InformationController::class, 'index'])->middleware('auth')->name('admin.information.index');
+Route::get('admin/information/create', [InformationController::class, 'create'])->middleware('auth')->name('admin.information.create');
+Route::post('admin/information/store', [InformationController::class, 'store'])->middleware('auth')->name('admin.information.store');
+Route::post('admin/information/update', [InformationController::class, 'update'])->middleware('auth')->name('admin.information.update');
+Route::get('admin/information/edit/{id}', [InformationController::class, 'edit'])->middleware('auth')->name('admin.information.edit');
+Route::post('admin/information/destroy/{id}', [InformationController::class, 'destroy'])->middleware('auth')->name('admin.information.destroy');
+
+
+// FOR OTHER 
+
+Route::get('admin/other/index', [OtherController::class, "index"])->middleware('auth')->name('admin.other.index');
+Route::get('admin/other/create', [OtherController::class, "create"])->middleware('auth')->name('admin.other.create');
+Route::post('admin/other/store', [OtherController::class, "store"])->middleware('auth')->name('admin.other.store');
+Route::post('admin/other/update', [OtherController::class, "update"])->middleware('auth')->name('admin.other.update');
+Route::get('admin/other/edit/{id}', [OtherController::class, "edit"])->middleware('auth')->name('admin.other.edit');
+Route::get('admin/other/destroy/{id}', [OtherController::class, "destroy"])->middleware('auth')->name('admin.other.destroy');
+
+
+Route::get('portal/render_about', [App\Http\Controllers\RenderController::class, 'render_about'])->name('render_about');
+Route::get('portal/render_team', [App\Http\Controllers\RenderController::class, 'render_team'])->name('render_team');
+Route::get('portal/render_images', [App\Http\Controllers\RenderController::class, 'render_images'])->name('render_images');
+Route::get('portal/render_videos', [App\Http\Controllers\RenderController::class, 'render_videos'])->name('render_videos');
+Route::get('portal/render_notice', [App\Http\Controllers\RenderController::class, 'render_notice'])->name('render_notice');
+Route::get('portal/render_publication', [App\Http\Controllers\RenderController::class, 'render_publication'])->name('render_publication');
+Route::get('portal/render_tender', [App\Http\Controllers\RenderController::class, 'render_tender'])->name('render_tender');
+Route::get('portal/render_rules', [App\Http\Controllers\RenderController::class, 'render_rules'])->name('render_rules');
+Route::get('portal/render_directot', [App\Http\Controllers\RenderController::class, 'render_directot'])->name('render_directot');
+Route::get('portal/render_press', [App\Http\Controllers\RenderController::class, 'render_press'])->name('render_press');
+Route::get('portal/render_news', [App\Http\Controllers\RenderController::class, 'render_news'])->name('render_news');
+Route::get('portal/render_other', [App\Http\Controllers\RenderController::class, 'render_other'])->name('render_other');
+
+
+Route::get('portal/render_otherpost/{id}', [App\Http\Controllers\RenderController::class, 'render_otherpost'])->name('render_otherpost');
+Route::get('portal/render_info/{id}', [App\Http\Controllers\RenderController::class, 'render_info'])->name('render_info');
+Route::get('portal/render_other_post/{id}', [App\Http\Controllers\RenderController::class, 'render_other_post'])->name('render_other_post');
+
+
+
+
+// FOR CONTACT US 
+
+Route::get('admin/contactus/index', [ContactUsController::class, 'index'])->middleware('auth')->name('admin.contactus.index');
+Route::post('admin/contactus/store', [ContactUsController::class, 'store'])->middleware('auth')->name('admin.contactus.store');
+Route::get('admin/contactus/destroy/{id}', [ContactUsController::class, 'destroy'])->middleware('auth')->name('admin.contactus.destroy');
+
+Route::get('portal/contact_page', [App\Http\Controllers\RenderController::class, 'contact_page'])->name('contact_page');
+
+
+
+
+

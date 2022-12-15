@@ -1,0 +1,315 @@
+/* =======================================================================
+    GLOBAL STYLES (IF ANY) BELOW HERE
+============================================================================ */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+
+body{
+    font-family: 'Changa', 'serif';
+    padding-left: 15%;
+    padding-right: 15%;
+    cursor: default;
+    
+}
+
+
+
+ul{
+    list-style: none;
+}
+
+/* =========================================================================================
+    GLOBAL STYLES (FOR ADDITIONAL EFFECTS) BELOW HERE
+============================================================================================ */
+
+
+.icon{
+    transition: all 600ms ease-in-out;
+}
+
+    .icon:hover{
+        transform: scale(1.5);
+    }
+
+.work-title{
+    transition: all 400ms linear;
+}
+
+    .work-title:hover{
+        transform: scale(1.05);
+    }
+
+
+
+/* =======================================================================================
+    LEFT COLUMN CSS WORK FROM BELOW HERE
+========================================================================================== */
+
+.left-column{
+    background: rgba(80,80,80,255);
+    color: #fff;
+    padding: 1rem;
+    
+}
+
+.photo-container{
+    align-self: center;
+    border: 2px solid black;
+    height: 15rem;
+    width: 15rem;
+    border-radius: 20%;
+    
+}
+
+.profile-image{
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 20%;
+    transition: all 700ms ease-in-out;
+}
+
+.profile-image:hover{
+    transform: scale(1.1);
+}
+
+.tag-container{
+    align-self: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+
+    position: relative;
+}
+
+    .tag-container::after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+
+        background-color: #fff;
+        transform-origin: bottom right;
+        transform: scaleX(0);
+        transition: all 600ms ease-in;
+    }
+
+        .tag-container:hover::after{
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+
+
+
+.mini-tag-container{
+    margin-left: 1.1rem;
+    padding-bottom: .5rem;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+    text-decoration: underline;
+}
+
+
+.summary-title{
+    /* TO Be DONE in a while */
+    margin-top: 3rem;
+}
+
+.summary-paragraph{
+
+    line-height: 1.8rem;
+    text-align: justify;
+
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+
+.points-list{
+    /* border: 2px solid black; */
+    padding: 0px;
+}
+
+.list-texts{
+    line-height: 1.8rem;
+    text-align: justify;
+
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+
+.fa-ellipsis{
+    
+    padding-right: .1rem;
+    
+}
+
+.soft-skill-container{
+    letter-spacing: 1px;
+}
+
+
+.soft-list-texts{
+    line-height: 1.8rem;
+    text-align: justify;
+
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+
+.spacing{
+    border: 1px solid black;
+    
+}
+
+.hobbies-paragraph{
+    line-height: 1.8rem;
+    text-align: justify;
+
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+
+
+
+
+/* =====================================================================
+    RIGHT COLUMN CSS WORK FROM BELOW HERE
+======================================================================== */
+
+.right-column{
+    background: rgb(245,245,245); 
+    padding-top: 1rem;
+
+}
+
+.title-name{
+    font-size: 3rem;
+    font-family: 'Changa';
+    color: rgba(110, 110, 110);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    text-align: center;
+    position: relative;
+    width: 250px;
+    align-self: center;
+}
+
+    .title-name::after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+
+        background-color: rgb(50, 50, 50);
+        transform-origin: bottom right;
+        transform: scaleX(0);
+        transition: all 600ms ease-in;
+    }
+
+        .title-name:hover::after{
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+
+.line{
+    border: 7px solid rgba(80,80,80,255);
+}
+
+
+.work-section{
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.experience-title{
+    color: rgba(128,128,128,255);
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+
+.work-experience{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.work-title{
+    color: rgb(0 , 0 , 0);
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.work-paragraph{
+    font-size: .9rem;
+    text-align: justify;
+}
+
+
+/* =======================================================================================
+    FOOTER CSS WORK FROM BELOW HERE
+========================================================================================== */
+
+
+.contact-title{
+
+    color: rgba(128,128,128,255);
+    letter-spacing: 1px;
+    
+}
+ 
+.media-list{
+    font-family: 'Changa';
+    font-weight: 100;
+    gap: .5rem;
+    cursor: pointer;
+}
+
+.contact-icons{
+
+    transition: all 600ms ease-in-out;
+}
+
+    .contact-icons:hover{
+        transform: rotate(360deg) scale(1.2);
+    }
+
+
+.media-items-container{
+    /* width: px; */
+    align-items: center;
+    gap: 1.5rem;
+}
+
+
+.footer-card-ad{
+    align-self: center;
+}
+
+.footer-card-whole{
+    gap: 5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 2rem;
+    padding: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    background: rgba(80,80,80,255);
+    color: #fff;
+    
+}
+
+
+
+
