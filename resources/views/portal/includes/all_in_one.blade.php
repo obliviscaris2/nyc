@@ -39,7 +39,7 @@ $other = App\Models\Other::whereType('other')->latest()->get()->take(4);
                             <ul class="events_text">
                             @foreach ($notice as $notice ) 
                                 <li>
-                                    <a href="{{ route('render_otherpost', $notice->id)}}"><span class="events_i"><i class="fa fa-download" aria-hidden="true"></i></span> {{ $notice->title }} </a>
+                                    <a href="{{ route('render_otherpost', $notice->slug)}}"><span class="events_i"><i class="fa fa-download" aria-hidden="true"></i></span> {{ $notice->title }} </a>
                                    <p class="events_cal"><i class="fa fa-calendar" aria-hidden="true"></i> {{date('F jS,Y', strtotime($notice->created_at)) }}</p> 
                                    <hr>
                                     {{-- <img class="show_image" src=""> --}}
@@ -51,7 +51,7 @@ $other = App\Models\Other::whereType('other')->latest()->get()->take(4);
                           <div id="Publication" class="tabcontent">
                             <ul class="events_text">
                                 @foreach ($publication as $publication )
-                                <li><a href="{{ route('render_otherpost', $publication->id)}}"><span class="events_i"><i class="fa fa-download" aria-hidden="true"></i></span> {{ $publication->title }}
+                                <li><a href="{{ route('render_otherpost', $publication->slug)}}"><span class="events_i"><i class="fa fa-download" aria-hidden="true"></i></span> {{ $publication->title }}
                                     </a>
                                     <p class="events_cal"><i class="fa fa-calendar" aria-hidden="true"></i> {{date('F jS,Y', strtotime($notice->created_at)) }}</p> 
                                     <hr>
@@ -65,7 +65,7 @@ $other = App\Models\Other::whereType('other')->latest()->get()->take(4);
                           <div id="Tender" class="tabcontent">
                             <ul class="events_text">
                                 @foreach ($tender as $tender )
-                                <li><a href="{{ route('render_otherpost', $tender->id)}}"><span class="events_i"><i class="fa fa-download" aria-hidden="true"></i></span> {{ $tender->title }}
+                                <li><a href="{{ route('render_otherpost', $tender->slug)}}"><span class="events_i"><i class="fa fa-download" aria-hidden="true"></i></span> {{ $tender->title }}
                                     </a>
                                     <p class="events_cal"><i class="fa fa-calendar" aria-hidden="true"></i> {{date('F jS,Y', strtotime($notice->created_at)) }}</p> 
                                     <hr>
@@ -96,7 +96,7 @@ $other = App\Models\Other::whereType('other')->latest()->get()->take(4);
                           <div id="Rules" class="tabcontentone">
                             <ul class="events_text">
                                 @foreach ($rules as $rule ) 
-                                <li><a href="{{ route('render_info', $rule->id)}}"><span class="events_i"><i class="fa fa-download" aria-hidden="true"></i></span> {{ $rule->title }} </a>
+                                <li><a href="{{ route('render_info', $rule->slug)}}"><span class="events_i"><i class="fa fa-download" aria-hidden="true"></i></span> {{ $rule->title }} </a>
                                     <p class="events_cal"><i class="fa fa-calendar" aria-hidden="true"></i> {{date('F jS,Y', strtotime($notice->created_at)) }}</p> 
                                     <hr>
                                     {{-- <img class="show_image" src=""> --}}
@@ -110,7 +110,7 @@ $other = App\Models\Other::whereType('other')->latest()->get()->take(4);
                           <div id="Directot" class="tabcontentone">
                             <ul class="events_text">
                                 @foreach ($directot as $directot )
-                                <li><a href="{{ route('render_info', $directot->id)}}"><span class="events_i"><i class="fa fa-download" aria-hidden="true"></i></span> {{ $directot->title }}
+                                <li><a href="{{ route('render_info', $directot->slug)}}"><span class="events_i"><i class="fa fa-download" aria-hidden="true"></i></span> {{ $directot->title }}
                                     </a>
                                     <p class="events_cal"><i class="fa fa-calendar" aria-hidden="true"></i> {{date('F jS,Y', strtotime($notice->created_at)) }}</p> 
                                     <hr>
@@ -126,7 +126,7 @@ $other = App\Models\Other::whereType('other')->latest()->get()->take(4);
                             <ul class="events_text">
                                 @foreach ($press as $press )
                                 <li>
-                                    <a href="{{ route('render_info', $press->id)}}"><span class="events_i"><i class="fa fa-download" aria-hidden="true"></i></span> {{ $press->title }}</a>
+                                    <a href="{{ route('render_info', $press->slug)}}"><span class="events_i"><i class="fa fa-download" aria-hidden="true"></i></span> {{ $press->title }}</a>
                                     <p class="events_cal"><i class="fa fa-calendar" aria-hidden="true"></i> {{date('F jS,Y', strtotime($notice->created_at)) }}</p> 
                                     <hr>
                                     {{-- <img class="show_image" src=""> --}}
@@ -157,7 +157,7 @@ $other = App\Models\Other::whereType('other')->latest()->get()->take(4);
                           <div id="News" class="tabcontenttwo">
                             <ul class="events_text">
                                 @foreach ($news as $news )
-                                <li><a href="{{ route('render_other_post', $news->id)}}"><span class="events_i"><i class="fa fa-download" aria-hidden="true"></i></span> {{ $news->title }}
+                                <li><a href="{{ route('render_other_post', $news->slug)}}"><span class="events_i"><i class="fa fa-download" aria-hidden="true"></i></span> {{ $news->title }}
                                     </a>
                                     <p class="events_cal"><i class="fa fa-calendar" aria-hidden="true"></i> {{date('F jS,Y', strtotime($notice->created_at)) }}</p> 
                                     <hr>
@@ -171,7 +171,7 @@ $other = App\Models\Other::whereType('other')->latest()->get()->take(4);
                           <div id="Other" class="tabcontenttwo">
                             <ul class="events_text">
                                 @foreach ($other as $other )
-                                <li><a href="{{ route('render_other_post', $other->id)}}"><span class="events_i"><i class="fa fa-download" aria-hidden="true"></i></span> {{ $other->title }}
+                                <li><a href="{{ route('render_other_post', $other->slug)}}"><span class="events_i"><i class="fa fa-download" aria-hidden="true"></i></span> {{ $other->title }}
                                     </a>
                                     <p class="events_cal"><i class="fa fa-calendar" aria-hidden="true"></i> {{date('F jS,Y', strtotime($notice->created_at)) }}</p> 
                                     <hr>

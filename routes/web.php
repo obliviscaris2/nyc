@@ -72,7 +72,10 @@ Route::get('file-export', [CommitteeDetailController::class, 'fileExport'])->nam
 
 Route::get('admin/posts/index', [PostController::class, 'index'])->middleware('auth')->name("admin.posts.index");
 Route::get('admin/posts/create', [PostController::class, 'create'])->middleware('auth')->name("admin.posts.create");
-Route::Post('admin/posts/store', [PostController::class, 'store'])->middleware('auth')->name("admin.posts.store");
+Route::post('admin/posts/store', [PostController::class, 'store'])->middleware('auth')->name("admin.posts.store");
+Route::get('admin/posts/edit/{id}', [PostController::class, 'edit'])->middleware('auth')->name("admin.posts.edit");
+Route::post('admin/posts/update', [PostController::class, 'update'])->middleware('auth')->name("admin.posts.update");
+Route::get('admin/posts/destroy/{id}', [PostController::class, 'destroy'])->middleware('auth')->name("admin.posts.destroy");
 
 
 // FOR CATEGORIES 
@@ -207,9 +210,9 @@ Route::get('portal/render_news', [App\Http\Controllers\RenderController::class, 
 Route::get('portal/render_other', [App\Http\Controllers\RenderController::class, 'render_other'])->name('render_other');
 
 
-Route::get('portal/render_otherpost/{id}', [App\Http\Controllers\RenderController::class, 'render_otherpost'])->name('render_otherpost');
-Route::get('portal/render_info/{id}', [App\Http\Controllers\RenderController::class, 'render_info'])->name('render_info');
-Route::get('portal/render_other_post/{id}', [App\Http\Controllers\RenderController::class, 'render_other_post'])->name('render_other_post');
+Route::get('portal/render_otherpost/{slug}', [App\Http\Controllers\RenderController::class, 'render_otherpost'])->name('render_otherpost');
+Route::get('portal/render_info/{slug}', [App\Http\Controllers\RenderController::class, 'render_info'])->name('render_info');
+Route::get('portal/render_other_post/{slug}', [App\Http\Controllers\RenderController::class, 'render_other_post'])->name('render_other_post');
 
 
 

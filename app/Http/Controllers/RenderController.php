@@ -116,19 +116,19 @@ class RenderController extends Controller
         return view('portal.render_other', compact('other'));
 
     }
-    public function render_otherpost(Request $req, $id=''){
-        $otherpost = Document::find($id);
+    public function render_otherpost(Request $req, $slug=''){
+        $otherpost = Document::where("slug", $slug)->first();
         return view('portal.render_otherpost', compact('otherpost'));
 
     }
 
-    public function render_info(Request $req, $id){
-        $otherpost = Information::find($id);
+    public function render_info(Request $req, $slug){
+        $otherpost = Information::where("slug", $slug)->first();
         return view('portal.includes.render_infopost', compact('otherpost'));
     }
 
-    public function render_other_post(Request $req, $id){
-        $otherpost = Other::find($id);
+    public function render_other_post(Request $req, $slug){
+        $otherpost = Other::where("slug", $slug)->first();
         return view('portal.includes.render_otherpost', compact('otherpost'));
     }
     

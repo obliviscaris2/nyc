@@ -41,20 +41,20 @@
                     <td>{{  $category->title  }}</td>   
                     @endforeach
                     <td>{{ $post->image ?? '' }}</td>
-                    <td>{{ $post->content }}</td>
+                    <td>{!! $post->content !!}</td>
                     <td>
                         
-                        {{-- <a href="edit/{{ $post->id }}">
+                        <a href="edit/{{ $post->id }}">
                             <div style="display: flex; flex-direction:row;">
                                 <button type="button" class="btn-block btn-warning btn-sm"><i class="fas fa-edit"></i>
                                     Edit </button>
                         </a>
                         
-                        <a href="{{ url('admin/documents/destroy/'.$post->id) }}">
+                        <a href="{{ url('admin/posts/destroy/'.$post->id) }}">
                             <button type="button" class="btn-block btn-danger btn-sm" data-toggle="modal"
                                 data-target="#modal-default" style="width:auto;"
                                 onclick="replaceLinkFunction">Delete</button>
-                        </a> --}}
+                        </a>
 
                     </td>
                 </tr>
