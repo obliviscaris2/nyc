@@ -42,7 +42,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
 
-Route::get('/single/{id}', [SingleController::class, 'index']);
+Route::get('/single/{slug}', [SingleController::class, 'index']);
 
 Route::get('login', function(){
     return view('auth.login');
@@ -210,9 +210,11 @@ Route::get('portal/render_news', [App\Http\Controllers\RenderController::class, 
 Route::get('portal/render_other', [App\Http\Controllers\RenderController::class, 'render_other'])->name('render_other');
 
 
+
 Route::get('portal/render_otherpost/{slug}', [App\Http\Controllers\RenderController::class, 'render_otherpost'])->name('render_otherpost');
 Route::get('portal/render_info/{slug}', [App\Http\Controllers\RenderController::class, 'render_info'])->name('render_info');
 Route::get('portal/render_other_post/{slug}', [App\Http\Controllers\RenderController::class, 'render_other_post'])->name('render_other_post');
+
 
 
 

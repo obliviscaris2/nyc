@@ -132,7 +132,7 @@ class RenderController extends Controller
         return view('portal.includes.render_otherpost', compact('otherpost'));
     }
     
- 
+    
 
     public function contact_page(){
        

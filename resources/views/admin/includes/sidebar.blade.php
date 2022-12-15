@@ -288,6 +288,15 @@
       </li>
 
       <li class="nav-item menu-items">
+        <a class="nav-link" href="{{ route('admin.categories.index') }}">
+          <span class="menu-icon">
+            <i class="mdi mdi-file-document-box"></i>
+          </span>
+          <span class="menu-title">Categories</span>
+        </a>
+      </li>
+
+      <li class="nav-item menu-items">
         <a class="nav-link" href="{{ route('admin.posts.index') }}">
           <span class="menu-icon">
             <i class="mdi mdi-playlist-play"></i>
@@ -306,14 +315,6 @@
         </a>
       </li>
 
-      <li class="nav-item menu-items">
-        <a class="nav-link" href="{{ route('admin.categories.index') }}">
-          <span class="menu-icon">
-            <i class="mdi mdi-file-document-box"></i>
-          </span>
-          <span class="menu-title">Categories</span>
-        </a>
-      </li>
 
       <li class="nav-item menu-items">
         <a class="nav-link" href="{{ route('admin.video.index') }}">
