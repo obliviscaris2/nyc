@@ -232,6 +232,15 @@
       </li>
 
       <li class="nav-item menu-items">
+        <a class="nav-link" href="{{ route('admin.coverimage.index') }}">
+          <span class="menu-icon">
+            <i class="mdi mdi-table-large"></i>
+          </span>
+          <span class="menu-title">Cover Images</span>
+        </a>
+      </li>
+
+      <li class="nav-item menu-items">
         <a class="nav-link" href="{{ route('admin.image.index') }}">
           <span class="menu-icon">
             <i class="mdi mdi-table-large"></i>

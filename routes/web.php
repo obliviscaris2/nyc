@@ -1,31 +1,32 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\SignupController;
-use App\Http\Controllers\LogoutController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\SingleController;
-use App\Http\Controllers\SiteSettingController;
-use App\Http\Controllers\TeamController;
-use App\Http\Controllers\AboutController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\CommitteeDetailController;
-use App\Http\Controllers\ContactUsController;
-use App\Http\Controllers\DocumentController;
-use App\Http\Controllers\LinkController;
-use App\Http\Controllers\VideoController;
-use App\Http\Controllers\ImageController;
-use App\Http\Controllers\InformationController;
-use App\Http\Controllers\OtherController;
-use App\Http\Controllers\OtherPostController;
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\PublicationController;
-use App\Http\Controllers\RenderController;
-use App\Http\Controllers\UserController;
 use App\Models\ContactUs;
 use App\Models\Information;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LinkController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\TeamController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ImageController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\OtherController;
+use App\Http\Controllers\VideoController;
+use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\RenderController;
+use App\Http\Controllers\SignupController;
+use App\Http\Controllers\SingleController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\OtherPostController;
+use App\Http\Controllers\CoverImageController;
+use App\Http\Controllers\InformationController;
+use App\Http\Controllers\PublicationController;
+use App\Http\Controllers\SiteSettingController;
+use App\Http\Controllers\CommitteeDetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,6 +62,18 @@ Route::post('signup', [SignupController::class, 'save']);
 
 Route::get('admin', [AdminController::class, 'index'])->middleware('auth')->name('admin.index');
 
+
+// FOR COVER IMAGES 
+Route::get('admin/coverimage/index', [CoverImageController::class, 'index'])->name('admin.coverimage.index');
+
+Route::get('admin/coverimage/create', [CoverImageController::class, 'create'])->name('admin.coverimage.create');
+Route::post('admin/coverimage/store', [CoverImageController::class, 'store'])->name('admin.coverimage.store');
+
+Route::get('admin/coverimage/edit/{id}', [CoverImageController::class, 'edit'])->name('admin.coverimage.edit');
+Route::post('admin/coverimage/update', [CoverImageController::class, 'update'])->name('admin.coverimage.update');
+Route::get('admin/coverimage/destroy/{id}', [CoverImageController::class, 'destroy'])->name('admin.coverimage.destroy');
+
+// FOR ADMIN COMMITTEE DETAILS 
 
 Route::get('admin/committeedetails/index', [CommitteeDetailController::class, 'index'])->name('admin.committeedetails.index');
 Route::get('file-import-export', [CommitteeDetailController::class, 'fileImportExport']);
@@ -208,6 +221,7 @@ Route::get('portal/render_directot', [App\Http\Controllers\RenderController::cla
 Route::get('portal/render_press', [App\Http\Controllers\RenderController::class, 'render_press'])->name('render_press');
 Route::get('portal/render_news', [App\Http\Controllers\RenderController::class, 'render_news'])->name('render_news');
 Route::get('portal/render_other', [App\Http\Controllers\RenderController::class, 'render_other'])->name('render_other');
+Route::get('portal/render_committee', [App\Http\Controllers\RenderController::class, 'render_committee'])->name('render_committee');
 
 
 
