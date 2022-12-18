@@ -1,10 +1,6 @@
 
 
-@php
-$sitesetting = App\Models\SiteSetting::first();
-$links = App\Models\Link::first()->get()->take(5);
 
-@endphp
 
     {{-- For Footer --}}
 

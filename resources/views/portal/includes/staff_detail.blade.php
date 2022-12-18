@@ -1,6 +1,4 @@
-@php
-     $teams = App\Models\Team::first()->get()->take(3);
-@endphp
+
 
  
 

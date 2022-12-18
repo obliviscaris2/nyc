@@ -1,6 +1,4 @@
-@php
-$images = App\Models\CoverImage::all();
-@endphp
+
     
     {{-- For Cover Image --}}
     <section class="cover_page wid_mar">
