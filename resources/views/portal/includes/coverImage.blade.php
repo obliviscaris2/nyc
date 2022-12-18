@@ -1,6 +1,6 @@
-@php
+{{-- @php
 $images = App\Models\MyImage::first()->get()->take(1);
-@endphp
+@endphp --}}
     
     
     

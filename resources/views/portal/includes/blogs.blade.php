@@ -1,7 +1,4 @@
-@php
-    $posts = App\Models\Post::first()->get()->take(4);
 
-@endphp
 
     {{-- For Latest Blogs --}}
     <section class="latest_blog wid_mar">
