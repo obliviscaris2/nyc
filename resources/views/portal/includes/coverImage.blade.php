@@ -1,8 +1,4 @@
-{{-- @php
-$images = App\Models\MyImage::first()->get()->take(1);
-@endphp --}}
-    
-    
+
     
     {{-- For Cover Image --}}
     <section class="cover_page wid_mar">
@@ -15,21 +11,29 @@ $images = App\Models\MyImage::first()->get()->take(1);
                               
                           
                           <div class="carousel-item active">
-                              <img src="{{ asset('uploads/' . $image->img) }}" class="d-block" alt="...">
+                              <img src="{{ asset('uploads/coverimage/' . $image->image) }}" class="d-block" alt="...">
                           </div>
 
                           @endforeach
                         
                       </div>
-                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      {{-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
                           data-bs-slide="prev">
                           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                           <span class="visually-hidden">Previous</span>
-                      </button>
-                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                      </button> --}}
+                      {{-- <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
                           data-bs-slide="next">
                           <span class="carousel-control-next-icon" aria-hidden="true"></span>
                           <span class="visually-hidden">Next</span>
+                      </button> --}}
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
                       </button>
                   </div>
               </div>
@@ -44,3 +48,6 @@ $images = App\Models\MyImage::first()->get()->take(1);
           </div>
       </div>
   </section>
+
+
+  

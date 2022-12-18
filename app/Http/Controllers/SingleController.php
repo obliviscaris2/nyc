@@ -11,14 +11,16 @@ use App\Models\Post;
 class SingleController extends Controller
 {
     //
-    public function index(Request $req, $id=''){
-        $post = Post::find($id);
-        $category = Category::find($id);
+    public function index(Request $req, $slug)
+    {
+        $post = Post::where("slug", $slug)->first();
+        $category = Category::find($slug);
 
-        return view('portal.single', [
+        return view('portal.single' , [
             "post" => $post,
             "category" => $category
         ]);
+
 
     //     $query = "select * from posts where slag= :slag limit 1";
     //     $row = DB::select($query, ['slag'=>$id]);

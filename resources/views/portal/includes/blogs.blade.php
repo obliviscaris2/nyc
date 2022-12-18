@@ -13,7 +13,7 @@
            
                 <div class="col-md-4">
                     <div class="card">
-                        <a href="{{url('single/'.$post->id)}}"><img src="{{ asset("uploads/posts/image/" . $post->image) }}" class="card-img-top" alt="..."></a>
+                        <a href="{{url('single/'.$post->slug)}}"><img src="{{ asset("uploads/posts/image/" . $post->image) }}" class="card-img-top" alt="..."></a>
                         <div class="d-flex ">
 
                             <div class="p-2 flex-shrink-1 blog_date">
