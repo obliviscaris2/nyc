@@ -1,6 +1,7 @@
 
 @extends('portal.layouts.master')
 
+
 <?php $root =url('')?>
 
 @section('content')

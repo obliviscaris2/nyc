@@ -43,17 +43,17 @@
                     <td>{{ $cd->phone ?? '' }}</td>
                     <td>
                         
-                        {{-- <a href="edit/{{ $document->id }}">
+                        <a href="edit/{{ $cd->id }}">
                             <div style="display: flex; flex-direction:row;">
                                 <button type="button" class="btn-block btn-warning btn-sm"><i class="fas fa-edit"></i>
                                     Edit </button>
                         </a>
                         
-                        <a href="{{ url('admin/documents/destroy/'.$document->id) }}">
+                        <a href="{{ url('admin/committeedetails/destroy/'.$cd->id) }}">
                             <button type="button" class="btn-block btn-danger btn-sm" data-toggle="modal"
                                 data-target="#modal-default" style="width:auto;"
                                 onclick="replaceLinkFunction">Delete</button>
-                        </a> --}}
+                        </a>
 
                     </td>
                 </tr>

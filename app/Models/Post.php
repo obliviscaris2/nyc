@@ -10,13 +10,22 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Post extends Model
 {
-    // use Sluggable;
+    use Sluggable;
     use HasFactory;
     public $timestamps = true;
 
     public function get_categories(): BelongsToMany
     {
         return $this->belongsToMany(Category::class, 'posts_categories');
+    }
+
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source'  => 'title',
+            ]
+            ];
     }
 
     // public function category(){
