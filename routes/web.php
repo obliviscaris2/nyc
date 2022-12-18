@@ -227,6 +227,8 @@ Route::get('portal/render_press', [App\Http\Controllers\RenderController::class,
 Route::get('portal/render_news', [App\Http\Controllers\RenderController::class, 'render_news'])->name('render_news');
 Route::get('portal/render_other', [App\Http\Controllers\RenderController::class, 'render_other'])->name('render_other');
 Route::get('portal/render_committee', [App\Http\Controllers\RenderController::class, 'render_committee'])->name('render_committee');
+Route::get('portal/render_administrative', [App\Http\Controllers\RenderController::class, 'render_administrative'])->name('render_administrative');
+Route::get('portal/render_chairperson', [App\Http\Controllers\RenderController::class, 'render_chairperson'])->name('render_chairperson');
 
 
 

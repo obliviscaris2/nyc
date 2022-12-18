@@ -171,6 +171,8 @@
                 <li><a href="{{ route('render_about') }}">कार्यालयकाे परिचय</a></li>
                 <li><a href="{{ route('render_team') }}">कर्मचारी विवरण</a></li>
                 <li><a href="{{ route('render_committee') }}">जिल्ला समितीहरु</a></li>
+                <li><a href="{{ route('render_administrative') }}">प्रशासकीय प्रमुखको सन्देश</a></li>
+                <li><a href="{{ route('render_chairperson') }}">अध्यक्षको सन्देश</a></li>
               </ul>
             </li>
             <li><a href="#">दस्तावेज</a>
