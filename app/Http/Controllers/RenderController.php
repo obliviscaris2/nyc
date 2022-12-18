@@ -7,6 +7,7 @@ use App\Models\About;
 use App\Models\Team;
 use App\Models\OtherPost;
 use App\Models\Category;
+use App\Models\CommitteeDetail;
 use App\Models\Document;
 use App\Models\Information;
 use App\Models\Post;
@@ -132,7 +133,14 @@ class RenderController extends Controller
         return view('portal.includes.render_otherpost', compact('otherpost'));
     }
     
- 
+    public function render_committee()
+    {
+        $committee = CommitteeDetail::all();
+        return view('portal.render_committee', [
+            "committee" => $committee,
+            "page_title" => "जिल्ला समितीहरु"
+        ]);
+    }
 
     public function contact_page(){
        

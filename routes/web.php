@@ -1,31 +1,32 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\SignupController;
-use App\Http\Controllers\LogoutController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\SingleController;
-use App\Http\Controllers\SiteSettingController;
-use App\Http\Controllers\TeamController;
-use App\Http\Controllers\AboutController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\CommitteeDetailController;
-use App\Http\Controllers\ContactUsController;
-use App\Http\Controllers\DocumentController;
-use App\Http\Controllers\LinkController;
-use App\Http\Controllers\VideoController;
-use App\Http\Controllers\ImageController;
-use App\Http\Controllers\InformationController;
-use App\Http\Controllers\OtherController;
-use App\Http\Controllers\OtherPostController;
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\PublicationController;
-use App\Http\Controllers\RenderController;
-use App\Http\Controllers\UserController;
 use App\Models\ContactUs;
 use App\Models\Information;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LinkController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\TeamController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ImageController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\OtherController;
+use App\Http\Controllers\VideoController;
+use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\RenderController;
+use App\Http\Controllers\SignupController;
+use App\Http\Controllers\SingleController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\OtherPostController;
+use App\Http\Controllers\CoverImageController;
+use App\Http\Controllers\InformationController;
+use App\Http\Controllers\PublicationController;
+use App\Http\Controllers\SiteSettingController;
+use App\Http\Controllers\CommitteeDetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,7 +43,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
 
-Route::get('/single/{id}', [SingleController::class, 'index']);
+Route::get('/single/{slug}', [SingleController::class, 'index']);
 
 Route::get('login', function(){
     return view('auth.login');
@@ -62,7 +63,22 @@ Route::post('signup', [SignupController::class, 'save']);
 Route::get('admin', [AdminController::class, 'index'])->middleware('auth')->name('admin.index');
 
 
+// FOR COVER IMAGES 
+Route::get('admin/coverimage/index', [CoverImageController::class, 'index'])->name('admin.coverimage.index');
+
+Route::get('admin/coverimage/create', [CoverImageController::class, 'create'])->name('admin.coverimage.create');
+Route::post('admin/coverimage/store', [CoverImageController::class, 'store'])->name('admin.coverimage.store');
+
+Route::get('admin/coverimage/edit/{id}', [CoverImageController::class, 'edit'])->name('admin.coverimage.edit');
+Route::post('admin/coverimage/update', [CoverImageController::class, 'update'])->name('admin.coverimage.update');
+Route::get('admin/coverimage/destroy/{id}', [CoverImageController::class, 'destroy'])->name('admin.coverimage.destroy');
+
+// FOR ADMIN COMMITTEE DETAILS 
+
 Route::get('admin/committeedetails/index', [CommitteeDetailController::class, 'index'])->name('admin.committeedetails.index');
+Route::get('admin/committeedetails/edit/{id}', [CommitteeDetailController::class, 'edit'])->name('admin.committeedetails.edit');
+Route::post('admin/committeedetails/update', [CommitteeDetailController::class, 'update'])->name('admin.committeedetails.update');
+Route::get('admin/committeedetails/destroy/{id}', [CommitteeDetailController::class, 'destroy'])->name('admin.committeedetails.destroy');
 Route::get('file-import-export', [CommitteeDetailController::class, 'fileImportExport']);
 Route::post('file-import', [CommitteeDetailController::class, 'fileImport'])->name('file-import');
 Route::get('file-export', [CommitteeDetailController::class, 'fileExport'])->name('file-export');
@@ -208,11 +224,14 @@ Route::get('portal/render_directot', [App\Http\Controllers\RenderController::cla
 Route::get('portal/render_press', [App\Http\Controllers\RenderController::class, 'render_press'])->name('render_press');
 Route::get('portal/render_news', [App\Http\Controllers\RenderController::class, 'render_news'])->name('render_news');
 Route::get('portal/render_other', [App\Http\Controllers\RenderController::class, 'render_other'])->name('render_other');
+Route::get('portal/render_committee', [App\Http\Controllers\RenderController::class, 'render_committee'])->name('render_committee');
+
 
 
 Route::get('portal/render_otherpost/{slug}', [App\Http\Controllers\RenderController::class, 'render_otherpost'])->name('render_otherpost');
 Route::get('portal/render_info/{slug}', [App\Http\Controllers\RenderController::class, 'render_info'])->name('render_info');
 Route::get('portal/render_other_post/{slug}', [App\Http\Controllers\RenderController::class, 'render_other_post'])->name('render_other_post');
+
 
 
 
