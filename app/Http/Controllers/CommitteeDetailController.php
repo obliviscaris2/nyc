@@ -86,9 +86,14 @@ class CommitteeDetailController extends Controller
      * @param  \App\Models\CommitteeDetail  $committeeDetail
      * @return \Illuminate\Http\Response
      */
-    public function edit(CommitteeDetail $committeeDetail)
+    public function edit(CommitteeDetail $committeeDetail, $id)
     {
-        //
+        $committeedetail = CommitteeDetail::find($id);
+
+        return view('admin.committeedetail.update', [
+            'committeedetail' => $committeedetail,
+            'page_title' => "Committee Update"
+        ]);
     }
 
     /**
@@ -100,7 +105,23 @@ class CommitteeDetailController extends Controller
      */
     public function update(Request $request, CommitteeDetail $committeeDetail)
     {
-        //
+        $request->validate([
+            "district" => "required|string",
+            "name" => "required|string",
+            "address" => 'required|string',
+            "phone" => 'required|string'
+        ]);
+
+        $committeedetail = CommitteeDetail::find($request->id);
+
+        $committeedetail->district = $request->district;
+        $committeedetail->name = $request->name;
+        $committeedetail->address = $request->address;
+        $committeedetail->phone = $request->phone;
+
+        $committeedetail->save();
+
+        return redirect("admin/committeedetails/index");
     }
 
     /**
@@ -109,8 +130,11 @@ class CommitteeDetailController extends Controller
      * @param  \App\Models\CommitteeDetail  $committeeDetail
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CommitteeDetail $committeeDetail)
+    public function destroy(CommitteeDetail $committeeDetail, $id)
     {
-        //
+        $committeeDetail = CommitteeDetail::find($id);
+        $committeeDetail->delete();
+
+        return redirect('admin/committeedetails/index');
     }
 }

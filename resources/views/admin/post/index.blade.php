@@ -28,6 +28,7 @@
                 <th>Title</th>
                 <th>Category</th>
                 <th>Image</th>
+                <th>Slug</th>
                 <th>Content</th>
                 <th>Action</th>
 
@@ -41,6 +42,7 @@
                     <td>{{  $category->title  }}</td>   
                     @endforeach
                     <td>{{ $post->image ?? '' }}</td>
+                    <td>{{ $post->slug ?? '' }}</td>
                     <td>{!! $post->content !!}</td>
                     <td>
                         

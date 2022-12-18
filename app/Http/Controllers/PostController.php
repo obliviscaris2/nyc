@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\Category;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -43,6 +44,7 @@ class PostController extends Controller
 
         $post = new Post;
         $post->title = $request->title;
+        $post->slug = SlugService::createSlug(Post::class, 'slug', $request->title);
         $post->image = $newImageName;
         $post->content = $request->content;
 
