@@ -64,22 +64,4 @@
         </div>
     </form>
 
-
-
-    <script>
-        const previewImage = e => {
-            const reader = new FileReader();
-            reader.readAsDataURL(e.target.files[0]);
-            reader.onload = () => {
-                const preview = document.getElementById('preview');
-                preview.src = reader.result;
-            };
-        };
-    </script>
-
-
-
-
-
-
   @stop
