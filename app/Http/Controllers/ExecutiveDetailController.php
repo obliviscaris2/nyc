@@ -81,9 +81,13 @@ class ExecutiveDetailController extends Controller
      * @param  \App\Models\ExecutiveDetail  $executiveDetail
      * @return \Illuminate\Http\Response
      */
-    public function edit(ExecutiveDetail $executiveDetail)
+    public function edit(ExecutiveDetail $executiveDetail, $id)
     {
-        //
+        $executivedetail = ExecutiveDetail::find($id);
+        return view('admin.executivedetail.update', [
+            'executivedetail' => $executivedetail,
+            'page_title' => "Executive Update"
+        ]);
     }
 
     /**
@@ -95,7 +99,26 @@ class ExecutiveDetailController extends Controller
      */
     public function update(Request $request, ExecutiveDetail $executiveDetail)
     {
-        //
+        $request->validate([
+            "name" => "required|string",
+            "image" => "required|string",
+            "phone" => 'required|string',
+            "email" => 'required|string',
+            "position" => 'required|string',
+        ]);
+
+        $executivedetail = ExecutiveDetail::find($request->id);
+
+        $executivedetail->name = $request->name;
+        $executivedetail->image = $request->image;
+        $executivedetail->phone = $request->phone;
+        $executivedetail->email = $request->email;
+        $executivedetail->position = $request->position;
+
+        $executivedetail->save();
+
+        return redirect("admin/executivedetails/index");
+        
     }
 
     /**
@@ -104,8 +127,11 @@ class ExecutiveDetailController extends Controller
      * @param  \App\Models\ExecutiveDetail  $executiveDetail
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ExecutiveDetail $executiveDetail)
+    public function destroy(ExecutiveDetail $executiveDetail, $id)
     {
-        //
+        $executivedetail = ExecutiveDetail::find($id);
+        $executivedetail->delete();
+
+        return redirect('admin/executivedetails/index');
     }
 }

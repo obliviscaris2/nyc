@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Link;
 use App\Models\Image;
+use App\Models\SiteSetting;
+use App\Models\Team;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -13,10 +15,15 @@ class HomeController extends Controller
     //
     public function index(Request $req){
 
-        $link = Link::first()->get()->take(5);
+        $links = Link::latest()->get()->take(4);
+        $sitesetting = SiteSetting::first();
+        $teams = Team::latest()->get()->take(3);
+
 
         return view('portal.index', [
-            "link" => $link,
+            "links" => $links,
+            "sitesetting" => $sitesetting,
+            "teams" => $teams
             
         ]);
         

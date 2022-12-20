@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en">
 
-@php
+{{-- @php
     $sitesetting = App\Models\SiteSetting::first();
   $link = App\Models\Link::first()->get()->take(5);
     
 
-@endphp
+@endphp --}}
 
 @include('portal.includes.head')
 
