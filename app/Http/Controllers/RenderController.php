@@ -9,7 +9,9 @@ use App\Models\OtherPost;
 use App\Models\Category;
 use App\Models\CommitteeDetail;
 use App\Models\Document;
+use App\Models\ExecutiveDetail;
 use App\Models\Information;
+use App\Models\Message;
 use App\Models\Post;
 use App\Models\Video;
 use App\Models\MyImage;
@@ -142,10 +144,37 @@ class RenderController extends Controller
         ]);
     }
 
+    public function render_administrative()
+    {
+        $administrative = Message::whereType('administrativehead')->latest()->get()->take(1);
+        return view('portal.render_administrative', [
+            "administrative" => $administrative,
+            "page_title" => "प्रशासकीय प्रमुखको सन्देश",
+        ]);
+    }
+
+    public function render_chairperson()
+    {
+        $chairperson = Message::whereType('chairperson')->latest()->get()->take(1);
+        return view('portal.render_chairperson', [
+            "chairperson" => $chairperson,
+            "page_title" => "अध्यक्षको सन्देश"
+        ]);
+    }
+
     public function contact_page(){
        
         return view('portal.contact_page');
 
+    }
+
+    public function render_executive_members()
+    {
+        $executivedetail = ExecutiveDetail::all();
+        return view('portal.render_executive_members', [
+            'executivedetail' => $executivedetail,
+            'page_title' => "परिषद् सदस्य"
+        ]);
     }
  
 }
