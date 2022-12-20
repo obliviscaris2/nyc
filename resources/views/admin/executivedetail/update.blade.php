@@ -28,7 +28,7 @@
     <section class="content">
       <div class="container-fluid">
       
-        <form id="quickForm" novalidate="novalidate" method="POST" action="{{ route('admin.executivedetail.update') }}"
+        <form id="quickForm" novalidate="novalidate" method="POST" action="{{ route('admin.executivedetails.update') }}"
         enctype="multipart/form-data">
         @csrf
         <input name="id" id="" value = "{{ $executivedetail->id }}" hidden>
