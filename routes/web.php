@@ -27,6 +27,9 @@ use App\Http\Controllers\InformationController;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\SiteSettingController;
 use App\Http\Controllers\CommitteeDetailController;
+use App\Http\Controllers\ExecutiveDetailController;
+use App\Http\Controllers\MessageController;
+use App\Models\Message;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,6 +85,13 @@ Route::get('admin/committeedetails/destroy/{id}', [CommitteeDetailController::cl
 Route::get('file-import-export', [CommitteeDetailController::class, 'fileImportExport']);
 Route::post('file-import', [CommitteeDetailController::class, 'fileImport'])->name('file-import');
 Route::get('file-export', [CommitteeDetailController::class, 'fileExport'])->name('file-export');
+
+// FOR ADMIN EXECUTIVE DETAILS 
+Route::get('admin/executivedetails/index', [ExecutiveDetailController::class, "index"])->name('admin.executivedetails.index');
+
+Route::get("file-import-export-exe", [ExecutiveDetailController::class, "fileImportExport"]);
+Route::post("file-import-exe", [ExecutiveDetailController::class, "fileImport"])->name("file-import-exe");
+Route::get('file-export-exe', [ExecutiveDetailController::class, "fileExport"])->name("file-export-exe");
 
 
 // FOR POSTS 
@@ -225,6 +235,9 @@ Route::get('portal/render_press', [App\Http\Controllers\RenderController::class,
 Route::get('portal/render_news', [App\Http\Controllers\RenderController::class, 'render_news'])->name('render_news');
 Route::get('portal/render_other', [App\Http\Controllers\RenderController::class, 'render_other'])->name('render_other');
 Route::get('portal/render_committee', [App\Http\Controllers\RenderController::class, 'render_committee'])->name('render_committee');
+Route::get('portal/render_administrative', [App\Http\Controllers\RenderController::class, 'render_administrative'])->name('render_administrative');
+Route::get('portal/render_chairperson', [App\Http\Controllers\RenderController::class, 'render_chairperson'])->name('render_chairperson');
+Route::get('portal/render_executive_members', [App\Http\Controllers\RenderController::class, 'render_executive_members'])->name('render_executive_members');
 
 
 
@@ -232,7 +245,15 @@ Route::get('portal/render_otherpost/{slug}', [App\Http\Controllers\RenderControl
 Route::get('portal/render_info/{slug}', [App\Http\Controllers\RenderController::class, 'render_info'])->name('render_info');
 Route::get('portal/render_other_post/{slug}', [App\Http\Controllers\RenderController::class, 'render_other_post'])->name('render_other_post');
 
+// FOR MESSAGE 
 
+Route::get('admin/message/index', [MessageController::class, 'index'])->name('admin.message.index');
+Route::get('admin/message/create', [MessageController::class, 'create'])->name('admin.message.create');
+Route::post('admin/message/store', [MessageController::class, 'store'])->name('admin.message.store');
+Route::get('admin/message/edit/{id}', [MessageController::class, 'edit'])->name('admin.message.edit');
+Route::post('admin/message/update', [MessageController::class, 'update'])->name('admin.message.update');
+Route::get('admin/message/destroy/{id}', [MessageController::class, 'destroy'])->name('admin.message.destroy');
+Route::get('admin/message/show/{id}', [MessageController::class, 'show'])->middleware('auth')->name('admin.message.show');
 
 
 
@@ -241,6 +262,7 @@ Route::get('portal/render_other_post/{slug}', [App\Http\Controllers\RenderContro
 Route::get('admin/contactus/index', [ContactUsController::class, 'index'])->middleware('auth')->name('admin.contactus.index');
 Route::post('admin/contactus/store', [ContactUsController::class, 'store'])->middleware('auth')->name('admin.contactus.store');
 Route::get('admin/contactus/destroy/{id}', [ContactUsController::class, 'destroy'])->middleware('auth')->name('admin.contactus.destroy');
+Route::get('admin/contactus/show/{id}', [ContactUsController::class, 'show'])->middleware('auth')->name('admin.contactus.show');
 
 Route::get('portal/contact_page', [App\Http\Controllers\RenderController::class, 'contact_page'])->name('contact_page');
 

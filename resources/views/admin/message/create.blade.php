@@ -27,44 +27,36 @@
     <section class="content">
       <div class="container-fluid">
       
-        <form id="quickForm" novalidate="novalidate" method="POST" action="{{ route('admin.documents.update') }}"
+        <form id="quickForm" novalidate="novalidate" method="POST" action="{{ route('admin.message.store') }}"
         enctype="multipart/form-data">
+
         @csrf
-        <input name="id" id="" value = "{{ $document->id }}" hidden>
         <select name="type" id="type">
-            <option value="0" disabled selected>--Select Type --</option>
-            <option value="notice">Notice</option>
-            <option value="publication">Publication</option>
-            <option value="tender">Tender</option>
+            <option value="0" disabled selected>--Select Position--</option>
+            <option value="administrativehead">Administrative Head</option>
+            <option value="chairperson">Chairperson</option>
         </select>
         
 
         <div class="card-body">
             <div class="form-group">
-                <label for="title">Title</label><span style="color:red; font-size:large"> *</span>
-                <input style="width:auto;" type="text" name="title" class="form-control" id="title" placeholder="Title" value="{{ $document->title }}">
+                <label for="name">Name</label><span style="color:red; font-size:large"> *</span>
+                <input style="width:auto;" type="text" name="name" class="form-control" id="name" placeholder="Name..">
             </div>
             <div>
                 <label for="description">Description</label><span style="color:red; font-size:large">
                     *</span>
-                <textarea style="max-width: 30%;" type="text" class="form-control" name="description" id="description"
-                    placeholder="Add Description">{{ $document->description }}</textarea>
+                <textarea style="max-width: 30%;" type="text" class="form-control" name="description" id="summernote"
+                    placeholder="Add Description"></textarea>
             </div>
 
             <div class="form-group">
               <label for="image">Image</label><span style="color:red; font-size:large"> *</span>
               <input type="file" name="image" class="form-control" id="image" onchange="previewImage(event)"
-                  placeholder="image" value="">
+                  placeholder="image" required>
             </div>
             <img id="preview" style="max-width: 500px; max-height:500px" />
             
-            <div class="form-group">
-              
-
-                    <label for="file">PDF</label><span style="color:red; font-size:large"> *</span>
-                    <input type="file" name="file" class="form-control" id="pdf" onchange="previewImage(event)" placeholder="PDF" value="">
-
-            </div>
 
         </div>
         <!-- /.card-body -->

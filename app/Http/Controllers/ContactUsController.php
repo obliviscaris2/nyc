@@ -21,6 +21,14 @@ class ContactUsController extends Controller
         ]);
     }
 
+    public function show($id)
+    {
+        $contact = ContactUs::find($id);
+        return view('admin.contactus.show', [
+            "contact" => $contact
+        ]);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
