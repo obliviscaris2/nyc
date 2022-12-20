@@ -223,15 +223,47 @@
       </li>
 
       <li class="nav-item menu-items">
+        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+          <span class="menu-icon">
+            <i class="mdi mdi-laptop"></i>
+          </span>
+          <span class="menu-title">Sitesetting</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="ui-basic">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item " > <a class="nav-link text-light" href="{{ route('Sitesetting.index') }}">Sitesettings</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ route('About.index') }}">About Us</a></li>
+          </ul>
+        </div>
+      </li>
+
+      {{-- <li class="nav-item menu-items">
         <a class="nav-link" href="{{ route('Sitesetting.index') }}">
           <span class="menu-icon">
             <i class="mdi mdi-table-large"></i>
           </span>
           <span class="menu-title">Sitesettings</span>
         </a>
-      </li>
+      </li> --}}
 
       <li class="nav-item menu-items">
+        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+          <span class="menu-icon">
+            <i class="mdi mdi-laptop"></i>
+          </span>
+          <span class="menu-title">Images</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="ui-basic">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item " > <a class="nav-link text-light" href="{{ route('admin.coverimage.index') }}">Cover Images</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ route('admin.image.index') }}">Gallery Images</a></li>
+          </ul>
+        </div>
+      </li>
+
+      {{-- <li class="nav-item menu-items">
         <a class="nav-link" href="{{ route('admin.coverimage.index') }}">
           <span class="menu-icon">
             <i class="mdi mdi-table-large"></i>
@@ -247,18 +279,33 @@
           </span>
           <span class="menu-title">Images</span>
         </a>
-      </li>
+      </li> --}}
 
-      <li class="nav-item menu-items">
+      {{-- <li class="nav-item menu-items">
         <a class="nav-link" href="{{ route('About.index') }}">
           <span class="menu-icon">
             <i class="mdi mdi-chart-bar"></i>
           </span>
           <span class="menu-title">Abouts</span>
         </a>
-      </li>
-
-
+      </li> --}}
+{{-- 
+      <li class="nav-item menu-items">
+        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+          <span class="menu-icon">
+            <i class="mdi mdi-laptop"></i>
+          </span>
+          <span class="menu-title">Team</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="ui-basic">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item " > <a class="nav-link text-light" href="{{ route('admin.team.index') }}">Team</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ route('admin.message.index') }}">Message from</a></li>
+          </ul>
+        </div>
+      </li> --}}
+      
 
       <li class="nav-item menu-items">
         <a class="nav-link" href="{{ route('admin.team.index') }}">
@@ -279,6 +326,23 @@
       </li>
 
       <li class="nav-item menu-items">
+        <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+          <span class="menu-icon">
+            <i class="mdi mdi-security"></i>
+          </span>
+          <span class="menu-title">Documents</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="auth">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="{{ route('admin.documents.index') }}"> Documents </a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ route('admin.information.index') }}"> Information </a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ route('admin.other.index') }}"> Others </a></li>
+          </ul>
+        </div>
+      </li>
+
+      {{-- <li class="nav-item menu-items">
         <a class="nav-link" href="{{ route('admin.documents.index') }}">
           <span class="menu-icon">
             <i class="mdi mdi-file-document-box"></i>
@@ -303,9 +367,9 @@
           </span>
           <span class="menu-title">Other</span>
         </a>
-      </li>
+      </li> --}}
 
-      <li class="nav-item menu-items">
+      {{-- <li class="nav-item menu-items">
         <a class="nav-link" href="{{ route('admin.categories.index') }}">
           <span class="menu-icon">
             <i class="mdi mdi-file-document-box"></i>
@@ -321,6 +385,22 @@
           </span>
           <span class="menu-title">Posts</span>
         </a>
+      </li> --}}
+
+      <li class="nav-item menu-items">
+        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+          <span class="menu-icon">
+            <i class="mdi mdi-laptop"></i>
+          </span>
+          <span class="menu-title">Posts</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="ui-basic">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item " > <a class="nav-link text-light" href="{{ route('admin.categories.index') }}">Categories</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ route('admin.posts.index') }}">Post</a></li>
+          </ul>
+        </div>
       </li>
 
 
@@ -331,6 +411,22 @@
           </span>
           <span class="menu-title">Contacts</span>
         </a>
+      </li>
+
+      <li class="nav-item menu-items">
+        <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+          <span class="menu-icon">
+            <i class="mdi mdi-security"></i>
+          </span>
+          <span class="menu-title">Team Details</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="auth">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="{{ route('admin.executivedetails.index') }}"> Executive Details </a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ route('admin.information.index') }}"> Committee Details </a></li>
+          </ul>
+        </div>
       </li>
 
 
@@ -351,6 +447,15 @@
         </a>
       </li>
 
+      {{-- <li class="nav-item menu-items">
+        <a class="nav-link" href="{{ route('admin.executivedetails.index') }}">
+          <span class="menu-icon">
+            <i class="mdi mdi-file-document-box"></i>
+          </span>
+          <span class="menu-title">Executive Details</span>
+        </a>
+      </li>
+
       <li class="nav-item menu-items">
         <a class="nav-link" href="{{ route('admin.committeedetails.index') }}">
           <span class="menu-icon">
@@ -358,7 +463,7 @@
           </span>
           <span class="menu-title">Committee Details</span>
         </a>
-      </li>
+      </li> --}}
 
       <li class="nav-item menu-items">
         <a class="nav-link" href="{{ route('admin.link.index') }}">

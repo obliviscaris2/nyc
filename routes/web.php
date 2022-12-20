@@ -27,6 +27,7 @@ use App\Http\Controllers\InformationController;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\SiteSettingController;
 use App\Http\Controllers\CommitteeDetailController;
+use App\Http\Controllers\ExecutiveDetailController;
 use App\Http\Controllers\MessageController;
 use App\Models\Message;
 
@@ -84,6 +85,13 @@ Route::get('admin/committeedetails/destroy/{id}', [CommitteeDetailController::cl
 Route::get('file-import-export', [CommitteeDetailController::class, 'fileImportExport']);
 Route::post('file-import', [CommitteeDetailController::class, 'fileImport'])->name('file-import');
 Route::get('file-export', [CommitteeDetailController::class, 'fileExport'])->name('file-export');
+
+// FOR ADMIN EXECUTIVE DETAILS 
+Route::get('admin/executivedetails/index', [ExecutiveDetailController::class, "index"])->name('admin.executivedetails.index');
+
+Route::get("file-import-export-exe", [ExecutiveDetailController::class, "fileImportExport"]);
+Route::post("file-import-exe", [ExecutiveDetailController::class, "fileImport"])->name("file-import-exe");
+Route::get('file-export-exe', [ExecutiveDetailController::class, "fileExport"])->name("file-export-exe");
 
 
 // FOR POSTS 
@@ -229,6 +237,7 @@ Route::get('portal/render_other', [App\Http\Controllers\RenderController::class,
 Route::get('portal/render_committee', [App\Http\Controllers\RenderController::class, 'render_committee'])->name('render_committee');
 Route::get('portal/render_administrative', [App\Http\Controllers\RenderController::class, 'render_administrative'])->name('render_administrative');
 Route::get('portal/render_chairperson', [App\Http\Controllers\RenderController::class, 'render_chairperson'])->name('render_chairperson');
+Route::get('portal/render_executive_members', [App\Http\Controllers\RenderController::class, 'render_executive_members'])->name('render_executive_members');
 
 
 

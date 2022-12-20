@@ -9,6 +9,7 @@ use App\Models\OtherPost;
 use App\Models\Category;
 use App\Models\CommitteeDetail;
 use App\Models\Document;
+use App\Models\ExecutiveDetail;
 use App\Models\Information;
 use App\Models\Message;
 use App\Models\Post;
@@ -165,6 +166,15 @@ class RenderController extends Controller
        
         return view('portal.contact_page');
 
+    }
+
+    public function render_executive_members()
+    {
+        $executivedetail = ExecutiveDetail::all();
+        return view('portal.render_executive_members', [
+            'executivedetail' => $executivedetail,
+            'page_title' => "परिषद् सदस्य"
+        ]);
     }
  
 }
