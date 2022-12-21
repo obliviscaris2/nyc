@@ -38,8 +38,11 @@ use App\Models\Information;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
 
+Route::group(['prefix' => '{locale}'], function (){
+    Route::get('/', [HomeController::class, 'index'])->middleware('setLocale')->name('home');
+
+});
 
 
 Route::get('/single/{id}', [SingleController::class, 'index']);
