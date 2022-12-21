@@ -1,3 +1,4 @@
+
 @extends('admin.master')
  
  
@@ -27,44 +28,30 @@
     <section class="content">
       <div class="container-fluid">
       
-        <form id="quickForm" novalidate="novalidate" method="POST" action="{{ route('admin.documents.update') }}"
+        <form id="quickForm" novalidate="novalidate" method="POST" action="{{ route('admin.committeedetails.update') }}"
         enctype="multipart/form-data">
         @csrf
-        <input name="id" id="" value = "{{ $document->id }}" hidden>
-        <select name="type" id="type">
-            <option value="0" disabled selected>--Select Type --</option>
-            <option value="notice">Notice</option>
-            <option value="publication">Publication</option>
-            <option value="tender">Tender</option>
-        </select>
+        <input name="id" id="" value = "{{ $committeedetail->id }}" hidden>
         
 
         <div class="card-body">
             <div class="form-group">
-                <label for="title">Title</label><span style="color:red; font-size:large"> *</span>
-                <input style="width:auto;" type="text" name="title" class="form-control" id="title" placeholder="Title" value="{{ $document->title }}">
+                <label for="district">District</label>
+                <input style="width:auto;" type="text" name="district" class="form-control" id="title" value="{{ $committeedetail->district }}" autocomplete="off">
             </div>
-            <div>
-                <label for="description">Description</label><span style="color:red; font-size:large">
-                    *</span>
-                <textarea style="max-width: 30%;" type="text" class="form-control" name="description" id="description"
-                    placeholder="Add Description">{{ $document->description }}</textarea>
-            </div>
-
             <div class="form-group">
-              <label for="image">Image</label><span style="color:red; font-size:large"> *</span>
-              <input type="file" name="image" class="form-control" id="image" onchange="previewImage(event)"
-                  placeholder="image" value="">
+                <label for="name">Name</label>
+                <input style="width:auto;" type="text" name="name" class="form-control" id="name" value="{{ $committeedetail->name }}">
             </div>
-            <img id="preview" style="max-width: 500px; max-height:500px" />
+            <div class="form-group">
+                <label for="name">Address</label>
+                <input style="width:auto;" type="text" name="address" class="form-control" id="address" value="{{ $committeedetail->address }}">
+            </div>
+            <div class="form-group">
+                <label for="name">Phone</label>
+                <input style="width:auto;" type="text" name="phone" class="form-control" id="phone" value="{{ $committeedetail->phone }}">
+            </div>
             
-            <div class="form-group">
-              
-
-                    <label for="file">PDF</label><span style="color:red; font-size:large"> *</span>
-                    <input type="file" name="file" class="form-control" id="pdf" onchange="previewImage(event)" placeholder="PDF" value="">
-
-            </div>
 
         </div>
         <!-- /.card-body -->

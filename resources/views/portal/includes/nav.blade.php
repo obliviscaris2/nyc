@@ -89,7 +89,8 @@
             <li><a href="#">हाम्रो बारेमा</a>
               <ul class="nav-dropdown">
                 <li><a href="{{ route('render_about') }}">कार्यालयकाे परिचय</a></li>
-                <li><a href="{{ route('render_team') }}">कर्मचारी विवरण</a></li>  
+                <li><a href="{{ route('render_team') }}">कर्मचारी विवरण</a></li>
+                <li><a href="{{ route('render_committee') }}">जिल्ला समितीहरु</a></li>
               </ul>
             </li>
             <li><a href="#">दस्तावेज</a>
