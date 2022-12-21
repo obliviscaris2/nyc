@@ -7,7 +7,7 @@
     <section class="latest_blog wid_mar">
         <div class="container">
             <h1 class="sec_title">
-                ब्लग
+                {{ __("Blog") }}
             </h1>
             <div class="row">
 

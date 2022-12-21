@@ -23,16 +23,16 @@ $other = App\Models\Other::whereType('other')->latest()->get()->take(4);
 
                         <div class="card-head">
                             <h5 class="card-title">
-                                <span class="card-title-backg">दस्तावेज</span>
+                                <span class="card-title-backg">{{ __("Documents") }}</span>
                             </h5>
                         </div>
 
 
                         
                         <div class="tab">
-                            <button class="tablinks" onclick="notes(event, 'Notice')">सुचना</button>
-                            <button class="tablinks" onclick="notes(event, 'Publication')">प्रकाशन</button>
-                            <button class="tablinks" onclick="notes(event, 'Tender')">बाेलपत्र</button>
+                            <button class="tablinks" onclick="notes(event, 'Notice')">{{ __("Notice") }}</button>
+                            <button class="tablinks" onclick="notes(event, 'Publication')">{{ __("Publication") }}</button>
+                            <button class="tablinks" onclick="notes(event, 'Tender')">{{ __("Tender") }}</button>
                           </div>
                           
                           <div id="Notice" class="tabcontent">
@@ -83,14 +83,14 @@ $other = App\Models\Other::whereType('other')->latest()->get()->take(4);
                 <div class="col-md-4 allbox_two">
                     <div class="card">
                         <div class="card-head">
-                            <h5 class="card-title">जानकारी</h5>
+                            <h5 class="card-title">{{ __("Information") }}</h5>
                         </div>
 
 
                         <div class="tab">
-                            <button class="tablinksone" onclick="info(event, 'Rules')">नियमावली</button>
-                            <button class="tablinksone" onclick="info(event, 'Directot')">निर्देशिका</button>
-                            <button class="tablinksone" onclick="info(event, 'Press')">प्रेस विज्ञप्ति</button>
+                            <button class="tablinksone" onclick="info(event, 'Rules')">{{ __("Regulations") }}</button>
+                            <button class="tablinksone" onclick="info(event, 'Directot')">{{ __("Directory") }}</button>
+                            <button class="tablinksone" onclick="info(event, 'Press')">{{ __("Press Release") }}</button>
                           </div>
                           
                           <div id="Rules" class="tabcontentone">
@@ -147,11 +147,11 @@ $other = App\Models\Other::whereType('other')->latest()->get()->take(4);
 
 
                         <div class="card-head">
-                            <h5 class="card-title">अन्य डाउनलाेड</h5>
+                            <h5 class="card-title">{{ __("Downloads") }}</h5>
                         </div>
                         <div class="tab">
-                            <button class="tablinkstwo" onclick="other(event, 'News')">समाचार</button>
-                            <button class="tablinkstwo" onclick="other(event, 'Other')">अन्य</button>
+                            <button class="tablinkstwo" onclick="other(event, 'News')">{{ __("News") }}</button>
+                            <button class="tablinkstwo" onclick="other(event, 'Other')">{{ __("Others") }}</button>
                           </div>
                           
                           <div id="News" class="tabcontenttwo">

@@ -158,7 +158,7 @@ class RenderController extends Controller
         return view('portal.render_committee', [
             "committee" => $committee,
             "sitesetting" => $sitesetting,
-            "page_title" => "जिल्ला समितीहरु"
+            "page_title" => "District Committees"
         ]);
     }
 
@@ -169,7 +169,7 @@ class RenderController extends Controller
         return view('portal.render_administrative', [
             "administrative" => $administrative,
             "sitesetting" => $sitesetting,
-            "page_title" => "प्रशासकीय प्रमुखको सन्देश",
+            "page_title" => "Message from the Administrative Head",
         ]);
     }
 
@@ -180,7 +180,7 @@ class RenderController extends Controller
         return view('portal.render_chairperson', [
             "chairperson" => $chairperson,
             "sitesetting" => $sitesetting,
-            "page_title" => "अध्यक्षको सन्देश"
+            "page_title" => "Message from Chairperson"
         ]);
     }
 
@@ -200,7 +200,7 @@ class RenderController extends Controller
         return view('portal.render_executive_members', [
             'executivedetail' => $executivedetail,
             'sitesetting' => $sitesetting,
-            'page_title' => "परिषद् सदस्य"
+            'page_title' => "Council Members"
         ]);
     }
  

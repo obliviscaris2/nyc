@@ -4,7 +4,7 @@
     <div class="container">
 
         <div class="row mt-3">
-            <h1 class="sec_title">ऐन तथा नियमावली</h1>
+            <h1 class="sec_title">{{ __("Acts & Regulations") }}</h1>
            
             @foreach ($rules as $rules ) 
            <div class="col-md-4">

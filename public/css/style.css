@@ -278,7 +278,7 @@ nav ul li {
 nav ul li a,
 nav ul li a:visited {
   display: block;
-  padding: 0 30px;
+  padding: 0 25px;
   line-height: 70px;
   background-image: linear-gradient(to right top, #0c3c85, #0e3b7f, #103a78, #133972, #16386b);
   font-weight: bold;

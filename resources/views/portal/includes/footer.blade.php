@@ -16,8 +16,8 @@ $links = App\Models\Link::first()->get()->take(5);
                         <div class="single-cta">
                             <i class="fas fa-map-marker-alt"></i>
                             <div class="cta-text">
-                                <h4>Find us</h4>
-                                <span> {{ $sitesetting->office_address }}</span>
+                                <h4>{{ __("Find us") }}</h4>
+                                <span> {{ __($sitesetting->office_address) }}</span>
                             </div>
                         </div>
                     </div>
@@ -25,7 +25,7 @@ $links = App\Models\Link::first()->get()->take(5);
                         <div class="single-cta">
                             <i class="fas fa-phone"></i>
                             <div class="cta-text">
-                                <h4>Call us</h4>
+                                <h4>{{ __("Call us") }}</h4>
                                 <span> {{ $sitesetting->office_contact }}</span>
                             </div>
                         </div>
@@ -34,7 +34,7 @@ $links = App\Models\Link::first()->get()->take(5);
                         <div class="single-cta">
                             <i class="far fa-envelope-open"></i>
                             <div class="cta-text">
-                                <h4>Mail us</h4>
+                                <h4>{{ __("Mail us") }}</h4>
                                 <span> {{ $sitesetting->office_mail }}</span>
                             </div>
                         </div>
@@ -56,7 +56,7 @@ $links = App\Models\Link::first()->get()->take(5);
                                 <p>We are Aashatech Company.</p>
                             </div> --}}
                             <div class="footer-social-icon">
-                                <span>Follow us</span>
+                                <span>{{ __("Follow us") }}</span>
                                 <a href="https://www.facebook.com/ktm.logistic/"><i
                                         class="fab fa-facebook-f facebook-bg"></i></a>
                                 <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
@@ -67,23 +67,23 @@ $links = App\Models\Link::first()->get()->take(5);
                     <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
                         <div class="footer-widget">
                             <div class="footer-widget-heading">
-                                <h3>Useful Links</h3>
+                                <h3>{{ __("Useful Links") }}</h3>
                             </div>
                             <ul>
-                                <li><a href="{{ url('/') }}">गृहपृष्ठ</a></li>
-                                <li><a href="{{ route('render_about') }}">कार्यालयकाे परिचय</a></li>
-                                <li><a href="{{ route('render_team') }}">कर्मचारी विवरण</a></li>
-                                <li><a href="{{ route('render_notice') }}">सुचना</a></li>
-                                <li><a href="{{ route('render_publication') }}">प्रकाशन</a></li>
-                                <li><a href="{{ route('render_tender') }}">बाेलपत्र</a></li>
-                                <li><a href="{{ route('render_rules') }}">ऐन तथा नियमावली</a></li>
-                                <li><a href="{{ route('render_directot') }}">निर्देशिका</a></li>
-                                <li><a href="{{ route('render_press') }}">प्रेस विज्ञप्ति</a></li>
-                                <li><a href="{{ route('render_news') }}">समाचार</a></li>
-                                <li><a href="{{ route('render_other') }}">अन्य</a></li>
-                                <li><a href="{{ route('render_images') }}">फाेटाे ग्यालेरी</a></li>
-                                <li><a href="{{ route('render_videos') }}">भिडियाे ग्यालेरी</a></li>
-                                <li><a href="{{ route('contact_page') }}">सम्पर्क</a></li>
+                                <li><a href="{{ url('/') }}">{{ __("Home") }}</a></li>
+                                <li><a href="{{ route('render_about') }}">{{ __("Introduction") }}</a></li>
+                                <li><a href="{{ route('render_team') }}">{{ __("Employee Details") }}</a></li>
+                                <li><a href="{{ route('render_notice') }}">{{ __("Notice") }}</a></li>
+                                <li><a href="{{ route('render_publication') }}">{{ __("Publication") }}</a></li>
+                                <li><a href="{{ route('render_tender') }}">{{ __("Tender") }}</a></li>
+                                <li><a href="{{ route('render_rules') }}">{{ __("Acts & Regulations") }}</a></li>
+                                <li><a href="{{ route('render_directot') }}">{{ __("Directory") }}</a></li>
+                                <li><a href="{{ route('render_press') }}">{{ __("Press Release") }}</a></li>
+                                <li><a href="{{ route('render_news') }}">{{ __("News") }}</a></li>
+                                <li><a href="{{ route('render_other') }}">{{ __("Others") }}</a></li>
+                                <li><a href="{{ route('render_images') }}">{{ __("Photo Gallery") }}</a></li>
+                                <li><a href="{{ route('render_videos') }}">{{ __("Video Gallery") }}</a></li>
+                                <li><a href="{{ route('contact_page') }}">{{ __("Contact") }}</a></li>
 
 
                             </ul>
@@ -92,7 +92,7 @@ $links = App\Models\Link::first()->get()->take(5);
                     <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
                         <div class="footer-widget">
                             <div class="footer-widget-heading">
-                                <h3>महत्वपुर्ण लिंकहरू</h3>
+                                <h3>{{ __("Important links") }}</h3>
                             </div>
                             <ul class="quicknepal_link">
                                 @foreach ($links as $link )

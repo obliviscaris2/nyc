@@ -4,7 +4,7 @@
     <div class="container">
 
         <div class="row mt-3">
-            <h1 class="sec_title">प्रेस विज्ञप्ति</h1>
+            <h1 class="sec_title">{{ __("Press Release") }}</h1>
            
             @foreach ($press as $press ) 
            <div class="col-md-4">

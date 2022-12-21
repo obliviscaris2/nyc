@@ -4,7 +4,7 @@
     <section class="contact_form wid_mar">
         <div class="container">
             <h1 class="sec_title">
-               सम्पर्क 
+               {{ __("Contact") }}
             </h1>
             <div class="row">
                 <div class="col-md-6 cform_left">
