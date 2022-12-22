@@ -587,7 +587,7 @@ nav ul li ul li a {
 } */
 .tablinks, .tablinksone,.tablinkstwo{
   padding: 10px;
-  width: 100px;
+  width: auto;
   background-color: #0c3c85;
   color: white;
   margin: 7px;
