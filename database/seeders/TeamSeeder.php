@@ -22,7 +22,6 @@ class TeamSeeder extends Seeder
                 'image'=> 'uploads/team/ramakant.jpg',
                 'email' => 'sharma.ramakanta@gmail.com',
                 'contact_number' => '9855064451',
-               
             ],
             [
                 'name' => 'Dinesh Ghimire',
@@ -31,9 +30,6 @@ class TeamSeeder extends Seeder
                 'image'=> 'uploads/team/dinesh.jpg',
                 'email' => 'dghimire72@gmail.com',
                 'contact_number' => '9851211483',
-
-
-            
             ],
             [
                 'name' => 'Chandra Thapa',
@@ -42,9 +38,6 @@ class TeamSeeder extends Seeder
                 'image'=> 'uploads/team/chandra.jpg',
                 'email' => 'chandathapa02@gmail.com',
                 'contact_number' => '9841358839',
-
-
-            
             ],
             [
                 'name' => 'Kamala Gyawali',
@@ -53,9 +46,6 @@ class TeamSeeder extends Seeder
                 'image'=> 'uploads/team/kamala.jpg',
                 'email' => 'kgyawali123@gmail.com',
                 'contact_number' => '9841777074',
-
-
-            
             ],
             [
                 'name' => 'Shanti Ram Poudel',
@@ -64,9 +54,6 @@ class TeamSeeder extends Seeder
                 'image'=> 'uploads/team/shanti.jpg',
                 'email' => 'info@nyc.gov.np',
                 'contact_number' => '9861999301',
-
-
-            
             ],
             [
                 'name' => 'Ashok Parajuli',
@@ -75,9 +62,6 @@ class TeamSeeder extends Seeder
                 'image'=> 'uploads/team/ashok.jpg',
                 'email' => 'aparajuli8@gmail.com',
                 'contact_number' => '9841773715',
-
-
-            
             ],
             [
                 'name' => 'Sunita Karki',
@@ -86,9 +70,6 @@ class TeamSeeder extends Seeder
                 'image'=> 'uploads/team/sunita.jpg',
                 'email' => 'sunita.jiri@gmail.com',
                 'contact_number' => '9841478525',
-
-
-            
             ],
             [
                 'name' => 'Kalpana Khanal Basnet',
@@ -96,10 +77,7 @@ class TeamSeeder extends Seeder
                 'role' => 'Section Officer',
                 'image'=> 'uploads/team/kalpana.jpg',
                 'email' => 'mailtokhanalkalpana@gmail.com',
-                'contact_number' => '9841606231',
-
-
-            
+                'contact_number' => '9841606231',            
             ],
             [
                 'name' => 'Khulanath Gautam',
@@ -107,10 +85,7 @@ class TeamSeeder extends Seeder
                 'role' => 'Section Officer',
                 'image'=> 'uploads/team/khulanath.jpg',
                 'email' => 'khulanathgtm@yahoo.com',
-                'contact_number' => '9841415745',
-
-
-            
+                'contact_number' => '9841415745',            
             ],
             [
                 'name' => 'Chandrawoti Koirala',
@@ -118,10 +93,7 @@ class TeamSeeder extends Seeder
                 'role' => 'Deputy Executive Officer',
                 'image'=> 'uploads/team/chandrawoti.jpg',
                 'email' => 'cwkoirala22@gmail.com',
-                'contact_number' => '9849220278',
-
-
-            
+                'contact_number' => '9849220278',           
             ],
             [
                 'name' => 'Durga Giri',
@@ -129,10 +101,7 @@ class TeamSeeder extends Seeder
                 'role' => 'Deputy Executive Officer',
                 'image'=> 'uploads/team/durga.jpg',
                 'email' => 'durgagiri28@gmail.com',
-                'contact_number' => '9844724628',
-
-
-            
+                'contact_number' => '9844724628',           
             ],
             [
                 'name' => 'Rani Kumari Mallik',
@@ -140,10 +109,7 @@ class TeamSeeder extends Seeder
                 'role' => 'Technical Assistant',
                 'image'=> 'uploads/team/rani.jpg',
                 'email' => 'ranukam123@gmail.com',
-                'contact_number' => '9841539741',
-
-
-            
+                'contact_number' => '9841539741',       
             ],
             [
                 'name' => 'Pushpa Dahal',
@@ -151,10 +117,7 @@ class TeamSeeder extends Seeder
                 'role' => 'Accountant',
                 'image'=> 'uploads/team/pushpa.jpg',
                 'email' => 'apushpaa1234@gmail.com',
-                'contact_number' => '9842494428',
-
-
-            
+                'contact_number' => '9842494428',           
             ],
             [
                 'name' => 'Mira Kafle',
@@ -162,10 +125,7 @@ class TeamSeeder extends Seeder
                 'role' => 'Computer Operator',
                 'image'=> 'uploads/team/mira.jpg',
                 'email' => 'mira.kafle@gmail.com',
-                'contact_number' => '9843639407',
-
-
-            
+                'contact_number' => '9843639407',      
             ],
 
             [
@@ -174,10 +134,7 @@ class TeamSeeder extends Seeder
                 'role' => 'Computer Operator',
                 'image'=> 'uploads/team/apsara.jpg',
                 'email' => 'apsarakoirala32@gmail.com',
-                'contact_number' => '9849353262',
-
-
-            
+                'contact_number' => '9849353262',          
             ],
             [
                 'name' => 'Naresh Maharjan',
@@ -185,10 +142,7 @@ class TeamSeeder extends Seeder
                 'role' => 'Driver',
                 'image'=> 'uploads/team/naresh.jpg',
                 'email' => 'info@nyc.gov.np',
-                'contact_number' => '9860468088',
-
-
-            
+                'contact_number' => '9860468088',         
             ],
             [
                 'name' => 'Gokul Bhujel',
@@ -196,10 +150,7 @@ class TeamSeeder extends Seeder
                 'role' => 'Driver',
                 'image'=> 'uploads/team/gokul.jpg',
                 'email' => 'info@nyc.gov.np',
-                'contact_number' => '9841482427',
-
-
-            
+                'contact_number' => '9841482427',          
             ],
             [
                 'name' => 'Laxmi Rai',
@@ -207,10 +158,7 @@ class TeamSeeder extends Seeder
                 'role' => 'Office Helper',
                 'image'=> 'uploads/team/laxmi.jpg',
                 'email' => 'info@nyc.gov.np',
-                'contact_number' => '9841703324',
-
-
-            
+                'contact_number' => '9841703324', 
             ],
             [
                 'name' => 'Prem Kumari Khatri',
@@ -218,11 +166,7 @@ class TeamSeeder extends Seeder
                 'role' => 'Office Helper',
                 'image'=> 'uploads/team/prem.jpg',
                 'email' => 'info@nyc.gov.np',
-                'contact_number' => '9847910005',
-                
-
-
-            
+                'contact_number' => '9847910005',         
             ],
 
             [
@@ -232,9 +176,6 @@ class TeamSeeder extends Seeder
                 'image'=> 'uploads/team/sarita.jpg',
                 'email' => 'info@nyc.gov.np',
                 'contact_number' => '9849816921',
-
-
-            
             ]
 
         ]);
