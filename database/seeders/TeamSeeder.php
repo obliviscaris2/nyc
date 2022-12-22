@@ -176,7 +176,8 @@ class TeamSeeder extends Seeder
                 'image'=> 'uploads/team/sarita.jpg',
                 'email' => 'info@nyc.gov.np',
                 'contact_number' => '9849816921',
-            ]
+            ],
+
 
         ]);
     }
