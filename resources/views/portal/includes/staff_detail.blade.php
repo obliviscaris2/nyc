@@ -15,7 +15,7 @@
     <div class="row pp_desc">
         <div class="col-md-5  col-5 col-sm-5">
 
-            <img src="{{ asset('uploads/' . $team->image ?? '') }}">
+            <img src="{{ asset($team->image) }}">
         </div>
         <div class="col-md-7  col-7 col-sm-7">
             <p><span class="bold_name">{{ __($team->name) }}</span><br>
