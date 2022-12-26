@@ -1,19 +1,5 @@
 <section class="top_nav">
     <div class="container">
-        @if (count(config('app.languages')) > 1)
-
-            <a class="">
-                {{ strtoupper(app()->getLocale()) }}
-            </a>
-            <div>
-                @foreach (config('app.languages') as $langLocale => $langName)
-                    <a class=""
-                        href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }}
-                    </a>
-                @endforeach
-            </div>
-
-        @endif
 
         <div class="d-flex justify-content-between align-items-center">
             <div class="p-2">
@@ -45,6 +31,13 @@
             <div class="p-2">
                 <img src="{{ asset($sitesetting->side_logo) }}" class="top_image" alt="logo">
                 <img src="{{ asset($sitesetting->flag_logo) }}" class="top_image" alt="logo">
+                <div>
+                  @foreach (config('app.languages') as $langLocale => $langName)
+                      <a class=""
+                          href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }}
+                      </a>
+                  @endforeach
+              </div>
             </div>
         </div>
 
