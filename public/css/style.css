@@ -63,8 +63,9 @@ body{
 .top_ntitle{
     font-family: 'Mukta', sans-serif;
     color: #B83955;
-    
+
 }
+
 .title_on,.title_tw{
     font-size: 1.1vw;
     font-weight: 500;
@@ -84,6 +85,7 @@ font-weight: 700;
 font-size: 1.2vw;
 font-weight: 600;
 }
+
 
 
 
@@ -157,6 +159,27 @@ nav ul li ul li a {
   height: 70px;
   width: 70px;
 }
+
+
+@media only screen and (min-width: 870px) {
+
+  .top_ntitle{
+    width: 350px;
+    text-align: center;
+    margin-left: 30%;
+  }
+ 
+
+  .side-logo-container{
+
+    margin-left: 20%;
+  }
+
+  .flag-container {
+    margin-left: -20px;
+  }
+}
+
 
 @media only screen and (max-width: 798px) {
 
