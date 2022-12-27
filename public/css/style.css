@@ -7,10 +7,35 @@
 /* For GLobal */
 body{
   background: url("../img/bodha.png") fixed ;
-background-size: 100% 100%;
-background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 
 }
+
+/* .this-container{
+  border: 2px solid green;
+}
+
+.nav-objs{
+  border: 2px solid gold;
+} */
+
+.lang-container{
+  
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+
+.lang-link {
+  text-decoration: none;
+  color: red;
+}
+
+
+
+
 /* For Title in the landing page */
 .sec_title{
     font-size: 40px;
@@ -323,8 +348,79 @@ nav ul li ul li a {
 }
 
 @media only screen and (max-width: 798px) {
+
+  .nav-objs{
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .main-logo-container{
+    /* border: 2px solid pink; */
+    height: 80px;
+    width: 130px;
+    /* width: 100px; */
+    margin-left: -280px;
+  
+    
+  }
+
+  .image_one{
+    width: 100%;
+    height: 100%;
+  }
+
+  .top_ntitle {
+    /* border: 2px solid blue; */
+    position: absolute;
+    top: 30px;
+    left: 16%;
+    width: 70%;
+
+  }
+
+  .title_on,.title_tw{
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .title_fo{
+    font-size: 18px;
+    font-weight: 700;
+    }
+    
+  .title_fi{
+    font-size: 2.5vw;
+    font-weight: 600;
+  }
+
+  .other-logo-container{
+    /* border: 2px solid purple; */
+    height: 80px;
+  }
+
+  .side-logo-container{
+    position: absolute;
+    right: 5%;
+    top: 30px;
+  }
+
+  .image_two {
+    max-height: 100%;
+  }
+
+  .flag-container {
+    height: 50px;
+  }
+
+  .image_flag {
+    height: 100%;
+  }
+
   .nav-mobile {
     display: block;
+    position: absolute;
+    top: 170px;
   }
 
   nav {
@@ -353,6 +449,8 @@ nav ul li ul li a {
   .nav-list {
     display: block !important;
   }
+
+
 }
 #nav-toggle {
   position: absolute;
@@ -1020,3 +1118,6 @@ nav ul li ul li a {
   font-size: 20px;
   font-weight: 600;
 }
+
+
+

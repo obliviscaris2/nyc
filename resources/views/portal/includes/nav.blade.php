@@ -1,9 +1,16 @@
 <section class="top_nav">
-    <div class="container">
+    <div class="container this-container">
+        <div class="lang-container">
+            @foreach (config('app.languages') as $langLocale => $langName)
+                <a class="lang-link"
+                    href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }}
+                </a>
+            @endforeach
+        </div>
 
-        <div class="d-flex justify-content-between align-items-center">
-            <div class="p-2">
-                <img src="{{ asset($sitesetting->main_logo) }}" class="top_image" alt="logo">
+        <div class="d-flex justify-content-between align-items-center nav-objs">
+            <div class="p-2 main-logo-container">
+                <img src="{{ asset($sitesetting->main_logo) }}" class="top_image image_one" alt="logo">
             </div>
 
             <div class="p-2 text-center">
@@ -14,9 +21,9 @@
                     <span class="title_tw">
                         {{ __($sitesetting->ministry_name) }}
                     </span><br>
-                    <span class="title_th">
+                    {{-- <span class="title_th">
                         {{ __($sitesetting->department_name) }}
-                    </span><br>
+                    </span><br> --}}
                     <span class="title_fo">
                         {{ __($sitesetting->office_name) }}
                     </span><br>
@@ -28,16 +35,11 @@
                 </p>
             </div>
 
-            <div class="p-2">
-                <img src="{{ asset($sitesetting->side_logo) }}" class="top_image" alt="logo">
-                <img src="{{ asset($sitesetting->flag_logo) }}" class="top_image" alt="logo">
-                <div>
-                  @foreach (config('app.languages') as $langLocale => $langName)
-                      <a class=""
-                          href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }}
-                      </a>
-                  @endforeach
-              </div>
+            <div class="p-2 other-logo-container side-logo-container">
+                <img src="{{ asset($sitesetting->side_logo) }}" class="top_image image_two" alt="logo">
+            </div>
+            <div class="p-2 other-logo-container flag-container">
+                <img src="{{ asset($sitesetting->flag_logo) }}" class="top_image image_flag" alt="logo">
             </div>
         </div>
 
