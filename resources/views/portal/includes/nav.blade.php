@@ -58,14 +58,24 @@
                 <li><a href="{{ url('/') }}">{{ __('Home') }}</a></li>
                 <li><a href="#">{{ __('About Us') }}</a>
                     <ul class="nav-dropdown">
-                        <li><a href="{{ route('render_about') }}">{{ __('Introduction') }}</a></li>
-                        <li><a href="{{ route('render_team') }}">{{ __('Employee Details') }}</a></li>
-                        <li><a href="{{ route('render_committee') }}">{{ __('District Committees') }}</a></li>
-                        <li><a href="{{ route('render_executive_members') }}">{{ __('Council Members') }}</a></li>
-                        <li><a
-                                href="{{ route('render_administrative') }}">{{ __('Message from the Administrative Head') }}</a>
+                        <li>
+                            <a href="{{ route('render_about') }}">{{ __('Introduction') }}</a>
                         </li>
-                        <li><a href="{{ route('render_chairperson') }}">{{ __('Message from Chairperson') }}</a></li>
+                        <li>
+                            <a href="{{ route('render_team') }}">{{ __('Employee Details') }}</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('render_committee') }}">{{ __('District Committees') }}</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('render_executive_members') }}">{{ __('Council Members') }}</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('render_administrative') }}">{{ __('Message from the Administrative Head') }}</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('render_chairperson') }}">{{ __('Message from Chairperson') }}</a>
+                        </li>
                     </ul>
                 </li>
                 <li><a href="#">{{ __('Documents') }}</a>
@@ -78,30 +88,44 @@
                 </li>
                 <li><a href="#">{{ __('Information') }}</a>
                     <ul class="nav-dropdown">
-                        <li><a href="{{ route('render_rules') }}">{{ __('Acts & Regulations') }}</a></li>
-                        <li><a href="{{ route('render_directot') }}">{{ __('Directory') }}</a></li>
-                        <li><a href="{{ route('render_press') }}">{{ __('Press Release') }}</a></li>
+                        <li>
+                            <a href="{{ route('render_rules') }}">{{ __('Acts & Regulations') }}</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('render_directot') }}">{{ __('Directory') }}</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('render_press') }}">{{ __('Press Release') }}</a>
+                        </li>
                     </ul>
                 </li>
                 <li><a href="#">{{ __('Downloads') }}</a>
                     <ul class="nav-dropdown">
-                        <li><a href="{{ route('render_news') }}">{{ __('News') }}</a></li>
-                        <li><a href="{{ route('render_other') }}">{{ __('Others') }}</a></li>
+                        <li>
+                            <a href="{{ route('render_news') }}">{{ __('News') }}</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('render_other') }}">{{ __('Others') }}</a>
+                        </li>
 
                     </ul>
                 </li>
                 <li><a href="#">{{ __('Gallery') }}</a>
                     <ul class="nav-dropdown">
-                        <li><a href="{{ route('render_images') }}">{{ __('Photo Gallery') }}</a></li>
-                        <li><a href="{{ route('render_videos') }}">{{ __('Video Gallery') }}</a></li>
+                        <li>
+                            <a href="{{ route('render_images') }}">{{ __('Photo Gallery') }}</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('render_videos') }}">{{ __('Video Gallery') }}</a>
+                        </li>
                     </ul>
                 </li>
 
 
-                <li><a href="{{ route('contact_page') }}">{{ __('Contact') }}</a></li>
                 <li>
-
+                    <a href="{{ route('contact_page') }}">{{ __('Contact') }}</a>
                 </li>
+
             </ul>
         </nav>
     </div>
