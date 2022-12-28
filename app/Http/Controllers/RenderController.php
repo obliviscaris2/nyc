@@ -135,14 +135,16 @@ class RenderController extends Controller
 
     }
     public function render_otherpost(Request $req, $slug=''){
+        $sitesetting = SiteSetting::first();
         $otherpost = Document::where("slug", $slug)->first();
-        return view('portal.render_otherpost', compact('otherpost'));
+        return view('portal.render_otherpost', compact('otherpost', 'sitesetting'));
 
     }
 
     public function render_info(Request $req, $slug){
+        $sitesetting = SiteSetting::first();
         $otherpost = Information::where("slug", $slug)->first();
-        return view('portal.includes.render_infopost', compact('otherpost'));
+        return view('portal.includes.render_infopost', compact('otherpost', "sitesetting"));
     }
 
     public function render_other_post(Request $req, $slug){
