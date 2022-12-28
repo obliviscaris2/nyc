@@ -1,5 +1,5 @@
 @php
-$images = App\Models\CoverImage::all();
+$images = App\Models\CoverImage::get()->skip(1);
 $img = App\Models\CoverImage::first();
 @endphp
     
