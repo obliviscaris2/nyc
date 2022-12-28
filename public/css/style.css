@@ -361,11 +361,14 @@ nav ul li ul li a {
     position: relative;
     width: auto;
     border-left: 20px;
+
   }
+  
   .news_slider .news_track {
     animation: scroll 30s linear infinite;
     display: flex;
     width: calc(250px * 14);
+    
   }
   .news_slider .news_slide {
     height: 50px;
@@ -378,7 +381,9 @@ nav ul li ul li a {
       text-decoration: none;
   }
 .news_slide p{
+    
     margin-top: 10px;
+    margin-left: 200px;
     font-size: 17px;
     font-weight: 600;
     color: black;
