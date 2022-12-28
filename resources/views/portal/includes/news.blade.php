@@ -25,12 +25,13 @@
                         
                   
                     <div class="news_slide">
-                        {{-- <a href="{{ route('render_otherpost', $data->id)}}"> --}}
+                        {{-- <a href="{{ route('render_otherpost', $data->slug)}}"> --}}
   
-                        <p>
-                                    {{ $data->title }}
-                               
-                        </p>
+                            <p>
+                                        {{ $data->title }}
+                                
+                            </p>
+                        {{-- </a> --}}
                        
                     </div>
                     @endforeach
