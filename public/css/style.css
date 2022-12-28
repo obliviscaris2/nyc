@@ -6,7 +6,7 @@
 }
 /* For GLobal */
 body{
-  background: url("../img/bodha.png") fixed ;
+  background: url("../img/bg.png") fixed ;
   background-size: 100% 100%;
   background-repeat: no-repeat;
 
@@ -461,7 +461,8 @@ nav ul li ul li a {
 
   .us_content{
     font-family: 'Mukta', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
+    text-align: justify;
   }
 
   .about_uimage img{
