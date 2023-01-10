@@ -7,7 +7,7 @@
     <section class="gallery_slider wid_mar">
         <div class="container">
             <h1 class="sec_title">
-                फाेटाे ग्यालेरी
+                {{ __("Photo Gallery") }}
             </h1>
             <div class="slider">
                 <div class="row">
@@ -29,7 +29,7 @@
 <section class="videos wid_mar">
     <div class="container">
         <h1 class="sec_title">
-            भिडियाे ग्यालेरी
+            {{ __("Video Gallery") }}
         </h1>
         <div class="row">
             @foreach ($videos as $video )

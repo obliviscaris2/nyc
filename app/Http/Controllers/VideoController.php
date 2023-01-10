@@ -79,7 +79,17 @@ class VideoController extends Controller
             return redirect('admin/video/index')->with(['successMessage' => 'Success !! Videos Updated']);
               } else {
             return redirect()->back()->with(['errorMessage' => 'Error Videos not updated']);
+            }
+
         }
 
+        public function destroy($id)
+        {
+
+            $video = Video::find($id);
+
+            $video->delete();
+            return redirect('admin/video/index')->with(['successmessage' => 'Success !! video Deleted']);
+        
         }
 }

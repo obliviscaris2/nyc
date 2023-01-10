@@ -4,7 +4,7 @@
     <div class="container">
 
         <div class="row mt-3">
-            <h1 class="sec_title">निर्देशिका</h1>
+            <h1 class="sec_title">{{ __("Directory") }}</h1>
            
             @foreach ($directot as $directot ) 
            <div class="col-md-4">

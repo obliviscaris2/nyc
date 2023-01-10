@@ -10,7 +10,7 @@
 <section class="latest_blog wid_mar">
     <div class="container">
         <h1 class="sec_title">
-            {{ $page_title }}
+            {{ __($page_title) }}
         </h1>
         <div class="row">
 

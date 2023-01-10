@@ -75,4 +75,13 @@ class LinkController extends Controller
             return redirect()->back()->with(['errorMessage' => 'Error Links not updated']);
         }
     }
+
+    public function destroy($id)
+    {
+
+        $link = Link::find($id);
+
+        $link->delete();
+        return redirect('admin/link/index')->with(['successmessage' => 'Success !! Link Deleted']);
+    }
 }
