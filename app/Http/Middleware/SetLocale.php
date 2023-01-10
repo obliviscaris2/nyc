@@ -29,6 +29,7 @@ class SetLocale
             app()->setLocale($language);
         }
 
+        app()->setLocale($request->segment(1));
         return $next($request);
     }
 }

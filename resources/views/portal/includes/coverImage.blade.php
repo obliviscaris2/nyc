@@ -1,7 +1,10 @@
+
 @php
 $images = App\Models\CoverImage::get()->skip(1);
 $img = App\Models\CoverImage::first();
 @endphp
+
+
     
     {{-- For Cover Image --}}
     <section class="cover_page wid_mar">

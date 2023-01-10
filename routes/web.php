@@ -42,8 +42,11 @@ use App\Models\Message;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
 
+Route::group(['prefix' => '{locale}'], function (){
+    Route::get('/', [HomeController::class, 'index'])->middleware('setLocale')->name('home');
+
+});
 
 
 Route::get('/single/{slug}', [SingleController::class, 'index']);
