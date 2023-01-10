@@ -1,8 +1,5 @@
 
-@php
-$videos = App\Models\Video::first()->get()->take(3);
-$images = App\Models\MyImage::latest()->get()->take(20);
-@endphp
+
 
 
 

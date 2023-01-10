@@ -137,6 +137,7 @@ class RenderController extends Controller
     public function render_otherpost(Request $req, $slug=''){
         $sitesetting = SiteSetting::first();
         $otherpost = Document::where("slug", $slug)->first();
+<<<<<<< HEAD
         return view('portal.render_otherpost', compact('otherpost','sitesetting'));
 
     }
@@ -145,6 +146,9 @@ class RenderController extends Controller
         $otherpost = Document::where("id", $id)->first();
         
         return view('portal.render_otherpost_news', compact('otherpost','sitesetting'));
+=======
+        return view('portal.render_otherpost', compact('otherpost', 'sitesetting'));
+>>>>>>> 487009eca607b34cf2cf4e13a492f6ebfdd3d327
 
     }
 
@@ -152,7 +156,11 @@ class RenderController extends Controller
     public function render_info(Request $req, $slug){
         $sitesetting = SiteSetting::first();
         $otherpost = Information::where("slug", $slug)->first();
+<<<<<<< HEAD
         return view('portal.includes.render_infopost', compact('otherpost','sitesetting'));
+=======
+        return view('portal.includes.render_infopost', compact('otherpost', "sitesetting"));
+>>>>>>> 487009eca607b34cf2cf4e13a492f6ebfdd3d327
     }
 
     public function render_other_post(Request $req, $slug){

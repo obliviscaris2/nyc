@@ -6,7 +6,7 @@
 }
 /* For GLobal */
 body{
-  background: url("../img/bodha.png") fixed ;
+  background: url("../img/bg.png") fixed ;
   background-size: 100% 100%;
   background-repeat: no-repeat;
 
@@ -379,11 +379,14 @@ nav ul li ul li a {
     position: relative;
     width: auto;
     border-left: 20px;
+
   }
+  
   .news_slider .news_track {
     animation: scroll 30s linear infinite;
     display: flex;
     width: calc(250px * 14);
+    
   }
   .news_slider .news_slide {
     height: 50px;
@@ -396,9 +399,14 @@ nav ul li ul li a {
       text-decoration: none;
   }
 .news_slide p{
+<<<<<<< HEAD
   
     margin-left: 300px;
+=======
+    
+>>>>>>> 487009eca607b34cf2cf4e13a492f6ebfdd3d327
     margin-top: 10px;
+    margin-left: 200px;
     font-size: 17px;
     font-weight: 600;
     color: black;
@@ -476,7 +484,8 @@ nav ul li ul li a {
 
   .us_content{
     font-family: 'Mukta', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
+    text-align: justify;
   }
 
   .about_uimage img{

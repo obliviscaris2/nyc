@@ -1,7 +1,15 @@
+
 @php
+<<<<<<< HEAD
 $img = App\Models\CoverImage::first();
 $images = App\Models\CoverImage::get()->skip(1);
+=======
+$images = App\Models\CoverImage::get()->skip(1);
+$img = App\Models\CoverImage::first();
+>>>>>>> 487009eca607b34cf2cf4e13a492f6ebfdd3d327
 @endphp
+
+
     
     {{-- For Cover Image --}}
     <section class="cover_page wid_mar">
@@ -12,9 +20,21 @@ $images = App\Models\CoverImage::get()->skip(1);
 
                       <div class="carousel-inner">
 
+<<<<<<< HEAD
                           <div class="carousel-item active">
                               <img src="{{ asset('uploads/coverimage/' . $img->image) }}" class="d-block" alt="...">
                           </div>
+=======
+                        <div class="carousel-item active">
+                            <img src="{{ asset('uploads/coverimage/' . $img->image) }}" class="d-block" alt="...">
+                        </div>
+                          @foreach ($images as $image )
+                              
+                            <div class="carousel-item">
+                                <img src="{{ asset('uploads/coverimage/' . $image->image) }}" class="d-block" alt="...">
+                            </div>
+                          
+>>>>>>> 487009eca607b34cf2cf4e13a492f6ebfdd3d327
 
                           @foreach ($images as $image )
                           <div class="carousel-item ">
@@ -28,7 +48,11 @@ $images = App\Models\CoverImage::get()->skip(1);
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                       </button>
+<<<<<<< HEAD
                      
+=======
+
+>>>>>>> 487009eca607b34cf2cf4e13a492f6ebfdd3d327
                       <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
