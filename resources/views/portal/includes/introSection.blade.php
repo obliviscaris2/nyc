@@ -7,10 +7,11 @@
 
     
 
-    <section class="about_us wid_mar">
-      <div class="container">
+<section class="about_us">
+   
+      <div class="container aboutuscontainer">
           <div class="row">
-              <p class="about_utitle">{{ !empty($abouts->title) ? $abouts->title:'' }}</p>
+              <p class="sec_utitle">{{ !empty($abouts->title) ? $abouts->title:'' }}</p>
               <div class="col-md-7 about_ucontent">
 
 
@@ -29,7 +30,11 @@
               </div>
           </div>
       </div>
-  </section>
+      <div class = "fb_container">
+        <h1>kdennedk</h1>
+      
+    </div>
+</section>
 
 
 

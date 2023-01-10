@@ -47,7 +47,7 @@ $links = App\Models\Link::first()->get()->take(5);
                         <div class="footer-widget">
                             <div class="footer-logo">
 
-                                <a href="{{ url('/') }}"><img src="{{ asset('uploads/'.$sitesetting->main_logo) }}"
+                                <a href="{{ url('/') }}"><img src="{{ asset($sitesetting->main_logo) }}"
                                         class="img-fluid" alt="logo"></a>
                             </div>
                             {{-- <div class="footer-text">

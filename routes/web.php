@@ -56,9 +56,6 @@ Route::get('signup', function(){
     return view('auth.signup');
 })->middleware('auth');
 
-
-
-
 Route::post('login', [LoginController::class, 'save']);
 Route::get('/logout', [LoginController::class, 'destroy']);
 Route::post('signup', [SignupController::class, 'save']);
@@ -141,7 +138,7 @@ Route::get('admin/sitesetting/index', [App\Http\Controllers\SiteSettingControlle
 Route::get('admin/sitesetting/create', [App\Http\Controllers\SiteSettingController::class, 'create'])->middleware('auth');
 Route::post('admin/sitesetting/store', [App\Http\Controllers\SiteSettingController::class, 'store'])->name('Sitesetting.store');
 
-Route::get('admin/sitesetting/edit/{id}', [App\Http\Controllers\SiteSettingController::class, 'edit'])->middleware('auth');
+Route::get('admin/sitesetting/edit/{id}', [App\Http\Controllers\SiteSettingController::class, 'edit'])->middleware('auth')->name('admin.sitesetting.edit');
 Route::post('admin/sitesetting/update', [App\Http\Controllers\SiteSettingController::class, 'update'])->name('Sitesetting.update');
 Route::get('admin/sitesetting/delete/{id}', [App\Http\Controllers\SiteSettingController::class, 'destroy'])->middleware('auth');
 
@@ -170,7 +167,7 @@ Route::post('admin/link/store', [App\Http\Controllers\LinkController::class, 'st
 
 Route::get('admin/link/edit/{id}', [App\Http\Controllers\LinkController::class, 'edit'])->middleware('auth');
 Route::post('admin/link/update', [App\Http\Controllers\LinkController::class, 'update'])->name('Link.update');
-Route::get('admin/link/delete/{id}', [App\Http\Controllers\LinkController::class, 'destroy'])->middleware('auth');
+Route::get('admin/link/delete/{id}', [App\Http\Controllers\LinkController::class, 'destroy'])->middleware('auth')->name('admin.link.delete');
 
 
 
@@ -226,28 +223,29 @@ Route::get('admin/other/edit/{id}', [OtherController::class, "edit"])->middlewar
 Route::get('admin/other/destroy/{id}', [OtherController::class, "destroy"])->middleware('auth')->name('admin.other.destroy');
 
 
-Route::get('portal/render_about', [App\Http\Controllers\RenderController::class, 'render_about'])->name('render_about');
-Route::get('portal/render_team', [App\Http\Controllers\RenderController::class, 'render_team'])->name('render_team');
-Route::get('portal/render_images', [App\Http\Controllers\RenderController::class, 'render_images'])->name('render_images');
-Route::get('portal/render_videos', [App\Http\Controllers\RenderController::class, 'render_videos'])->name('render_videos');
-Route::get('portal/render_notice', [App\Http\Controllers\RenderController::class, 'render_notice'])->name('render_notice');
-Route::get('portal/render_publication', [App\Http\Controllers\RenderController::class, 'render_publication'])->name('render_publication');
-Route::get('portal/render_tender', [App\Http\Controllers\RenderController::class, 'render_tender'])->name('render_tender');
-Route::get('portal/render_rules', [App\Http\Controllers\RenderController::class, 'render_rules'])->name('render_rules');
-Route::get('portal/render_directot', [App\Http\Controllers\RenderController::class, 'render_directot'])->name('render_directot');
-Route::get('portal/render_press', [App\Http\Controllers\RenderController::class, 'render_press'])->name('render_press');
-Route::get('portal/render_news', [App\Http\Controllers\RenderController::class, 'render_news'])->name('render_news');
-Route::get('portal/render_other', [App\Http\Controllers\RenderController::class, 'render_other'])->name('render_other');
-Route::get('portal/render_committee', [App\Http\Controllers\RenderController::class, 'render_committee'])->name('render_committee');
-Route::get('portal/render_administrative', [App\Http\Controllers\RenderController::class, 'render_administrative'])->name('render_administrative');
-Route::get('portal/render_chairperson', [App\Http\Controllers\RenderController::class, 'render_chairperson'])->name('render_chairperson');
-Route::get('portal/render_executive_members', [App\Http\Controllers\RenderController::class, 'render_executive_members'])->name('render_executive_members');
+Route::get('render_about', [App\Http\Controllers\RenderController::class, 'render_about'])->name('render_about');
+Route::get('render_team', [App\Http\Controllers\RenderController::class, 'render_team'])->name('render_team');
+Route::get('render_images', [App\Http\Controllers\RenderController::class, 'render_images'])->name('render_images');
+Route::get('render_videos', [App\Http\Controllers\RenderController::class, 'render_videos'])->name('render_videos');
+Route::get('render_notice', [App\Http\Controllers\RenderController::class, 'render_notice'])->name('render_notice');
+Route::get('render_publication', [App\Http\Controllers\RenderController::class, 'render_publication'])->name('render_publication');
+Route::get('render_tender', [App\Http\Controllers\RenderController::class, 'render_tender'])->name('render_tender');
+Route::get('render_rules', [App\Http\Controllers\RenderController::class, 'render_rules'])->name('render_rules');
+Route::get('render_directot', [App\Http\Controllers\RenderController::class, 'render_directot'])->name('render_directot');
+Route::get('render_press', [App\Http\Controllers\RenderController::class, 'render_press'])->name('render_press');
+Route::get('render_news', [App\Http\Controllers\RenderController::class, 'render_news'])->name('render_news');
+Route::get('render_other', [App\Http\Controllers\RenderController::class, 'render_other'])->name('render_other');
+Route::get('render_committee', [App\Http\Controllers\RenderController::class, 'render_committee'])->name('render_committee');
+Route::get('render_administrative', [App\Http\Controllers\RenderController::class, 'render_administrative'])->name('render_administrative');
+Route::get('render_chairperson', [App\Http\Controllers\RenderController::class, 'render_chairperson'])->name('render_chairperson');
+Route::get('render_executive_members', [App\Http\Controllers\RenderController::class, 'render_executive_members'])->name('render_executive_members');
 
 
 
-Route::get('portal/render_otherpost/{slug}', [App\Http\Controllers\RenderController::class, 'render_otherpost'])->name('render_otherpost');
-Route::get('portal/render_info/{slug}', [App\Http\Controllers\RenderController::class, 'render_info'])->name('render_info');
-Route::get('portal/render_other_post/{slug}', [App\Http\Controllers\RenderController::class, 'render_other_post'])->name('render_other_post');
+Route::get('render_otherpost/{slug}', [App\Http\Controllers\RenderController::class, 'render_otherpost'])->name('render_otherpost');
+Route::get('render_otherpost_news/{id}', [App\Http\Controllers\RenderController::class, 'render_otherpost_news'])->name('render_otherpost_news');
+Route::get('render_info/{slug}', [App\Http\Controllers\RenderController::class, 'render_info'])->name('render_info');
+Route::get('render_other_post/{slug}', [App\Http\Controllers\RenderController::class, 'render_other_post'])->name('render_other_post');
 
 // FOR MESSAGE 
 
