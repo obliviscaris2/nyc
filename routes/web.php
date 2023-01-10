@@ -92,6 +92,10 @@ Route::get('file-export', [CommitteeDetailController::class, 'fileExport'])->nam
 // FOR ADMIN EXECUTIVE DETAILS 
 Route::get('admin/executivedetails/index', [ExecutiveDetailController::class, "index"])->name('admin.executivedetails.index');
 
+Route::get('admin/executivedetails/edit/{id}', [ExecutiveDetailController::class, 'edit'])->name('admin.executivedetails.edit');
+Route::post('admin/executivedetails/update', [ExecutiveDetailController::class, 'update'])->name('admin.executivedetails.update');
+Route::get('admin/executivedetails/destroy/{id}', [ExecutiveDetailController::class, 'destroy'])->name('admin.executivedetails.destroy');
+
 Route::get("file-import-export-exe", [ExecutiveDetailController::class, "fileImportExport"]);
 Route::post("file-import-exe", [ExecutiveDetailController::class, "fileImport"])->name("file-import-exe");
 Route::get('file-export-exe', [ExecutiveDetailController::class, "fileExport"])->name("file-export-exe");

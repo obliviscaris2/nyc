@@ -17,7 +17,7 @@
 
                     {!! Str::words(strip_tags($about->content), 150) !!}
                   </p>
-                  <a class="about_aclass" href="{{ route('render_about') }}">पुरा पढ्नुहाेस <i class="fa-solid fa-arrow-right"></i>
+                  <a class="about_aclass" href="{{ route('render_about') }}">{{ __("Read more") }} <i class="fa-solid fa-arrow-right"></i>
                   </a>
 
               </div>

@@ -8,7 +8,7 @@
     <div class="container">
 
         <div class="row mt-3">
-            <h1 class="sec_title">परिषद् सदस्य</h1>
+            <h1 class="sec_title">{{ __("Council Members") }}</h1>
            
         @foreach ($executivedetail as $ex)
             <div class="col-md-4">

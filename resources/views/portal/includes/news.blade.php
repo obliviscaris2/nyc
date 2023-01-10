@@ -1,7 +1,7 @@
 @php
     
-    $notice = App\Models\Document::whereType('notice')->latest()->get()->take(15);
-    $news = App\Models\Other::whereType('news')->latest()->get()->take(15);
+    $notice = App\Models\Document::whereType('notice')->latest()->get()->take(5);
+    $news = App\Models\Other::whereType('news')->latest()->get()->take(5);
 
     $data = $notice->concat($news);
 
@@ -17,7 +17,7 @@
 
 
                 <button class="qn_button">
-                    ताजा अपडेट
+                    {{ __("Highlights") }}
                 </button>
                 <div class="news_track">
 
@@ -25,13 +25,13 @@
                         
                   
                     <div class="news_slide">
-                        {{-- <a href="{{ route('render_otherpost', $data->id)}}"> --}}
+                        {{-- <a href="{{ route('render_otherpost', $data->slug)}}"> --}}
   
-                        <p>
-                                    {{ $data->title }}
-                               
+                            <p>
+                                        {{ $data->title }}
+                                
                             </p>
-                        </a>
+                        {{-- </a> --}}
                        
                     </div>
                     @endforeach

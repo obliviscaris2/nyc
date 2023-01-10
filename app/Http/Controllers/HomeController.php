@@ -7,9 +7,12 @@ use App\Models\Post;
 use App\Models\Team;
 use App\Models\About;
 use App\Models\Image;
+use App\Models\SiteSetting;
+use App\Models\Team;
 use App\Models\Video;
 use App\Models\MyImage;
 use App\Models\SiteSetting;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -18,6 +21,17 @@ class HomeController extends Controller
 {
     //
     public function index(Request $req){
+
+
+        $links = Link::latest()->get()->take(4);
+        $sitesetting = SiteSetting::first();
+        $teams = Team::latest()->get()->take(3);
+
+
+        return view('portal.index', [
+            "links" => $links,
+            "sitesetting" => $sitesetting,
+            "teams" => $teams
 
         $links = Link::latest()->get()->take(5);
         $images = MyImage::latest()->get()->take(5);

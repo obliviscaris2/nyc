@@ -80,6 +80,11 @@ return [
     |
     */
 
+    'languages' => [
+        'en' => 'English',
+        'ne' => 'Nepali',
+    ],
+
     'locale' => 'en',
 
     /*

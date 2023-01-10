@@ -8,16 +8,16 @@
 
 <div class="p-5">
 
-    <h1 class="sec_title">{{ $page_title }}</h1>
+    <h1 class="sec_title">{{ __($page_title) }}</h1>
 
     <table class="table table-striped">
         <thead>
         <tr>
-            <th scope="col">S.N.</th>
-            <th scope="col">District</th>
-            <th scope="col">Name</th>
-            <th scope="col">Address</th>
-            <th scope="col">Phone</th>
+            <th scope="col">{{ __("S.N.") }}</th>
+            <th scope="col">{{ __("District") }}</th>
+            <th scope="col">{{ __("Executive Name")}}</th>
+            <th scope="col">{{ __("Address") }}</th>
+            <th scope="col">{{ __("Phone No.") }}</th>
         </tr>
         </thead>
         <tbody>

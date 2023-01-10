@@ -4,7 +4,7 @@
     <div class="container">
 
         <div class="row mt-3">
-            <h1 class="sec_title">फाेटाे ग्यालेरी</h1>
+            <h1 class="sec_title">{{ __("Photo Gallery") }}</h1>
            
         @foreach ($images as $image)
             <div class="col-md-3">

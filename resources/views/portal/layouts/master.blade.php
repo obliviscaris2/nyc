@@ -2,6 +2,13 @@
 <html lang="en">
 
 
+{{-- @php
+    $sitesetting = App\Models\SiteSetting::first();
+  $link = App\Models\Link::first()->get()->take(5);
+    
+
+@endphp --}}
+
 
 @include('portal.includes.head')
 

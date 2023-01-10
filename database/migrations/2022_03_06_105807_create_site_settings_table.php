@@ -24,6 +24,7 @@ class CreateSiteSettingsTable extends Migration
             $table->string('office_mail');
             $table->string('main_logo');
             $table->string('side_logo')->nullable();
+            $table->string('flag_logo')->nullable();
             $table->string('face_link')->nullable();
             $table->string('insta_link')->nullable();
             $table->string('social_link')->nullable();

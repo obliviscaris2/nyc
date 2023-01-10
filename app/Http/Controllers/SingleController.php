@@ -7,18 +7,21 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Image;
 use App\Models\Post;
+use App\Models\SiteSetting;
 
 class SingleController extends Controller
 {
     //
     public function index(Request $req, $slug)
     {
+        $sitesetting = SiteSetting::first();
         $post = Post::where("slug", $slug)->first();
         $category = Category::find($slug);
 
         return view('portal.single' , [
             "post" => $post,
-            "category" => $category
+            "category" => $category,
+            "sitesetting" => $sitesetting
         ]);
 
 

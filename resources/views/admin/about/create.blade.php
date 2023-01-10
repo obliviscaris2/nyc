@@ -48,7 +48,7 @@
             <img id="preview" style="max-width: 500px; max-height:500px" />
 
             <div class="form-group">
-                <label for="exampleInputEmail1">Contact Number</label>
+                <label for="exampleInputEmail1">Content</label>
                 <textarea id="summernote" name="content">
                     {{ old('content') }}"
                 </textarea>

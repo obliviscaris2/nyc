@@ -45,17 +45,17 @@
                     <td>{{ $ed->position ?? '' }}</td>
                     <td>
                         
-                        {{-- <a href="edit/{{ $cd->id }}">
+                        <a href="edit/{{ $ed->id }}">
                             <div style="display: flex; flex-direction:row;">
                                 <button type="button" class="btn-block btn-warning btn-sm"><i class="fas fa-edit"></i>
                                     Edit </button>
                         </a>
                         
-                        <a href="{{ url('admin/committeedetails/destroy/'.$cd->id) }}">
+                        <a href="{{ url('admin/executivedetails/destroy/'.$ed->id) }}">
                             <button type="button" class="btn-block btn-danger btn-sm" data-toggle="modal"
                                 data-target="#modal-default" style="width:auto;"
                                 onclick="replaceLinkFunction">Delete</button>
-                        </a> --}}
+                        </a>
 
                     </td>
                 </tr>
