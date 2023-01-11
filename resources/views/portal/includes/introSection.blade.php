@@ -10,11 +10,7 @@
    
       <div class="container aboutuscontainer">
           <div class="row">
-<<<<<<< HEAD
               <p class="sec_utitle">{{ !empty($abouts->title) ? $abouts->title:'' }}</p>
-=======
-              <p class="about_utitle">{{ !empty($about->title) ? $about->title:'' }}</p>
->>>>>>> 487009eca607b34cf2cf4e13a492f6ebfdd3d327
               <div class="col-md-7 about_ucontent">
 
 
