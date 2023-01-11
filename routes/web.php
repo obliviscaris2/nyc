@@ -43,10 +43,10 @@ use App\Models\Message;
 */
 
 
-Route::group(['prefix' => '{locale}'], function (){
-    Route::get('/', [HomeController::class, 'index'])->middleware('setLocale')->name('home');
+// Route::group(['prefix' => '{locale}'], function (){
+//     Route::get('/', [HomeController::class, 'index'])->middleware('setLocale')->name('home');
 
-});
+// });
 
 
 Route::get('/single/{slug}', [SingleController::class, 'index']);
@@ -213,7 +213,7 @@ Route::get('admin/information/create', [InformationController::class, 'create'])
 Route::post('admin/information/store', [InformationController::class, 'store'])->middleware('auth')->name('admin.information.store');
 Route::post('admin/information/update', [InformationController::class, 'update'])->middleware('auth')->name('admin.information.update');
 Route::get('admin/information/edit/{id}', [InformationController::class, 'edit'])->middleware('auth')->name('admin.information.edit');
-Route::post('admin/information/destroy/{id}', [InformationController::class, 'destroy'])->middleware('auth')->name('admin.information.destroy');
+Route::get('admin/information/destroy/{id}', [InformationController::class, 'destroy'])->middleware('auth')->name('admin.information.destroy');
 
 
 // FOR OTHER 
