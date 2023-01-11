@@ -48,7 +48,7 @@ use App\Models\Message;
 
 // });
 
-
+Route::get('/', [HomeController::class, 'index'])->middleware('auth')->name('home');
 Route::get('/single/{slug}', [SingleController::class, 'index']);
 
 Route::get('login', function(){
