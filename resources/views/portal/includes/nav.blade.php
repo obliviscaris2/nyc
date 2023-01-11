@@ -1,4 +1,4 @@
-
+@if(count(config('app.languages')) > 1)
 <section class="top_nav">
     <div class="container this-container">
         <div class="lang-container">
@@ -8,36 +8,9 @@
                 </a>
             @endforeach
         </div>
-
- <style>
-  .lngg{
-     position:absolute;
-     right:0;
-     top: 0%;
-}
- </style>
- <div class="lngg"> 
-  <select value=" {{ app()->getLocale() == 'ne'? 'Nepali':'English' }}" onChange="top.location.href=this.options[this.selectedIndex].value;" class="selectpicker" data-width="fit">
-   
-   
-
-    <a href="{{ url(app()->getLocale() == 'en'? 'ne':'en') }}">
-      <option value="" data-content={{ app()->getLocale() == 'ne'? 'English':'Nepali' }}'>{{ app()->getLocale() == 'ne'? 'English':'Nepali' }}</option>
-    </a>
-      {{-- <a href="{{ url('ne') }}">
-  
-    <option value="{{ url('ne') }}"  data-content='<span class="flag-icon flag-icon-de"></span>'>Nepali</option>
-    </a>
-       --}}
-  </select>
-  </div>
-
-
-  <script>
-    $(function(){
-    $('.selectpicker').selectpicker();
-});
-  </script>
+    </div>
+</secton>
+@endif
  
  {{-- For Header Menu --}}
 
