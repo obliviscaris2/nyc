@@ -42,13 +42,13 @@
                     <td>{{ $msg->image ?? '' }}</td>
                     <td>
                         <div style="display: flex; flex-direction:row;">
-                            <a href="edit/{{ $msg->id }}">
+                            {{-- <a href="edit/{{ $msg->id }}"> --}}
                                 
-                                    <button type="button" class="btn-block btn-warning button-size" >
-                                        Update
-                                    </button>
+                                     <button type="button" class="btn-block btn-warning button-size" data-bs-toggle="modal" data-bs-target="#exampleModals">
+                                Update
+                              </button>
                                 
-                            </a>
+                            {{-- </a> --}}
                         
                         {{-- <a href="{{ url('admin/message/destroy/'.$msg->id) }}"> --}}
                             <button type="button" class="btn-block btn-danger button-size" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -80,6 +80,29 @@
                 <div class="modal-footer">
                   <a href=""><button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button></a>
                   <a href="{{ url('admin/message/destroy/'.$msg->id) }}">
+                    <button type="button" class="btn btn-danger">Yes
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        @endforeach
+
+        {{-- for edit --}}
+        @foreach($messages as $message)
+        <div class="modal fade" id="exampleModals" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">This can't be undone. Are you sure?</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+        
+                <div class="modal-footer">
+                  <a href=""><button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button></a>
+                  <a href="{{ url('admin/message/edit/'.$msg->id) }}">
                     <button type="button" class="btn btn-danger">Yes
                     </button>
                   </a>
