@@ -41,29 +41,66 @@
                     <td>{!! $msg->description ?? '' !!}</td>
                     <td>{{ $msg->image ?? '' }}</td>
                     <td>
+                        <div style="display: flex; flex-direction:row;">
+                            <a href="edit/{{ $msg->id }}">
+                                
+                                    <button type="button" class="btn-block btn-warning button-size" >
+                                        Update
+                                    </button>
+                                
+                            </a>
                         
-                        <a href="edit/{{ $msg->id }}">
-                            <div style="display: flex; flex-direction:row;">
-                                <button type="button" class="btn-block btn-warning btn-sm"><i class="fas fa-edit"></i>
-                                    Edit </button>
-                        </a>
-                        
-                        <a href="{{ url('admin/message/destroy/'.$msg->id) }}">
-                            <button type="button" class="btn-block btn-danger btn-sm" data-toggle="modal"
-                                data-target="#modal-default" style="width:auto;"
-                                onclick="replaceLinkFunction">Delete</button>
-                        </a>
+                        {{-- <a href="{{ url('admin/message/destroy/'.$msg->id) }}"> --}}
+                            <button type="button" class="btn-block btn-danger button-size" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Delete
+                              </button>
+                        {{-- </a> --}}
 
                         <a href="{{ url('admin/message/show/' .$msg->id) }}">
-                            <button type="button" class="btn-block btn-success btn-sm" data-toggle="modal"
+                            <button type="button" class="btn-block btn-success btn-sm button-size" data-toggle="modal"
                             data-target="#modal-default" style="width:auto;" onclick="replaceLinkFunction">
                                 Show
                             </button>
                         </a>
-
+                    </div>
                     </td>
                 </tr>
             @endforeach
         </tbody>
+
+        @foreach($messages as $message)
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">This can't be undone. Are you sure?</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+        
+                <div class="modal-footer">
+                  <a href=""><button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button></a>
+                  <a href="{{ url('admin/message/destroy/'.$msg->id) }}">
+                    <button type="button" class="btn btn-danger">Yes
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        @endforeach
+
+
+      
     </table>
+
+    <script>
+
+        var myModal = document.getElementById('myModal')
+        var myInput = document.getElementById('myInput')
+
+        myModal.addEventListener('shown.bs.modal', function () {
+        myInput.focus()
+        })
+        </script>
 @endsection

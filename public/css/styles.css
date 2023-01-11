@@ -15,6 +15,13 @@ html,body
     overflow-x: hidden; 
 }
 
+.button-size{
+  height: 35px;
+  width: auto;
+  margin-right: 5px;
+  
+}
+
 .green-color{
   color: green;
 }
