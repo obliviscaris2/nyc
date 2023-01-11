@@ -1,26 +1,27 @@
 
-
-
-
-
-
   @extends('admin.master')
  
- 
   @section('content') 
-   <!-- Content Wrapper. Contains page content -->
   
-  
+   @if(session('successMessage'))
+   <div class="alert alert-success">
+     {!! session('successMessage') !!}
+   </div>
+   @endif
    
+   @if(session('error'))
+   <div class="alert alert-danger">
+     {!! session('error') !!}
+   </div>
+   @endif
   
-      
       <!-- Content Header (Page header) -->
       <div class="content-header">
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
               <h1 class="m-0">{{ $page_title }}</h1>
-             <a href="{{ url('admin/about/create') }}"><button class="btn-primary btn-sm"><i class="fa fa-plus"></i>Add About</button></a> 
+             {{-- <a href="{{ url('admin/about/create') }}"><button class="btn-primary btn-sm"><i class="fa fa-plus"></i>Add About</button></a>  --}}
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
@@ -46,34 +47,57 @@
                 <tr data-widget="expandable-table" aria-expanded="false">
                     <td>{{ $about->title ?? '' }}</td>
                     
-                    <td>
-                        <a href="/admin/about/edit/{{ $about->id }}">
-                            <div style="display: flex; flex-direction:row;">
-                                <button type="button" class="btn-block btn-warning btn-sm"><i
-                                        class="fas fa-edit"></i> Update </button>
-                        </a>
+                    <td> 
+                      <div style="display: flex; flex-direction:row;">
+                        {{-- <a href="/admin/about/edit/{{ $about->id }}"> --}}
+                          <button type="button" class="btn-warning button-size" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Update
+                          </button>
+                      </div>
+                        {{-- </a>
                         <a href="{{ url('admin/about/delete/'.$about->id) }}">
                         <button type="button" class="btn-block btn-danger btn-sm" data-toggle="modal"
                             data-target="#modal-default" style="width:auto;"
                             onclick="replaceLinkFunction">Delete</button>
-                        </a>
+                        </a> --}}
                     </td>
                 </tr>
             @endforeach
         </tbody>
+        @foreach($abouts as $about)
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">This can't be undone. Are you sure?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+             
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+                 <a href="{{ url('admin/about/edit/' .$about->id) }}">
+                  <button type="button" class="btn btn-danger">Yes
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        @endforeach
     </table>
   
-  
-      
-  
-  
-          <!-- /.row -->
-          <!-- Main row -->
-     
-          <!-- /.row (main row) -->
-        </div><!-- /.container-fluid -->
+        </div>
       </section>
-      <!-- /.content -->
+    <script>
+      var myModal = document.getElementById('myModal')
+      var myInput = document.getElementById('myInput')
+
+      myModal.addEventListener('shown.bs.modal', function () {
+      myInput.focus()
+      })
+    </script>
   
   
   
