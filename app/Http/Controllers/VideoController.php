@@ -81,8 +81,7 @@ class VideoController extends Controller
             return redirect('admin/video/index')->with(['successMessage' => 'Success !! Videos Updated']);
         } else {
             return redirect()->back()->with(['errorMessage' => 'Error Videos not updated']);
-<<<<<<< HEAD
-        }
+        };
     }
 
 
@@ -94,19 +93,4 @@ class VideoController extends Controller
         $video->delete();
         return redirect('admin/video/index')->with(['successmessage' => 'Success !! video Deleted']);
     }
-=======
-            }
-
-        }
-
-        public function destroy($id)
-        {
-
-            $video = Video::find($id);
-
-            $video->delete();
-            return redirect('admin/video/index')->with(['successmessage' => 'Success !! video Deleted']);
-        
-        }
->>>>>>> 487009eca607b34cf2cf4e13a492f6ebfdd3d327
 }
