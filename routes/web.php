@@ -43,10 +43,12 @@ use App\Models\Message;
 */
 
 
-Route::group(['prefix' => '{locale}'], function (){
-    Route::get('/', [HomeController::class, 'index'])->middleware('setLocale')->name('home');
+// Route::group(['prefix' => '{locale}'], function (){
+//     Route::get('/', [HomeController::class, 'index'])->middleware('setLocale')->name('home');
 
-});
+// });
+
+Route::get("/", [HomeController::class, "index"])->name('home.index');
 
 
 Route::get('/single/{slug}', [SingleController::class, 'index']);

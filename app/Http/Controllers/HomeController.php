@@ -24,7 +24,7 @@ class HomeController extends Controller
 
         $links = Link::latest()->get()->take(5);
         $images = MyImage::latest()->get()->take(5);
-        $teams = Team::latest()->get()->take(5);
+        $teams = Team::latest()->get()->take(3);
         $abouts = About::latest()->get()->take(1);
         $videos = Video::latest()->get()->take(3);
         $posts = Post::latest()->get()->take(6);
