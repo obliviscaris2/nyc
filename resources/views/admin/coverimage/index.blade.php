@@ -55,11 +55,11 @@
                                 </div>
                             {{-- </a> --}}
 
-                            <a href="{{ url('admin/coverimage/destroy/'.$coverimage->id) }}">
-                              <button type="button" class="btn-block btn-danger btn-sm button-size" data-toggle="modal"
-                                  data-target="#modal-default" style="width:auto;"
-                                  onclick="replaceLinkFunction">Delete</button>
-                              </a>
+                            {{-- <a href="{{ url('admin/coverimage/destroy/'.$coverimage->id) }}"> --}}
+                              <button type="button" class="btn-danger button-size" data-bs-toggle="modal" data-bs-target="#exampleModals">
+                                Delete
+                              </button>
+                              {{-- </a> --}}
 
                     </td>
                 </tr>
@@ -78,6 +78,29 @@
               <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
                  <a href="{{ url('admin/coverimage/edit/' .$coverimage->id) }}">
+                  <button type="button" class="btn btn-danger">Yes
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+          
+        @endforeach
+
+        {{-- for delete --}}
+        @foreach ($coverimages as $coverimage )
+        <div class="modal fade" id="exampleModals" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">This can't be undone. Are you sure?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+             
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+                 <a href="{{ url('admin/coverimage/destroy/' .$coverimage->id) }}">
                   <button type="button" class="btn btn-danger">Yes
                   </button>
                 </a>
