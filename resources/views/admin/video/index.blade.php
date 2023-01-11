@@ -1,20 +1,21 @@
 
-
-
-
-
-
   @extends('admin.master')
  
  
   @section('content') 
-   <!-- Content Wrapper. Contains page content -->
+
+  @if(session('successMessage'))
+  <div class="alert alert-success">
+    {!! session('successMessage') !!}
+  </div>
+  @endif
   
-  
-   
-  
-      
-      <!-- Content Header (Page header) -->
+  @if(session('error'))
+  <div class="alert alert-danger">
+    {!! session('error') !!}
+  </div>
+  @endif
+ 
       <div class="content-header">
         <div class="container-fluid">
           <div class="row mb-2">
@@ -49,34 +50,85 @@
                     <td>{{ $video->vid_url ?? '' }}</td>
                     
                     <td>
-                        <a href="/admin/video/edit/{{ $video->id }}">
+                        {{-- <a href="/admin/video/edit/{{ $video->id }}"> --}}
                             <div style="display: flex; flex-direction:row;">
-                                <button type="button" class="btn-block btn-warning btn-sm"><i
-                                        class="fas fa-edit"></i> Update </button>
-                        </a>
-                        <a href="{{ url('admin/video/delete/'.$video->id) }}">
-                        <button type="button" class="btn-block btn-danger btn-sm" data-toggle="modal"
+                              <button type="button" class="btn-warning button-size" data-bs-toggle="modal" data-bs-target="#exampleModals">
+                                Update
+                              </button>
+                        {{-- </a> --}}
+                        {{-- <a href="{{ url('admin/video/delete/'.$video->id) }}"> --}}
+                        {{-- <button type="button" class="btn-block btn-danger btn-sm button-size" data-toggle="modal"
                             data-target="#modal-default" style="width:auto;"
-                            onclick="replaceLinkFunction">Delete</button>
-                        </a>
+                            onclick="replaceLinkFunction">Delete</button> --}}
+                            <button type="button" class="btn-danger button-size" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                              Delete
+                            </button>
+
+                        {{-- </a> --}}
                     </td>
                 </tr>
             @endforeach
         </tbody>
+
+        @foreach($videos as $video)
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">This can't be undone. Are you sure?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+             
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+                 <a href="{{ url('admin/video/delete/' .$video->id) }}">
+                  <button type="button" class="btn btn-danger">Yes
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        @endforeach
+
+        {{-- Update --}}
+        @foreach($videos as $video)
+        <div class="modal fade" id="exampleModals" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">This can't be undone. Are you sure?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+             
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+                 <a href="{{ url('admin/video/edit/' .$video->id) }}">
+                  <button type="button" class="btn btn-danger">Yes
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        @endforeach
     </table>
   
-  
-      
-  
-  
-          <!-- /.row -->
-          <!-- Main row -->
-     
-          <!-- /.row (main row) -->
-        </div><!-- /.container-fluid -->
+        </div>
       </section>
-      <!-- /.content -->
+     
+      <script>
+        var myModal = document.getElementById('myModal')
+        var myInput = document.getElementById('myInput')
   
+        myModal.addEventListener('shown.bs.modal', function () {
+        myInput.focus()
+        })
+      </script>
   
   
   
