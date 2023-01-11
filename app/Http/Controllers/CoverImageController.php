@@ -114,9 +114,9 @@ class CoverImageController extends Controller
         $coverimage->title = $request->title ?? ''; 
 
         if ($coverimage->save()) {
-            return redirect('admin/coverimage/index')->with(['successMessage' => 'Success !! COverImage Updated']);
+            return redirect('admin/coverimage/index')->with(['successMessage' => 'Success !! CoverImage Updated']);
         } else {
-            return redirect()->back()->with(['errorMessage' => 'Error COver Image not updated']);
+            return redirect()->back()->with(['errorMessage' => 'Error Cover Image not updated']);
         }
     }
 

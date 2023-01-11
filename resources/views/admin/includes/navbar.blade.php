@@ -146,6 +146,7 @@
         
         
                 -->
+             
                 <li class="nav-item dropdown border-left">
                     <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#"
                         data-bs-toggle="dropdown">
@@ -201,6 +202,11 @@
         
         
                 -->
+                <a href="/">
+                   
+                    <button style="width: 100px"> Home</button>
+                </a>
+              
                 <a href="/logout">
                     <button style="width: 100px"> Log out</button>
                 </a>
