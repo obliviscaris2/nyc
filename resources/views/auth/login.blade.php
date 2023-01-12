@@ -233,11 +233,7 @@ body {
 					<a href="{{ url('signup') }}">Signup</a>
                 </form>
                 <div class="social-login">
-<<<<<<< HEAD
-                    <a href="{{ route('home.index') }}"><h3>Home</h3></a>
-=======
                     <a href=""><h3>Home</h3></a>
->>>>>>> 87fc27f0f69f306a897e0769acab3870afea7d8e
                 </div>
             </div>
             <div class="screen__background">

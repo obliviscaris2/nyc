@@ -49,6 +49,7 @@ use App\Models\Message;
 // });
 
 Route::get('/', [HomeController::class, 'index'])->middleware('auth')->name('home');
+
 Route::get('/single/{slug}', [SingleController::class, 'index']);
 
 Route::get('login', function(){
@@ -59,11 +60,14 @@ Route::get('signup', function(){
     return view('auth.signup');
 })->middleware('auth');
 
+
 Route::post('login', [LoginController::class, 'save']);
 Route::get('/logout', [LoginController::class, 'destroy']);
 Route::post('signup', [SignupController::class, 'save']);
 
 Route::get('admin', [AdminController::class, 'index'])->middleware('auth')->name('admin.index');
+Route::get('dashboard', [AdminController::class, 'dashboard'])->middleware('auth')->name('admin.dashboard');
+
 
 
 // FOR COVER IMAGES 
