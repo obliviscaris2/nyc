@@ -2,7 +2,7 @@
 @extends('portal.layouts.master')
 
 
-<?php $root =url('')?>
+<?php $root =url('')
 
 @section('content')
 
@@ -17,6 +17,7 @@
         {{ $category->title }}
 
         @endif
+        
 
         {{date('F jS,Y', strtotime($post->created_at)) }}
 

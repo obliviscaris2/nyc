@@ -1,8 +1,5 @@
 
 
-  
-
-    
 @foreach ($abouts as $about )
     
 
@@ -10,7 +7,7 @@
    
       <div class="container aboutuscontainer">
           <div class="row">
-              <p class="sec_utitle">{{ !empty($abouts->title) ? $abouts->title:'' }}</p>
+              <p class="sec_title">{{ !empty($about->title) ? $about->title:'' }}</p>
               <div class="col-md-7 about_ucontent">
 
 
