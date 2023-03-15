@@ -208,7 +208,7 @@
 <html lang="en">
   @include('admin.includes.head')
   <body>
-    <div class="container-scroller">
+    <div class="container-scroller container">
 
       <!-- ADMIN DASHBOARD SIDEPANEL -->
       @include('admin.includes.sidebar')
