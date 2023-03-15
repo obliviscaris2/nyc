@@ -162,7 +162,7 @@ class SiteSettingController extends Controller
     
           
             Storage::delete('public/uploads/sitesetting/' . $newSideLogo);
-                // $sitesetting->side_logo =  $newSideLogo;
+                 $sitesetting->side_logo =  $newSideLogo;
             }
             $sitesetting->govn_name=$request->govn_name;
             $sitesetting->ministry_name=$request->ministry_name;
@@ -171,8 +171,8 @@ class SiteSettingController extends Controller
             $sitesetting->office_address=$request->office_address;
             $sitesetting->office_contact=$request->office_contact;
             $sitesetting->office_mail=$request->office_mail;
-            $sitesetting->main_logo= $newMainLogo ;
-            $sitesetting->side_logo=$newSideLogo;
+            // $sitesetting->main_logo= $newMainLogo ;
+            // $sitesetting->side_logo=$newSideLogo;
             $sitesetting->face_link=$request->face_link;
             $sitesetting->insta_link=$request->insta_link;
             $sitesetting->social_link=$request->social_link;
