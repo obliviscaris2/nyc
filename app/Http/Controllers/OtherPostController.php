@@ -48,7 +48,7 @@ public function store(Request $request)
     // $imagePath = $request->file('image')->storeAs('images/post', Carbon::now()  . '.' . $request->file('image')->getClientOriginalExtension(), 'public');
    
     $otherpostPath = time() . '-' . $request->title . '.' .$request->file->extension();
-    $request->file->move(public_path('uploads'), $otherpostPath );
+    $request->file->move(public_path('uploads/otherpost/'), $otherpostPath );
  
 
     $otherpost = new OtherPost;
@@ -100,8 +100,8 @@ public function update(Request $request, OtherPost $otherpost)
     // }
     if ($request->hasFile('file')) {
         $otherpostPath = time() . '-' . $request->title . '.' .$request->file->extension();
-        $request->file->move(public_path('uploads'), $otherpostPath );
-        Storage::delete('public/uploads' . $otherpost->file);
+        $request->file->move(public_path('uploads/otherpost/'), $otherpostPath );
+        Storage::delete('public/uploads/otherpost/' . $otherpost->file);
         $otherpost->file = $otherpostPath;  
     }
     $otherpost->title = $request->title;

@@ -1,15 +1,16 @@
-@extends('admin.master')
+@extends('admin.layouts.master')
 
 
 @section('content')
-    <div class="content-header">
-        <div class="container-fluid">
+    <!-- Content Wrapper. Contains page content -->
+
+    <!-- Content Header (Page header) -->
+
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1 class="m-0">{{ $page_title }}</h1>
-                    {{-- {{ url('admin/otherpost/create') }} --}}
-                    <a href="{{ route('admin.message.create') }}"><button class="btn-primary btn-sm"><i
-                                class="fa fa-plus"></i>Add Message</button></a>
+                    <a href="{{ route('admin.message.create') }}"><button class="btn-primary btn-sm"><i class="fa fa-plus"></i>
+                      Add New</button></a>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -18,9 +19,7 @@
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
+
 
     <table class="table table-bordered table-hover">
         <thead>
@@ -39,7 +38,8 @@
                     <td>{{ $msg->type ?? '' }}</td>
                     <td>{{ $msg->name ?? '' }}</td>
                     <td>{!! $msg->description ?? '' !!}</td>
-                    <td>{{ $msg->image ?? '' }}</td>
+                    <td><img id="preview" src="{{ url('uploads/message/' . $msg->image) }}"
+                      style="width: 100px; height:100px; object-fit:cover;" /></td>
                     <td>
                         <div style="display: flex; flex-direction:row;">
                             {{-- <a href="edit/{{ $msg->id }}"> --}}

@@ -53,7 +53,7 @@ class AboutController extends Controller
 
         // $imagePath = $request->file('image')->storeAs('images/team', Carbon::now()  . '.' . $request->file('image')->getClientOriginalExtension(), 'public');
         $newImageName = time() . '-' . $request->title . '.' .$request->image->extension();
-        $request->image->move(public_path('uploads'), $newImageName );
+        $request->image->move(public_path('uploads/about/'), $newImageName );
      
 
         $about = new About;
@@ -128,7 +128,7 @@ class AboutController extends Controller
         // ]);
         $request->validate([
             'title' => 'required|string',
-                'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:1536',
+                'image' => 'image|mimes:jpg,png,jpeg,gif,svg|max:1536',
                 'content' => 'required|string',
         ]);
        
@@ -137,8 +137,8 @@ class AboutController extends Controller
             if ($request->hasFile('image')) {
             // $imagePath = $request->file('image')->storeAs('images/team', Carbon::now()  . '.' . $request->file('image')->getClientOriginalExtension(), 'public');
             $newImageName = time() . '-' . $request->title . '.' .$request->image->extension();
-            $request->image->move(public_path('uploads'), $newImageName );
-            Storage::delete('public/uploads' . $about->image);
+            $request->image->move(public_path('uploads/about/'), $newImageName );
+            Storage::delete('public/uploads/about/' . $about->image);
                 $about->image = $newImageName;
             }
             

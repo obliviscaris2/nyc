@@ -1,7 +1,26 @@
-@extends('admin.master')
+@extends('admin.layouts.master')
 
 
 @section('content')
+    <!-- Content Wrapper. Contains page content -->
+
+    <!-- Content Header (Page header) -->
+
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">{{ $page_title }}</h1>
+                    <a href="{{ route('Image.create') }}"><button class="btn-primary btn-sm"><i class="fa fa-plus"></i>
+                      Add New</button></a>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="{{ url('admin') }}">Home</a></li>
+                        <li class="breadcrumb-item active">Dashboard v1</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+
+
 <!-- Content Wrapper. Contains page content -->
 @if(session('successMessage'))
 <div class="alert alert-success">
@@ -16,25 +35,7 @@
 @endif
 
 
-<!-- Content Header (Page header) -->
-<div class="content-header">
-  <div class="container-fluid">
-    <div class="row mb-2">
-      <div class="col-sm-6">
-        <h1 class="m-0">{{ $page_title }}</h1>
-        <a href="{{ url('admin/image/create') }}"><button class="btn-primary btn-sm"><i class="fa fa-plus"></i>Add
-            Images</button></a>
-      </div><!-- /.col -->
-      <div class="col-sm-6">
-        <ol class="breadcrumb float-sm-right">
-          <li class="breadcrumb-item"><a href="{{ url('admin') }}">Home</a></li>
-          <li class="breadcrumb-item active">Dashboard v1</li>
-        </ol>
-      </div><!-- /.col -->
-    </div><!-- /.row -->
-  </div><!-- /.container-fluid -->
-</div>
-<!-- /.content-header -->
+
 
 <table class="table table-bordered table-hover">
   <thead>
@@ -49,7 +50,8 @@
     @foreach ($images as $image)
     <tr data-widget="expandable-table" aria-expanded="false">
       <td>{{ $image->img_desc ?? '' }}</td>
-      <td>{{ $image->img ?? '' }}</td>
+      <td><img id="preview1" src="{{ url('uploads/image/' . $image->img) }}"
+        style="width: 100px; height:100px; object-fit:cover;" /></td>
 
       <td>
         {{-- <a href="/admin/image/edit/{{ $image->id }}">
@@ -94,9 +96,6 @@
 
 
 
-
-</div>
-</section>
 <script>
   var myModal = document.getElementById('myModal')
         var myInput = document.getElementById('myInput')
