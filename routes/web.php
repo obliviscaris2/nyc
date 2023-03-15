@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Message;
 use App\Models\ContactUs;
 use App\Models\Information;
 use Illuminate\Support\Facades\Route;
@@ -8,6 +9,7 @@ use App\Http\Controllers\LinkController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ImageController;
@@ -18,6 +20,7 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RenderController;
 use App\Http\Controllers\SignupController;
 use App\Http\Controllers\SingleController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\ContactUsController;
@@ -28,8 +31,6 @@ use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\SiteSettingController;
 use App\Http\Controllers\CommitteeDetailController;
 use App\Http\Controllers\ExecutiveDetailController;
-use App\Http\Controllers\MessageController;
-use App\Models\Message;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,9 +61,13 @@ Route::get('signup', function(){
     return view('auth.signup');
 })->middleware('auth');
 
+Route::get('/change-password', [AdminController::class, 'changePassword'])->name('change-password');
+Route::post('/change-password', [AdminController::class, 'updatePassword'])->name('update-password');
 
 Route::post('login', [LoginController::class, 'save']);
 Route::get('/logout', [LoginController::class, 'destroy'])->name('logout');
+
+
 Route::post('signup', [SignupController::class, 'save']);
 
 Route::get('admin', [AdminController::class, 'index'])->middleware('auth')->name('admin.index');
