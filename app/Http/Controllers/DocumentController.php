@@ -47,12 +47,12 @@ class DocumentController extends Controller
         ]); 
         
         $newImage = time() . "-" . $request->title . "-" . $request->image->extension();
-        $request->image->move(public_path('uploads/documents/image'), $newImage);
+        $request->image->move(public_path('uploads/documents/image/'), $newImage);
 
 
         if ($request->hasFile('file')){
             $postPath = $request->title . '.' .$request->file->extension();
-            $request->file->move(public_path('uploads/documents/file'), $postPath );
+            $request->file->move(public_path('uploads/documents/file/'), $postPath );
         }else{
                 $postPath = "NoFile";
         }
@@ -95,14 +95,14 @@ class DocumentController extends Controller
             "title" => "required|string",
             "description" => "required|string",
             "image" => "image|mimes:jpg,png,peg,gif,svg|max:2048",
-            "file" => "required|file|max:4000"
+            "file" => "file|max:4000"
         ]);
 
         $document = Document::find($request->id);
 
         if ($request->hasFile('file')){
             $postPath = $request->title . '.' .$request->file->extension();
-            $request->file->move(public_path('uploads/documents/file'), $postPath );
+            $request->file->move(public_path('uploads/documents/file/'), $postPath );
         }else {
                 $postPath = "NoFile";
         }
@@ -110,8 +110,9 @@ class DocumentController extends Controller
 
         if ($request->hasFile('image')) {
             $newImageName = time() . '-' . $request->image->extension();
-            $request->image->move(public_path('uploads/documents/image'), $newImageName );
+            $request->image->move(public_path('uploads/documents/image/'), $newImageName );
         }
+       
 
         $document->image = $newImageName;
         $document->file = $postPath;

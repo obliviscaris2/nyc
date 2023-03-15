@@ -59,7 +59,7 @@ class TeamController extends Controller
 
         // $imagePath = $request->file('image')->storeAs('images/team', Carbon::now()  . '.' . $request->file('image')->getClientOriginalExtension(), 'public');
         $newImageName = time() . '-' . $request->name . '.' .$request->image->extension();
-        $request->image->move(public_path('uploads'), $newImageName );
+        $request->image->move(public_path('uploads/team/'), $newImageName );
      
 
 
@@ -144,8 +144,8 @@ class TeamController extends Controller
             $team = Team::find($request->id);
             if ($request->hasFile('image')) {
                 $newImageName = time() . '-' . $request->name . '.' .$request->image->extension();
-                $request->image->move(public_path('uploads'), $newImageName );
-                             Storage::delete('public/uploads' . $team->image);
+                $request->image->move(public_path('uploads/team'), $newImageName );
+                             Storage::delete('public/uploads/team' . $team->image);
                 $team->image = $newImageName;
             }
 

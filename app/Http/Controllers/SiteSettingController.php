@@ -64,11 +64,11 @@ class SiteSettingController extends Controller
         ]);
 
         $newMainLogo = time() . '-' . $request->office_name . '.' .$request->main_logo->extension();
-        $request->main_logo->move(public_path('uploads'), $newMainLogo );
+        $request->main_logo->move(public_path('uploads/sitesetting/'), $newMainLogo );
 
        
         $newSideLogo = time() . '-' . $request->department_name . '.' .$request->side_logo->extension();
-        $request->side_logo->move(public_path('uploads'), $newSideLogo );
+        $request->side_logo->move(public_path('uploads/sitesetting/'), $newSideLogo );
      
 
         $sitesetting = new SiteSetting;
@@ -135,7 +135,7 @@ class SiteSettingController extends Controller
             'office_address'=>'required|string',
             'office_contact'=>'required|string',
             'office_mail'=>'required|string',
-            'main_logo'=>'required|image|mimes:jpg,png,jpeg,gif,svg|max:1536',
+            'main_logo'=>'image|mimes:jpg,png,jpeg,gif,svg|max:1536',
             'side_logo'=>'image|mimes:jpg,png,jpeg,gif,svg|max:1536',
             'face_link'=>'url',
             'insta_link'=>'url',
@@ -147,10 +147,10 @@ class SiteSettingController extends Controller
         if ($request->hasFile('main_logo')) {
             // $imagePath = $request->file('image')->storeAs('images/team', Carbon::now()  . '.' . $request->file('image')->getClientOriginalExtension(), 'public');
             $newMainLogo = time() . '-' . $request->office_name . '.' .$request->main_logo->extension();
-            $request->main_logo->move(public_path('uploads'), $newMainLogo );
+            $request->main_logo->move(public_path('uploads/sitesetting/'), $newMainLogo );
     
           
-            Storage::delete('public/uploads' . $sitesetting->main_logo);
+            Storage::delete('public/uploads/sitesetting/' . $sitesetting->main_logo);
                 $sitesetting->main_logo =  $newMainLogo;
             }
 
@@ -158,10 +158,10 @@ class SiteSettingController extends Controller
         if ($request->hasFile('side_logo')) {
             // $imagePath = $request->file('image')->storeAs('images/team', Carbon::now()  . '.' . $request->file('image')->getClientOriginalExtension(), 'public');
             $newSideLogo = time() . '-' . $request->office_name . '.' .$request->side_logo->extension();
-            $request->side_logo->move(public_path('uploads'), $newSideLogo );
+            $request->side_logo->move(public_path('uploads/sitesetting/'), $newSideLogo );
     
           
-            Storage::delete('public/uploads' . $newSideLogo);
+            Storage::delete('public/uploads/sitesetting/' . $newSideLogo);
                 // $sitesetting->side_logo =  $newSideLogo;
             }
             $sitesetting->govn_name=$request->govn_name;

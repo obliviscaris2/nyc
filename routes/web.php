@@ -62,7 +62,7 @@ Route::get('signup', function(){
 
 
 Route::post('login', [LoginController::class, 'save']);
-Route::get('/logout', [LoginController::class, 'destroy']);
+Route::get('/logout', [LoginController::class, 'destroy'])->name('logout');
 Route::post('signup', [SignupController::class, 'save']);
 
 Route::get('admin', [AdminController::class, 'index'])->middleware('auth')->name('admin.index');
@@ -97,7 +97,7 @@ Route::get('admin/executivedetails/edit/{id}', [ExecutiveDetailController::class
 Route::post('admin/executivedetails/update', [ExecutiveDetailController::class, 'update'])->name('admin.executivedetails.update');
 Route::get('admin/executivedetails/destroy/{id}', [ExecutiveDetailController::class, 'destroy'])->name('admin.executivedetails.destroy');
 
-Route::get("file-import-export-exe", [ExecutiveDetailController::class, "fileImportExport"]);
+Route::get("file-import-export-exe", [ExecutiveDetailController::class, "fileImportExport"])->name('executive.file');
 Route::post("file-import-exe", [ExecutiveDetailController::class, "fileImport"])->name("file-import-exe");
 Route::get('file-export-exe', [ExecutiveDetailController::class, "fileExport"])->name("file-export-exe");
 
@@ -130,7 +130,7 @@ Route::get('admin/users/index', [UserController::class, 'index'])->middleware('a
 Route::get('admin/team', [App\Http\Controllers\TeamController::class, 'index'])->middleware('auth');
 Route::get('admin/team/index', [App\Http\Controllers\TeamController::class, 'index'])->middleware('auth')->name('admin.team.index');
 
-Route::get('admin/team/create', [App\Http\Controllers\TeamController::class, 'create'])->middleware('auth');
+Route::get('admin/team/create', [App\Http\Controllers\TeamController::class, 'create'])->middleware('auth')->name('admin.team.create');
 Route::post('admin/team/store', [App\Http\Controllers\TeamController::class, 'store'])->name('Team.store');
 
 Route::get('admin/team/edit/{id}', [App\Http\Controllers\TeamController::class, 'edit'])->middleware('auth');
@@ -154,7 +154,7 @@ Route::get('admin/sitesetting/delete/{id}', [App\Http\Controllers\SiteSettingCon
 Route::get('admin/about', [App\Http\Controllers\AboutController::class, 'index'])->middleware('auth');
 Route::get('admin/about/index', [App\Http\Controllers\AboutController::class, 'index'])->name('About.index');
 
-Route::get('admin/about/create', [App\Http\Controllers\AboutController::class, 'create'])->middleware('auth');
+Route::get('admin/about/create', [App\Http\Controllers\AboutController::class, 'create'])->middleware('auth')->name('About.create');
 Route::post('admin/about/store', [App\Http\Controllers\AboutController::class, 'store'])->name('About.store');
 
 Route::get('admin/about/edit/{id}', [App\Http\Controllers\AboutController::class, 'edit'])->middleware('auth');
@@ -169,7 +169,7 @@ Route::get('admin/about/delete/{id}', [App\Http\Controllers\AboutController::cla
 Route::get('admin/link', [App\Http\Controllers\LinkController::class, 'index'])->middleware('auth');
 Route::get('admin/link/index', [App\Http\Controllers\LinkController::class, 'index'])->middleware('auth')->name("admin.link.index");
 
-Route::get('admin/link/create', [App\Http\Controllers\LinkController::class, 'create'])->middleware('auth');
+Route::get('admin/link/create', [App\Http\Controllers\LinkController::class, 'create'])->middleware('auth')->name('Link.create');
 Route::post('admin/link/store', [App\Http\Controllers\LinkController::class, 'store'])->name('Link.store');
 
 Route::get('admin/link/edit/{id}', [App\Http\Controllers\LinkController::class, 'edit'])->middleware('auth');
@@ -181,7 +181,7 @@ Route::get('admin/link/delete/{id}', [App\Http\Controllers\LinkController::class
 Route::get('admin/video', [App\Http\Controllers\VideoController::class, 'index'])->middleware('auth');
 Route::get('admin/video/index', [App\Http\Controllers\VideoController::class, 'index'])->middleware('auth')->name('admin.video.index');
 
-Route::get('admin/video/create', [App\Http\Controllers\VideoController::class, 'create'])->middleware('auth');
+Route::get('admin/video/create', [App\Http\Controllers\VideoController::class, 'create'])->middleware('auth')->name('admin.video.create');
 Route::post('admin/video/store', [App\Http\Controllers\VideoController::class, 'store'])->name('Video.store');
 
 Route::get('admin/video/edit/{id}', [App\Http\Controllers\VideoController::class, 'edit'])->middleware('auth');
@@ -192,7 +192,7 @@ Route::get('admin/video/delete/{id}', [App\Http\Controllers\VideoController::cla
 Route::get('admin/image', [App\Http\Controllers\ImageController::class, 'index'])->middleware('auth');
 Route::get('admin/image/index', [App\Http\Controllers\ImageController::class, 'index'])->middleware('auth')->name('admin.image.index');
 
-Route::get('admin/image/create', [App\Http\Controllers\ImageController::class, 'create'])->middleware('auth');
+Route::get('admin/image/create', [App\Http\Controllers\ImageController::class, 'create'])->middleware('auth')->name('Image.create');
 Route::post('admin/image/store', [App\Http\Controllers\ImageController::class, 'store'])->name('Image.store');
 
 Route::get('admin/image/edit/{id}', [App\Http\Controllers\ImageController::class, 'edit'])->middleware('auth');

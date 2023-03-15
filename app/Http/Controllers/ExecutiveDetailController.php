@@ -18,7 +18,10 @@ class ExecutiveDetailController extends Controller
 
     public function fileImportExport()
     {
-        return view('admin.executivedetail.upload');
+        
+        return view('admin.executivedetail.upload', [
+            "page_title" => "Import Executive members"
+        ]);
     }
 
     public function fileImport(Request $request) 

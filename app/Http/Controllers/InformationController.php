@@ -124,7 +124,7 @@ class InformationController extends Controller
             "title" => "required|string",
             "description" => "required|string",
             "image" => "image|mimes:jpg,png,peg,gif,svg|max:2048",
-            "file" => "required|file|max:4000"
+            "file" => "file|max:4000"
         ]);
 
         $information = Information::find($request->id);

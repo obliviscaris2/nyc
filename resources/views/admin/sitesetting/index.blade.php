@@ -1,36 +1,35 @@
-@extends('admin.master')
+@extends('admin.layouts.master')
 
 @section('content')
-@if(session('successMessage'))
-<div class="alert alert-success">
-  {!! session('successMessage') !!}
-</div>
-@endif
 
-@if(session('error'))
-<div class="alert alert-danger">
-  {!! session('error') !!}
-</div>
-@endif
+    @if (session('successMessage'))
+        <div class="alert alert-success">
+            {!! session('successMessage') !!}
+        </div>
+    @endif
 
-<div class="content-header">
-  <div class="container-fluid">
-    <div class="row mb-2">
-      <div class="col-sm-6">
-        <h1 class="m-0">{{ $page_title }}</h1>
-        {{-- <a href="{{ url('admin/sitesetting/create') }}"><button class="btn-primary btn-sm"><i
-              class="fa fa-plus"></i>Add Sitesetting</button></a> --}}
-      </div><!-- /.col -->
-      <div class="col-sm-6">
-        <ol class="breadcrumb float-sm-right">
-          <li class="breadcrumb-item"><a href="{{ url('admin') }}">Home</a></li>
-          <li class="breadcrumb-item active">Dashboard v1</li>
-        </ol>
-      </div><!-- /.col -->
-    </div><!-- /.row -->
-  </div><!-- /.container-fluid -->
-</div>
-<!-- /.content-header -->
+    @if (session('error'))
+        <div class="alert alert-danger">
+            {!! session('error') !!}
+        </div>
+    @endif
+
+    <!-- Content Header (Page header) -->
+
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">Sitesetting</h1>
+                    {{-- <a href="{{ url('admin/sitesetting/create') }}"><button class="btn-primary btn-sm"><i class="fa fa-plus"></i>Add Sitesetting</button></a>  --}}
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="{{ url('admin') }}">Home</a></li>
+                        <li class="breadcrumb-item active">Dashboard v1</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+
+
 
 <table class="table table-bordered table-hover">
   <thead>
@@ -91,8 +90,6 @@
 
 </table>
 
-</div>
-</section>
 
 <script>
   const previewImage1 = e => {

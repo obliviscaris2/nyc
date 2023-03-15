@@ -39,7 +39,7 @@ class ImageController extends Controller
 
   
         $newImageName = time() . '-' . $request->img_desc . '.' .$request->img->extension();
-        $request->img->move(public_path('uploads'), $newImageName );
+        $request->img->move(public_path('uploads/image/'), $newImageName );
 
 
 
