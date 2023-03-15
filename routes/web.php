@@ -49,7 +49,7 @@ use App\Http\Controllers\ExecutiveDetailController;
 
 // });
 
-Route::get('/', [HomeController::class, 'index'])->middleware('auth')->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/single/{slug}', [SingleController::class, 'index']);
 
@@ -65,9 +65,7 @@ Route::get('/change-password', [AdminController::class, 'changePassword'])->name
 Route::post('/change-password', [AdminController::class, 'updatePassword'])->name('update-password');
 
 Route::post('login', [LoginController::class, 'save']);
-Route::get('/logout', [LoginController::class, 'destroy'])->name('logout');
-
-
+Route::post('/logout', [LoginController::class, 'destroy'])->name('logout');
 Route::post('signup', [SignupController::class, 'save']);
 
 Route::get('admin', [AdminController::class, 'index'])->middleware('auth')->name('admin.index');
