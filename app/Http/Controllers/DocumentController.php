@@ -103,6 +103,8 @@ class DocumentController extends Controller
         if ($request->hasFile('file')){
             $postPath = $request->title . '.' .$request->file->extension();
             $request->file->move(public_path('uploads/documents/file/'), $postPath );
+            Storage::delete('uploads/documents/file/' . $document->file);
+            $document->file = $postPath;
         }else {
                 $postPath = "NoFile";
         }
@@ -111,11 +113,13 @@ class DocumentController extends Controller
         if ($request->hasFile('image')) {
             $newImageName = time() . '-' . $request->image->extension();
             $request->image->move(public_path('uploads/documents/image/'), $newImageName );
+            Storage::delete('uploads/documents/image/' . $document->image);
+            $document->image = $newImageName;
         }
        
 
-        $document->image = $newImageName;
-        $document->file = $postPath;
+        
+       
 
         $document->type = $request->type;
         $document->title = $request->title;
