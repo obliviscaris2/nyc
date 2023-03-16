@@ -52,7 +52,7 @@ class ImageController extends Controller
             
         $image->save();
 
-        return redirect('admin/image/index')->with(['successMessage' => 'Success !! Video created']);
+        return redirect('admin/image/index')->with(['successMessage' => 'Success !! Image created']);
     }
 
     public function destroy($id){

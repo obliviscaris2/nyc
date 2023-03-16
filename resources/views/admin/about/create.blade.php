@@ -40,7 +40,7 @@
             <div class="form-group">
                 <label for="exampleInputEmail1">Content</label>
                 <textarea id="summernote" name="content">
-                    {{ old('content') }}"
+                    {{ old('content') }}
                 </textarea>
             </div>
 
