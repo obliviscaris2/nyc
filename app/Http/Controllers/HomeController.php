@@ -10,6 +10,7 @@ use App\Models\Image;
 use App\Models\SiteSetting;
 use App\Models\Video;
 use App\Models\MyImage;
+use App\Models\Coverimage;
 
 
 use Illuminate\Http\Request;
@@ -21,20 +22,21 @@ class HomeController extends Controller
     //
     public function index(Request $req){
 
-
+        $coverimages = Coverimage::latest()->get()->take(5);
         $links = Link::latest()->get()->take(5);
         $images = MyImage::latest()->get()->take(5);
         $teams = Team::latest()->get()->take(3);
-        $abouts = About::latest()->get()->take(1);
+        $about = About::first();
         $videos = Video::latest()->get()->take(3);
         $posts = Post::latest()->get()->take(6);
         $sitesetting = SiteSetting::first();
 
         return view('portal.index', [
+            'coverimages' => $coverimages,
             'links' => $links,
             'images' => $images,
             'teams' => $teams,
-            'abouts' => $abouts,
+            'about' => $about,
             'videos' => $videos,
             'posts' => $posts,
             'sitesetting' => $sitesetting,
