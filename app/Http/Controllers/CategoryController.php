@@ -19,7 +19,9 @@ class CategoryController extends Controller
 
     public function create()
     {
-        return view('admin.categories.create');
+        return view('admin.categories.create',[
+            'page_title' => 'Create Category'
+        ]);
     }
 
     public function store(Request $request)
