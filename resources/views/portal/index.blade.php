@@ -14,6 +14,11 @@
     <title>Home</title>
     <link rel="stylesheet" href="{{ asset('css/aasha.css') }}" media="screen">
     <link rel="stylesheet" href="{{ asset('css/home.css') }}" media="screen">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrapcss/bootstrap.min.css') }}">
+    <script src="https://kit.fontawesome.com/160b82d057.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" sizes="128x128" href="{{ asset('favicon.png') }}">
+    <link rel="stylesheet" href="{{ asset('css/venobox.min.css') }}" type="text/css" media="screen" />
     <script class="u-script" type="text/javascript" src="{{ asset('js/jquery.js') }}" defer=""></script>
     <script class="u-script" type="text/javascript" src="{{ asset('js/aasha.js') }}" defer=""></script>
     <meta name="generator" content="Nicepage 5.6.9, nicepage.com">
@@ -422,8 +427,9 @@
                         <div
                             class="u-align-center u-container-style u-layout-cell u-left-cell u-size-60 u-layout-cell-1">
                             <div class="u-container-layout u-container-layout-1">
-                                <img class="u-image u-image-1" src="{{ asset('img/National-Youth-Council-Nepal.png') }}"
-                                    data-image-width="800" data-image-height="418">
+                                <img class="u-image u-image-1"
+                                    src="{{ asset('img/National-Youth-Council-Nepal.png') }}" data-image-width="800"
+                                    data-image-height="418">
                                 <h2 class="u-text u-text-1" data-animation-name="customAnimationIn"
                                     data-animation-duration="1500">राष्ट्रिय युवा परिषद्<br>
                                 </h2>
@@ -464,18 +470,16 @@
                         </div>
                     </div>
                     @foreach ($coverimages as $coverimage)
+                        <div class="u-carousel-item u-effect-fade u-gallery-item u-carousel-item-2">
+                            <div class="u-back-slide" data-image-width="1280" data-image-height="853">
+                                <img class="u-back-image u-expanded"
+                                    src="{{ asset('uploads/coverimage/' . $coverimage->image) }}" alt="Cover Image">
+                            </div>
+                            <div class="u-align-center u-over-slide u-shading u-valign-bottom u-over-slide-2">
+                                <h3 class="u-gallery-heading">{{ $coverimage->title }}</h3>
 
-                    <div class="u-carousel-item u-effect-fade u-gallery-item u-carousel-item-2">
-                        <div class="u-back-slide" data-image-width="1280" data-image-height="853">
-                            <img class="u-back-image u-expanded"
-                                src="{{ asset('uploads/coverimage/' . $coverimage->image) }}" alt="Cover Image">
+                            </div>
                         </div>
-                        <div class="u-align-center u-over-slide u-shading u-valign-bottom u-over-slide-2">
-                            <h3 class="u-gallery-heading">{{ $coverimage->title }}</h3>
-                            
-                        </div>
-                    </div>
-                                            
                     @endforeach
 
                     {{-- <div class="u-carousel-item u-effect-fade u-gallery-item u-carousel-item-3"
@@ -593,7 +597,7 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
     </section>
 
 
-    
+
     <section class="u-align-center u-clearfix u-white u-section-2" id="carousel_8e8e">
         <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-xl u-sheet-1">
             <div class="u-expanded-width u-list u-list-1">
@@ -609,7 +613,8 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
                                 </div>
                             </div><span class="u-align-center-xs u-file-icon u-icon u-text-palette-1-base u-icon-1"
                                 data-animation-name="customAnimationIn" data-animation-duration="1500"
-                                data-animation-delay="500"><img src="{{ asset('img/prachanda.PNG') }}" alt=""></span>
+                                data-animation-delay="500"><img src="{{ asset('img/prachanda.PNG') }}"
+                                    alt=""></span>
                             <div
                                 class="u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-palette-4-dark-1 u-group-2">
                                 <div class="u-container-layout u-container-layout-3">
@@ -668,7 +673,8 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
                                 </div>
                             </div><span class="u-align-center-xs u-file-icon u-icon u-icon-4"
                                 data-animation-name="customAnimationIn" data-animation-duration="1500"
-                                data-animation-delay="500"><img src="{{ asset('img/surendra.jpg') }}" alt=""></span>
+                                data-animation-delay="500"><img src="{{ asset('img/surendra.jpg') }}"
+                                    alt=""></span>
                             <div
                                 class="u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-palette-4-dark-1 u-group-4">
                                 <div class="u-container-layout u-container-layout-6">
@@ -787,7 +793,8 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
                                 </div>
                             </div><span class="u-align-center-xs u-file-icon u-icon u-icon-10"
                                 data-animation-name="customAnimationIn" data-animation-duration="1500"
-                                data-animation-delay="500"><img src="{{ asset('img/ashok.jpg') }}" alt=""></span>
+                                data-animation-delay="500"><img src="{{ asset('img/ashok.jpg') }}"
+                                    alt=""></span>
                             <div
                                 class="u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-palette-4-dark-1 u-group-8">
                                 <div class="u-container-layout u-container-layout-12">
@@ -1808,8 +1815,135 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
     </section>
 
+    {{-- For Footer --}}
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-cta pt-5 pb-5">
+                <div class="row">
+                    <div class="col-xl-4 col-md-4 mb-5">
+                        <div class="single-cta">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="cta-text">
+                                <h4>{{ __('Find us') }}</h4>
+                                <span> {{ __($sitesetting->office_address) }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="fas fa-phone"></i>
+                            <div class="cta-text">
+                                <h4>{{ __('Call us') }}</h4>
+                                <span> {{ $sitesetting->office_contact }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="far fa-envelope-open"></i>
+                            <div class="cta-text">
+                                <h4>{{ __('Mail us') }}</h4>
+                                <span> {{ $sitesetting->office_mail }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-content pt-5 pb-5">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 mb-50">
+                        <div class="footer-widget">
+                            <div class="footer-logo">
 
-    <footer class="u-clearfix u-footer u-palette-4-dark-1" id="sec-e2f2">
+                                <a href="{{ url('/') }}"><img src="{{ asset($sitesetting->main_logo) }}"
+                                        class="img-fluid" alt="logo"></a>
+                            </div>
+                            {{-- <div class="footer-text">
+
+
+                                <p>We are Aashatech Company.</p>
+                            </div> --}}
+                            <div class="footer-social-icon">
+                                <span>{{ __('Follow us') }}</span>
+                                <a href="https://www.facebook.com/ktm.logistic/"><i
+                                        class="fab fa-facebook-f facebook-bg"></i></a>
+                                <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
+                                <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                        <div class="footer-widget">
+                            <div class="footer-widget-heading">
+                                <h3>{{ __('Useful Links') }}</h3>
+                            </div>
+                            <ul>
+                                <li><a href="{{ url('/') }}">{{ __('Home') }}</a></li>
+                                <li><a href="{{ route('render_about') }}">{{ __('Introduction') }}</a></li>
+                                <li><a href="{{ route('render_team') }}">{{ __('Employee Details') }}</a></li>
+                                <li><a href="{{ route('render_notice') }}">{{ __('Notice') }}</a></li>
+                                <li><a href="{{ route('render_publication') }}">{{ __('Publication') }}</a></li>
+                                <li><a href="{{ route('render_tender') }}">{{ __('Tender') }}</a></li>
+                                <li><a href="{{ route('render_rules') }}">{{ __('Acts & Regulations') }}</a></li>
+                                <li><a href="{{ route('render_directot') }}">{{ __('Directory') }}</a></li>
+                                <li><a href="{{ route('render_press') }}">{{ __('Press Release') }}</a></li>
+                                <li><a href="{{ route('render_news') }}">{{ __('News') }}</a></li>
+                                <li><a href="{{ route('render_other') }}">{{ __('Others') }}</a></li>
+                                <li><a href="{{ route('render_images') }}">{{ __('Photo Gallery') }}</a></li>
+                                <li><a href="{{ route('render_videos') }}">{{ __('Video Gallery') }}</a></li>
+                                <li><a href="{{ route('contact_page') }}">{{ __('Contact') }}</a></li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                        <div class="footer-widget">
+                            <div class="footer-widget-heading">
+                                <h3>{{ __('Important links') }}</h3>
+                            </div>
+                            <ul class="quicknepal_link">
+                                @foreach ($links as $link)
+                                    <li><a href="{{ $link->link_url }}"
+                                            target="_blank">{{ $link->link_title }}</a></li>
+                                @endforeach
+
+
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 text-center text-lg-left">
+                        <div class="copyright-text">
+                            <p>Copyright &copy; 2021, All Right Reserved <a href="https:aashatech.com">Aasha Tech Pvt.
+                                    Ltd.</a></p>
+                        </div>
+                    </div>
+                    {{-- <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                        <div class="footer-menu">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Terms</a></li>
+                                <li><a href="#">Privacy</a></li>
+                                <li><a href="#">Policy</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div> --}}
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    {{-- <footer class="u-clearfix u-footer u-palette-4-dark-1" id="sec-e2f2">
         <div class="u-clearfix u-sheet u-sheet-1">
             <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="800"
                 data-image-height="418">
@@ -1953,8 +2087,8 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
                     Tech</a>
             </p>
         </div>
-    </footer>
-    <section class="u-backlink u-clearfix u-grey-80">
+    </footer> --}}
+    {{-- <section class="u-backlink u-clearfix u-grey-80">
         <a class="u-link" href="https://nicepage.com/website-mockup" target="_blank">
             <span>Website Mockup</span>
         </a>
@@ -1964,7 +2098,10 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         <a class="u-link" href="https://nicepage.com/wysiwyg-html-editor" target="_blank">
             <span>HTML editor</span>
         </a>.
-    </section>
+    </section> --}}
+
+
+    <script src="{{ asset('css/bootstrapjs/bootstrap.min.js') }}"></script>
 
 </body>
 
