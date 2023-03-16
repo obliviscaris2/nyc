@@ -25,7 +25,8 @@ class ContactUsController extends Controller
     {
         $contact = ContactUs::find($id);
         return view('admin.contactus.show', [
-            "contact" => $contact
+            "contact" => $contact,
+            "page_title" => "Contact Details"
         ]);
     }
 

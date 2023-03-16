@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Other;
 use Illuminate\Http\Request;
 use Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Support\Facades\Storage;
 
 class OtherController extends Controller
 {
@@ -121,7 +122,7 @@ class OtherController extends Controller
             "title" => "required|string",
             "description" => "required|string",
             "image" => "image|mimes:jpg,png,peg,gif,svg|max:2048",
-            "file" => "required|file|max:4000"
+            "file" => "file|max:4000"
         ]);
 
         $other = Other::find($request->id);
@@ -129,18 +130,23 @@ class OtherController extends Controller
         if ($request->hasFile('file')){
             $postPath = $request->title . '.' .$request->file->extension();
             $request->file->move(public_path('uploads/other/file'), $postPath );
+            Storage::delete('uploads/other/file/'. $other->file );
         }else {
-                $postPath = "NoFile";
+                unset($request['file']);
         }
         
 
         if ($request->hasFile('image')) {
-            $newImageName = time() . '-' . $request->image->extension();
-            $request->image->move(public_path('uploads/other/image'), $newImageName );
+            $newImageName = time() . '.' . $request->image->extension();
+            $request->image->move(public_path('uploads/other/image/'), $newImageName );
+            Storage::delete('uploads/other/image/' . $other->image);
+            $other->image = $newImageName;
+        }else{
+            unset($request['image']);
         }
 
-        $other->image = $newImageName;
-        $other->file = $postPath;
+    
+       
         $other->type = $request->type;
         $other->title = $request->title;
         $other->slug = SlugService::createSlug(Other::class, 'slug', $request->title);

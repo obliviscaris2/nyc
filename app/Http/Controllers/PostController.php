@@ -40,7 +40,7 @@ class PostController extends Controller
         ]);
 
         $newImageName = time() . "-" . $request->title . "-" . $request->image->extension();
-        $request->image->move(public_path('uploads/posts/image'), $newImageName);
+        $request->image->move(public_path('uploads/posts/'), $newImageName);
 
         $post = new Post;
         $post->title = $request->title;
@@ -71,7 +71,7 @@ class PostController extends Controller
     {
         $request->validate([
             'title' => 'required|string',
-            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:3000',
+            'image' => 'image|mimes:jpg,png,jpeg,gif,svg|max:3000',
             'content' => 'required|string',
             'categories' => 'required'
         ]);
@@ -79,7 +79,7 @@ class PostController extends Controller
         $post = Post::find($request->id);
 
         $newImageName = time() . "-" . $request->title . "-" . $request->image->extension();
-        $request->image->move(public_path('uploads/posts/image'), $newImageName);
+        $request->image->move(public_path('uploads/posts/'), $newImageName);
 
         $post->title = $request->title;
         $post->image = $newImageName;

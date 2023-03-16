@@ -1,35 +1,26 @@
-@extends('admin.master')
- 
- 
-@section('content') 
- <!-- Content Wrapper. Contains page content -->
+@extends('admin.layouts.master')
 
 
- 
+@section('content')
+    <!-- Content Wrapper. Contains page content -->
 
-    
     <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            {{-- <h1 class="m-0">{{ $page_title }}</h1> --}}
-           {{-- <a href="{{ url('admin/posts/add') }}"><button class="btn btn-primary btn-sm"><i class="fa fa-plus"></i>Add Team Member</button></a>  --}}
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{ url('admin') }}">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">{{ $page_title }}</h1>
+                    <a href="{{ url('admin') }}"><button class="btn-primary btn-sm"><i class="fa fa-arrow-left"></i>
+                            Back</button></a>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="{{ url('admin') }}">Home</a></li>
+                        <li class="breadcrumb-item active">Dashboard v1</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+
+
         <form id="quickForm" method="POST" action="{{ route('Team.update') }}"
         enctype="multipart/form-data">
         @csrf
@@ -50,17 +41,17 @@
             <div class="form-group">
                 <label for="exampleInputEmail1">Image</label>
                 <input type="file" name="image" class="form-control" onchange="previewImage(event)" placeholder="Image"
-                    required>
+                    >
             </div>
-            <img id="preview" src="{{ url('storage/'.$team->image) }}" style="max-width: 500px; max-height:500px" />
+            <img id="preview" src="{{ asset('uploads/team/'.$team->image) }}" style="max-width: 500px; max-height:500px" />
             <div class="form-group">
                 <label for="exampleInputEmail1">Contact Number</label>
-                <input type="text" name="contact_number" class="form-control" placeholder="Contact Number" required>
+                <input type="text" name="contact_number" class="form-control" placeholder="Contact Number" value="{{ $team->contact_number }}" required>
             </div>
 
             <div class="form-group">
                 <label for="exampleInputEmail1">Email</label>
-                <input type="email" name="email" class="form-control" placeholder="Email" required>
+                <input type="email" name="email" class="form-control" placeholder="Email" value="{{ $team->email }}" required>
             </div>
         </div>
         <!-- /.card-body -->
@@ -84,13 +75,7 @@
     </div>
 
     @endif
-        <!-- /.row -->
-        <!-- Main row -->
-   
-        <!-- /.row (main row) -->
-      </div><!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
+    
 
 
     <script>

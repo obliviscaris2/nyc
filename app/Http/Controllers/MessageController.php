@@ -53,7 +53,7 @@ class MessageController extends Controller
         ]);
 
         $newImage = time() . "-" . $request->name . "-" . $request->image->extension();
-        $request->image->move(public_path('uploads/message/image'), $newImage);
+        $request->image->move(public_path('uploads/message/'), $newImage);
 
         $message = new Message();
         $message->type = $request->type;
@@ -114,7 +114,7 @@ class MessageController extends Controller
         $message = Message::find($request->id);
 
         $newImage = time() . "-" . $request->name . "-" . $request->image->extension();
-        $request->image->move(public_path('uploads/message/image'), $newImage);
+        $request->image->move(public_path('uploads/message'), $newImage);
 
         $message->type = $request->type;
         $message->name = $request->name;
