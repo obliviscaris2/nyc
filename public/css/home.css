@@ -3318,3 +3318,15 @@
       width: auto;
     }
   }
+
+
+
+
+
+  /* For Chaiman Page */
+  .chairman_card_image{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+  }
