@@ -68,10 +68,10 @@
                         <div
                             class="u-container-align-left-sm u-container-align-left-xs u-container-style u-list-item u-repeater-item">
                             <div class="u-container-layout u-similar-container u-container-layout-1">
-                                <a href="#"
+                                <a href=""
                                     class="u-align-center-lg u-align-center-md u-align-center-xl u-align-left-sm u-align-left-xs u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-btn u-button-style u-custom-item u-none u-text-body-alt-color u-btn-1">
-                                    <i class="fa fa-phone" aria-hidden="true"></i>
-                                    ०१६६३८१५२, ६६३५१३३
+                                    {{ $sitesetting->office_contact }}
+
                                 </a>
 
                             </div>
@@ -81,8 +81,8 @@
                             <div class="u-container-layout u-similar-container u-container-layout-2">
                                 <a href="#"
                                     class="u-align-center-lg u-align-center-md u-align-center-xl u-align-left-sm u-align-left-xs u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-btn u-button-style u-custom-item u-none u-text-body-alt-color u-btn-2">
-                                    <i class="fa fa-envelope" aria-hidden="true"></i>
-                                    info@nyc.gov.np
+                                    {{ $sitesetting->office_mail }}
+
                                 </a>
 
 
@@ -93,8 +93,9 @@
                             <div class="u-container-layout u-similar-container u-container-layout-3">
                                 <a href="#"
                                     class="u-align-center-lg u-align-center-md u-align-center-xl u-align-left-sm u-align-left-xs u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-btn u-button-style u-custom-item u-none u-text-body-alt-color u-btn-3">
-                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                    सानोठिमी, भक्तपुर
+
+                                    {{ $sitesetting->office_address }}
+
                                 </a>
                                
                             </div>
@@ -126,152 +127,97 @@
                 </form>
             </div>
 
-
-            <div class="u-align-center-xs u-palette-4-dark-1 u-section-row u-sticky u-sticky-e2a9" id="sec-71fa">
-                <div
-                    class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-xl u-valign-middle-xs u-sheet-2">
-                    <a href="#" class="u-image u-logo u-image-1" data-image-width="3000"
-                        data-image-height="2984">
-                        <img src="images/vectorstock_28525730.png" class="u-logo-image u-logo-image-1"
-                            data-image-width="80">
-                    </a>
-                    <nav class="u-menu u-menu-hamburger u-offcanvas u-menu-1">
-                        <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700;">
-                            <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link"
-                                href="#" style="padding: 6px 0px; font-size: calc(1em + 12px);">
-                                <svg class="u-svg-link" viewBox="0 0 24 24">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger">
-                                    </use>
-                                </svg>
-                                <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16"
-                                    x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <g>
-                                        <rect y="1" width="16" height="2"></rect>
-                                        <rect y="7" width="16" height="2"></rect>
-                                        <rect y="13" width="16" height="2"></rect>
-                                    </g>
-                                </svg>
-                            </a>
-                        </div>
-                        <div class="u-custom-menu u-nav-container">
-                            <ul class="u-nav u-spacing-20 u-unstyled u-nav-1">
-                                <li class="u-nav-item"><a
-                                        class="u-active-white u-button-style u-hover-palette-4-light-1 u-nav-link u-text-active-palette-4-dark-1 u-text-body-alt-color u-text-hover-palette-4-base"
-                                        href="{{ route('home') }}" style="padding: 10px 16px;">गृहपृष्ठ</a>
-                                </li>
-                                <li class="u-nav-item"><a
-                                        class="u-active-white u-button-style u-hover-palette-4-light-1 u-nav-link u-text-active-palette-4-dark-1 u-text-body-alt-color u-text-hover-palette-4-base"
-                                        href="#" style="padding: 10px 16px;">हाम्रोबारे</a>
-                                    <div class="u-nav-popup">
-                                        <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-2">
-                                            <li class="u-nav-item"><a href="{{ route('render_about') }}"
-                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">कार्यलयको
-                                                    परिचय</a>
-                                            </li>
-                                            <li class="u-nav-item"><a href="{{ route('render_team') }}"
-                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">कर्मचारी
-                                                    विवरण</a>
-                                            </li>
-                                            <li class="u-nav-item"><a href="{{ route('render_committee') }}"
-                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">जिल्ला
-                                                    समितिहरु</a>
-                                            </li>
-                                            <li class="u-nav-item"><a href="{{ route('render_executive_members') }}"
-                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">परिषद
-                                                    सधस्यहारु</a>
-                                            </li>
-                                            <li class="u-nav-item"><a href="{{ route('render_administrative') }}"
-                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">प्रशासकिय
-                                                    प्रमुख को सन्देश</a>
-                                            </li>
-                                            <li class="u-nav-item"><a href="{{ 'render_chairperson' }}"
-                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">अध्यक्षको
-                                                    सन्देश</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="u-nav-item"><a
-                                        class="u-active-white u-button-style u-hover-palette-4-light-1 u-nav-link u-text-active-palette-4-dark-1 u-text-body-alt-color u-text-hover-palette-4-base"
-                                        href="#" style="padding: 10px 16px;">दस्तावेज</a>
-                                    <div class="u-nav-popup">
-                                        <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-3">
-                                            <li class="u-nav-item"><a href="{{ route('render_notice') }}"
-                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">सुचना</a>
-                                            </li>
-                                            <li class="u-nav-item"><a href="{{ route('render_publication') }}"
-                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">प्रकाशन</a>
-                                            </li>
-                                            <li class="u-nav-item"><a href="{{ route('render_tender') }}"
-                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">बोलपत्र</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="u-nav-item"><a
-                                        class="u-active-white u-button-style u-hover-palette-4-light-1 u-nav-link u-text-active-palette-4-dark-1 u-text-body-alt-color u-text-hover-palette-4-base"
-                                        href="#" style="padding: 10px 16px;">जानकरी</a>
-                                    <div class="u-nav-popup">
-                                        <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-4">
-                                            <li class="u-nav-item"><a href="{{ route('render_rules') }}"
-                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">ऐन
-                                                    तथा नियमावली</a>
-                                            </li>
-                                            <li class="u-nav-item"><a href="{{ route('render_directot') }}"
-                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">निर्देशिका</a>
-                                            </li>
-                                            <li class="u-nav-item"><a href="{{ route('render_press') }}"
-                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">प्रेश
-                                                    विज्ञप्ती</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="u-nav-item"><a
-                                        class="u-active-white u-button-style u-hover-palette-4-light-1 u-nav-link u-text-active-palette-4-dark-1 u-text-body-alt-color u-text-hover-palette-4-base"
-                                        href="#" style="padding: 10px 16px;">अन्य डाउनलोड</a>
-                                    <div class="u-nav-popup">
-                                        <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-5">
-                                            <li class="u-nav-item"><a href="{{ route('render_news') }}"
-                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">समाचार</a>
-                                            </li>
-                                            <li class="u-nav-item"><a href="{{ route('render_other') }}"
-                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">अन्य</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="u-nav-item"><a
-                                        class="u-active-white u-button-style u-hover-palette-4-light-1 u-nav-link u-text-active-palette-4-dark-1 u-text-body-alt-color u-text-hover-palette-4-base"
-                                        href="#" style="padding: 10px 16px;">ग्यालेरी</a>
-                                    <div class="u-nav-popup">
-                                        <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-6">
-                                            <li class="u-nav-item"><a href="{{ route('render_images') }}"
-                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">फाेटाे
-                                                    ग्यालेरी</a>
-                                            </li>
-                                            <li class="u-nav-item"><a href="{{ route('render_videos') }}"
-                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">भिडियो
-                                                    ग्यालेरी</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="u-nav-item"><a href="{{ route('contact_page') }}"
-                                        class="u-active-white u-button-style u-hover-palette-4-light-1 u-nav-link u-text-active-palette-4-dark-1 u-text-body-alt-color u-text-hover-palette-4-base"
-                                        style="padding: 10px 18px 10px 16px;">सम्पर्क</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="u-custom-menu u-nav-container-collapse">
-                            <div
-                                class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-                                <div class="u-inner-container-layout u-sidenav-overflow">
-                                    <div class="u-menu-close"></div>
-                                    <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-7">
-                                        <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                                                href="{{ route('home') }}">गृहपृष्ठ</a>
+        </...........>
+        <div class="u-align-center-xs u-palette-4-dark-1 u-section-row u-sticky u-sticky-e2a9" id="sec-71fa">
+            <div
+                class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-xl u-valign-middle-xs u-sheet-2">
+                <a href="{{ route('home') }}" class="u-image u-logo u-image-1" data-image-width="3000"
+                    data-image-height="2984">
+                    <img src="{{ $sitesetting->main_logo }}" class="u-logo-image u-logo-image-1"
+                        data-image-width="80">
+                </a>
+                <nav class="u-menu u-menu-hamburger u-offcanvas u-menu-1">
+                    <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700;">
+                        <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link"
+                            href="#" style="padding: 6px 0px; font-size: calc(1em + 12px);">
+                            <svg class="u-svg-link" viewBox="0 0 24 24">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger">
+                                </use>
+                            </svg>
+                            <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16"
+                                x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g>
+                                    <rect y="1" width="16" height="2"></rect>
+                                    <rect y="7" width="16" height="2"></rect>
+                                    <rect y="13" width="16" height="2"></rect>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="u-custom-menu u-nav-container">
+                        <ul class="u-nav u-spacing-20 u-unstyled u-nav-1">
+                            <li class="u-nav-item"><a
+                                    class="u-active-white u-button-style u-hover-palette-4-light-1 u-nav-link u-text-active-palette-4-dark-1 u-text-body-alt-color u-text-hover-palette-4-base"
+                                    href="{{ route('home') }}" style="padding: 10px 16px;">गृहपृष्ठ</a>
+                            </li>
+                            <li class="u-nav-item"><a
+                                    class="u-active-white u-button-style u-hover-palette-4-light-1 u-nav-link u-text-active-palette-4-dark-1 u-text-body-alt-color u-text-hover-palette-4-base"
+                                    href="#" style="padding: 10px 16px;">हाम्रोबारे</a>
+                                <div class="u-nav-popup">
+                                    <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-2">
+                                        <li class="u-nav-item"><a href="{{ route('render_about') }}"
+                                                class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">कार्यलयको
+                                                परिचय</a>
+                                        </li>
+                                        <li class="u-nav-item"><a href="{{ route('render_team') }}"
+                                                class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">कर्मचारी
+                                                विवरण</a>
+                                        </li>
+                                        <li class="u-nav-item"><a href="{{ route('render_committee') }}"
+                                                class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">जिल्ला
+                                                समितिहरु</a>
+                                        </li>
+                                        <li class="u-nav-item"><a href="{{ route('render_executive_members') }}"
+                                                class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">परिषद
+                                                सधस्यहारु</a>
+                                        </li>
+                                        <li class="u-nav-item"><a href="{{ route('render_administrative') }}"
+                                                class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">प्रशासकिय
+                                                प्रमुख को सन्देश</a>
+                                        </li>
+                                        <li class="u-nav-item"><a href="{{ 'render_chairperson' }}"
+                                                class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">अध्यक्षको
+                                                सन्देश</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="u-nav-item"><a
+                                    class="u-active-white u-button-style u-hover-palette-4-light-1 u-nav-link u-text-active-palette-4-dark-1 u-text-body-alt-color u-text-hover-palette-4-base"
+                                    href="Contact.html" style="padding: 10px 16px;">दस्तावेज</a>
+                                <div class="u-nav-popup">
+                                    <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-3">
+                                        <li class="u-nav-item"><a href="{{ route('render_notice') }}"
+                                                class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">सुचना</a>
+                                        </li>
+                                        <li class="u-nav-item"><a href="{{ route('render_publication') }}"
+                                                class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">प्रकाशन</a>
+                                        </li>
+                                        <li class="u-nav-item"><a href="{{ route('render_tender') }}"
+                                                class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">बोलपत्र</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="u-nav-item"><a
+                                    class="u-active-white u-button-style u-hover-palette-4-light-1 u-nav-link u-text-active-palette-4-dark-1 u-text-body-alt-color u-text-hover-palette-4-base"
+                                    href="about.html" style="padding: 10px 16px;">जानकरी</a>
+                                <div class="u-nav-popup">
+                                    <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-4">
+                                        <li class="u-nav-item"><a href="{{ route('render_rules') }}"
+                                                class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">ऐन
+                                                तथा नियमावली</a>
                                         </li>
                                         <li class="u-nav-item"><a class="u-button-style u-nav-link"
                                                 href="#">हाम्रोबारे</a>
