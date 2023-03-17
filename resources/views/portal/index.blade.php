@@ -1013,17 +1013,20 @@ s80-35.8,80-80S124.2,0,80,0L80,0z">
         </h3>
         <div class="u-expanded-width u-gallery u-layout-grid u-lightbox u-show-text-on-hover u-gallery-1">
             <div class="u-gallery-inner u-gallery-inner-1">
+                @foreach ($images as $img )
                 <div class="u-effect-fade u-gallery-item">
-                    <div class="u-back-slide" data-image-width="1000" data-image-height="1500">
+                    <div class="u-back-slide" data-image-width="513" data-image-height="300">
                         <img class="u-back-image u-expanded u-back-image-1"
-                            src="images/pexels-photo-4210854.jpeg">
+                            src="{{ asset('uploads/image/' . $img->img) }}">
                     </div>
                     <div class="u-over-slide u-shading u-over-slide-1">
                         <h3 class="u-gallery-heading"></h3>
                         <p class="u-gallery-text"></p>
                     </div>
                 </div>
-                <div class="u-effect-fade u-gallery-item">
+                @endforeach
+
+                {{-- <div class="u-effect-fade u-gallery-item">
                     <div class="u-back-slide" data-image-width="1000" data-image-height="665">
                         <img class="u-back-image u-expanded u-back-image-2"
                             src="images/Leopard_skin_texture_Wall_Mural_Wallpaper_a.jpg">
@@ -1098,7 +1101,7 @@ s80-35.8,80-80S124.2,0,80,0L80,0z">
                         <h3 class="u-gallery-heading"></h3>
                         <p class="u-gallery-text"></p>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
@@ -1109,20 +1112,24 @@ s80-35.8,80-80S124.2,0,80,0L80,0z">
         <div class="u-clearfix u-expanded-width u-gutter-22 u-layout-wrap u-layout-wrap-1">
             <div class="u-layout">
                 <div class="u-layout-row">
-                    <div
-                        class="u-align-left u-container-style u-layout-cell u-left-cell u-size-15 u-layout-cell-1">
+                    @foreach ($videos as $vid)
+
+                    <div class="u-align-left u-container-style u-layout-cell u-left-cell u-size-15 u-layout-cell-1">
                         <div class="u-container-layout u-container-layout-1">
                             <div class="u-align-left u-expanded u-uploaded-video u-video">
                                 <div class="embed-responsive embed-responsive-1">
                                     <iframe style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"
                                         class="embed-responsive-item"
-                                        src="https://www.youtube.com/embed/B9YKnNtFqds?mute=0&amp;showinfo=0&amp;controls=0&amp;start=0"
+                                        src="{{ $vid->vid_url }}"
                                         frameborder="0" allowfullscreen=""></iframe>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="u-align-left u-container-style u-layout-cell u-size-15 u-layout-cell-2">
+                        
+                    @endforeach
+
+                    {{-- <div class="u-align-left u-container-style u-layout-cell u-size-15 u-layout-cell-2">
                         <div class="u-container-layout u-container-layout-2">
                             <div class="u-align-left u-expanded u-uploaded-video u-video">
                                 <div class="embed-responsive embed-responsive-2">
@@ -1158,7 +1165,7 @@ s80-35.8,80-80S124.2,0,80,0L80,0z">
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
