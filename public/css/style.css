@@ -179,7 +179,7 @@ nav ul li ul li a {
 }
 
 
-@media only screen and (min-width: 870px) {
+/* @media only screen and (min-width: 870px) {
 
   .top_ntitle{
     width: 400px;
@@ -192,9 +192,9 @@ nav ul li ul li a {
   }
 
   .flag-container {
-    margin-left: -20px;
+    margin-left: -20px;*
   }
-}
+} */
 
 
 @media only screen and (max-width: 798px) {
