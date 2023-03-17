@@ -43,14 +43,6 @@
             </ol>
             <div class="u-carousel-inner u-gallery-inner" role="listbox">
                 <div class="u-active u-carousel-item u-effect-fade u-gallery-item u-carousel-item-1">
-                    <div class="u-back-slide" data-image-width="1280" data-image-height="720">
-                        <img class="u-back-image u-expanded"
-                            src="https://pixabay.com/get/gfbf40d1d54509b1c3bf907751839cb423e2d686c99ffe0cf5824b3f5b1a49a39b5b944764a2c258fec4b3fcceb04172348a2593637d235c3635bc9f147c77f51_1280.jpg">
-                    </div>
-                    <div class="u-align-center u-over-slide u-shading u-valign-bottom u-over-slide-1">
-                        <h3 class="u-gallery-heading">Sample Title</h3>
-                        <p class="u-gallery-text" style="margin-top: 2px;"></p>
-                    </div>
                 </div>
                 @foreach ($coverimages as $coverimage)
                     <div class="u-carousel-item u-effect-fade u-gallery-item u-carousel-item-2">
@@ -64,71 +56,6 @@
                         </div>
                     </div>
                 @endforeach
-
-                {{-- <div class="u-carousel-item u-effect-fade u-gallery-item u-carousel-item-3"
-                    data-image-width="1280" data-image-height="796">
-                    <div class="u-back-slide">
-                        <img class="u-back-image u-expanded"
-                            src="https://pixabay.com/get/g75fd5505234424c693b93f501ddbd7e0c0956ed7a285c3bbab37590985e9a0632d9a84309a570cf3ed2ea7861bfdd18348b1c8eecb0b1d8050d5780a705227f5_1280.png">
-                    </div>
-                    <div class="u-align-center u-over-slide u-shading u-valign-bottom u-over-slide-3">
-                        <h3 class="u-gallery-heading"></h3>
-                        <p class="u-gallery-text" style="margin-top: 2px;"></p>
-                    </div>
-                    <style data-mode="XL" data-visited="true"></style>
-                    <style data-mode="LG"></style>
-                    <style data-mode="MD"></style>
-                    <style data-mode="SM"></style>
-                    <style data-mode="XS" data-visited="true"></style>
-                </div>
-                <div class="u-carousel-item u-effect-fade u-gallery-item u-carousel-item-4"
-                    data-image-width="1280" data-image-height="853">
-                    <div class="u-back-slide">
-                        <img class="u-back-image u-expanded"
-                            src="https://pixabay.com/get/g86ec2efe0d4db7d3b22f33f9f1678b60a8457bc31cc6d2532ef5688ca97112bbd479a746485eb8473da4de878322f48083d72dd2af4b796aa4eb24b67f8ad78c_1280.jpg">
-                    </div>
-                    <div class="u-align-center u-over-slide u-shading u-valign-bottom u-over-slide-4">
-                        <h3 class="u-gallery-heading"></h3>
-                        <p class="u-gallery-text" style="margin-top: 2px;"></p>
-                    </div>
-                    <style data-mode="XL" data-visited="true"></style>
-                    <style data-mode="LG"></style>
-                    <style data-mode="MD"></style>
-                    <style data-mode="SM"></style>
-                    <style data-mode="XS" data-visited="true"></style>
-                </div>
-                <div class="u-carousel-item u-effect-fade u-gallery-item u-carousel-item-5"
-                    data-image-width="1280" data-image-height="853">
-                    <div class="u-back-slide">
-                        <img class="u-back-image u-expanded"
-                            src="https://pixabay.com/get/g02d1c5f79365550d9816fa82e36a633a4b0e7ecd81549b957b364e191888f426159fcb5a6aad43ed6e902e0e5b677224ffdc6dc996f7307fe8dec3b10d5b6845_1280.jpg">
-                    </div>
-                    <div class="u-align-center u-over-slide u-shading u-valign-bottom u-over-slide-5">
-                        <h3 class="u-gallery-heading"></h3>
-                        <p class="u-gallery-text" style="margin-top: 2px;"></p>
-                    </div>
-                    <style data-mode="XL" data-visited="true"></style>
-                    <style data-mode="LG"></style>
-                    <style data-mode="MD"></style>
-                    <style data-mode="SM"></style>
-                    <style data-mode="XS" data-visited="true"></style>
-                </div>
-                <div class="u-carousel-item u-effect-fade u-gallery-item u-carousel-item-6"
-                    data-image-width="1280" data-image-height="853">
-                    <div class="u-back-slide">
-                        <img class="u-back-image u-expanded"
-                            src="https://pixabay.com/get/ge73fe32c7bb13e985e63224bd121eec13dca12348c723f196b13756b8f422c9d081db3502f64d247c81d373efbb650f684164aa5d538008aa7fdbc53ab214021_1280.jpg">
-                    </div>
-                    <div class="u-align-center u-over-slide u-shading u-valign-bottom u-over-slide-6">
-                        <h3 class="u-gallery-heading"></h3>
-                        <p class="u-gallery-text" style="margin-top: 2px;"></p>
-                    </div>
-                    <style data-mode="XL" data-visited="true"></style>
-                    <style data-mode="LG"></style>
-                    <style data-mode="MD"></style>
-                    <style data-mode="SM"></style>
-                    <style data-mode="XS" data-visited="true"></style>
-                </div> --}}
             </div>
 
 
@@ -450,7 +377,7 @@ s80-35.8,80-80S124.2,0,80,0L80,0z">
             <div class="u-container-layout u-container-layout-1">
                 <h3 class="u-text u-text-body-alt-color u-text-1"> {{ $about->title }}</h3>
                 <p class="u-text u-text-body-alt-color u-text-2">{!! Str::substr($about->content, 0, 800) !!}</p>
-                <a href="#"
+                <a href="{{ route('render_about') }}"
                     class="u-border-2 u-border-hover-palette-2-dark-1 u-border-palette-4-dark-1 u-btn u-btn-round u-button-style u-hover-palette-2-dark-1 u-palette-4-dark-1 u-radius-50 u-text-body-alt-color u-btn-1">read
                     more</a>
             </div>
@@ -464,7 +391,7 @@ s80-35.8,80-80S124.2,0,80,0L80,0z">
             <div class="u-repeater u-repeater-1">
                 <div class="u-align-center u-container-style u-list-item u-opacity u-opacity-40 u-palette-5-dark-2 u-radius-50 u-repeater-item u-shape-round u-list-item-1"
                     data-animation-name="customAnimationIn" data-animation-duration="1500"
-                    data-animation-delay="0" data-href="https://nicepage.com">
+                    data-animation-delay="0" data-href="{{ route('render_images') }}">
                     <div class="u-container-layout u-similar-container u-container-layout-1"><span
                             class="u-file-icon u-icon u-text-white u-icon-1"><img src="images/45010-756f759e.png"
                                 alt=""></span>
@@ -474,7 +401,7 @@ s80-35.8,80-80S124.2,0,80,0L80,0z">
                 </div>
                 <div class="u-align-center u-container-style u-list-item u-opacity u-opacity-40 u-palette-5-dark-2 u-radius-50 u-repeater-item u-shape-round u-list-item-2"
                     data-animation-name="customAnimationIn" data-animation-duration="1500"
-                    data-animation-delay="0" data-href="https://nicepage.com">
+                    data-animation-delay="0" data-href="{{ route('render_videos') }}">
                     <div class="u-container-layout u-similar-container u-container-layout-2"><span
                             class="u-file-icon u-icon u-text-white u-icon-2"><img src="images/711245-1b37bf58.png"
                                 alt=""></span>
@@ -546,7 +473,7 @@ s80-35.8,80-80S124.2,0,80,0L80,0z">
                                     <li class="u-tab-item u-tab-item-4" role="presentation">
                                         <a class="u-active-palette-1-base u-button-style u-grey-10 u-tab-link u-text-active-white u-text-black u-tab-link-4"
                                             id="tab-93fc" href="#link-tab-93fc" role="tab"
-                                            aria-controls="link-tab-93fc" aria-selected="false">Release</a>
+                                            aria-controls="link-tab-93fc" aria-selected="false">Press Release</a>
                                     </li>
                                 </ul>
                                 <div class="u-tab-content">
@@ -556,9 +483,10 @@ s80-35.8,80-80S124.2,0,80,0L80,0z">
                                         <div class="u-container-layout u-valign-top u-container-layout-2">
                                             <div class="u-expanded-width u-list u-list-1">
                                                 <div class="u-repeater u-repeater-1">
+                                                    @foreach ($press as $pres )
+
                                                     <div class="u-container-style u-list-item u-repeater-item">
-                                                        <div
-                                                            class="u-container-layout u-similar-container u-container-layout-3">
+                                                        <div class="u-container-layout u-similar-container u-container-layout-3">
                                                             <span class="u-file-icon u-icon u-icon-1"><img
                                                                     src="images/3031707.png"
                                                                     alt=""></span><span
@@ -568,8 +496,7 @@ s80-35.8,80-80S124.2,0,80,0L80,0z">
                                                                 class="u-file-icon u-icon u-icon-3"><img
                                                                     src="images/vectorstock_28525730.png"
                                                                     alt=""></span>
-                                                            <h5 class="u-text u-text-1"> नमुना संसद अभ्यास
-                                                                कार्यक्रम सञ्चालन सम्बन्धमा</h5>
+                                                            <h5 class="u-text u-text-1"> {{$pres->title}}</h5>
                                                             <p class="u-text u-text-2"><span
                                                                     class="u-file-icon u-icon"><img
                                                                         src="images/8110713.png"
@@ -582,6 +509,9 @@ s80-35.8,80-80S124.2,0,80,0L80,0z">
                                                             </p>
                                                         </div>
                                                     </div>
+                                                        
+                                                    @endforeach
+                                                    
                                                     <div class="u-container-style u-list-item u-repeater-item">
                                                         <div
                                                             class="u-container-layout u-similar-container u-container-layout-4">
@@ -822,7 +752,7 @@ s80-35.8,80-80S124.2,0,80,0L80,0z">
                                                                 class="u-file-icon u-icon u-icon-48"><img
                                                                     src="images/vectorstock_28525730.png"
                                                                     alt=""></span>
-                                                            <h5 class="u-text u-text-28">v​नमुना संसद अभ्यास
+                                                            <h5 class="u-text u-text-28">​नमुना संसद अभ्यास
                                                                 कार्यक्रम सञ्चालन सम्बन्धमा</h5>
                                                             <p class="u-text u-text-29"><span
                                                                     class="u-file-icon u-icon"><img
@@ -899,6 +829,8 @@ s80-35.8,80-80S124.2,0,80,0L80,0z">
                                             class="u-container-layout u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-17">
                                             <div class="u-expanded-width u-list u-list-4">
                                                 <div class="u-repeater u-repeater-4">
+
+                                                    @foreach ($press as $pre )
                                                     <div class="u-container-style u-list-item u-repeater-item">
                                                         <div
                                                             class="u-container-layout u-similar-container u-container-layout-18">
@@ -911,8 +843,7 @@ s80-35.8,80-80S124.2,0,80,0L80,0z">
                                                                 class="u-file-icon u-icon u-icon-63"><img
                                                                     src="images/vectorstock_28525730.png"
                                                                     alt=""></span>
-                                                            <h5 class="u-text u-text-37"> नमुना संसद अभ्यास
-                                                                कार्यक्रम सञ्चालन सम्बन्धमा</h5>
+                                                            <h5 class="u-text u-text-37">{{$pre->title}}</h5>
                                                             <p class="u-text u-text-38"><span
                                                                     class="u-file-icon u-icon"><img
                                                                         src="images/8110713.png"
@@ -924,85 +855,8 @@ s80-35.8,80-80S124.2,0,80,0L80,0z">
                                                                         alt=""></span>&nbsp;Text with icon
                                                             </p>
                                                         </div>
-                                                    </div>
-                                                    <div class="u-container-style u-list-item u-repeater-item">
-                                                        <div
-                                                            class="u-container-layout u-similar-container u-container-layout-19">
-                                                            <span class="u-file-icon u-icon u-icon-66"><img
-                                                                    src="images/3031707.png"
-                                                                    alt=""></span><span
-                                                                class="u-file-icon u-icon u-icon-67"><img
-                                                                    src="images/159604.png"
-                                                                    alt=""></span><span
-                                                                class="u-file-icon u-icon u-icon-68"><img
-                                                                    src="images/vectorstock_28525730.png"
-                                                                    alt=""></span>
-                                                            <h5 class="u-text u-text-40">v​नमुना संसद अभ्यास
-                                                                कार्यक्रम सञ्चालन सम्बन्धमा</h5>
-                                                            <p class="u-text u-text-41"><span
-                                                                    class="u-file-icon u-icon"><img
-                                                                        src="images/8110713.png"
-                                                                        alt=""></span>&nbsp;Text with icon
-                                                            </p>
-                                                            <p class="u-text u-text-42"><span
-                                                                    class="u-file-icon u-icon"><img
-                                                                        src="images/747310.png"
-                                                                        alt=""></span>&nbsp;Text with icon
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="u-container-style u-list-item u-repeater-item">
-                                                        <div
-                                                            class="u-container-layout u-similar-container u-container-layout-20">
-                                                            <span class="u-file-icon u-icon u-icon-71"><img
-                                                                    src="images/3031707.png"
-                                                                    alt=""></span><span
-                                                                class="u-file-icon u-icon u-icon-72"><img
-                                                                    src="images/159604.png"
-                                                                    alt=""></span><span
-                                                                class="u-file-icon u-icon u-icon-73"><img
-                                                                    src="images/vectorstock_28525730.png"
-                                                                    alt=""></span>
-                                                            <h5 class="u-text u-text-43"> नमुना संसद अभ्यास
-                                                                कार्यक्रम सञ्चालन सम्बन्धमा</h5>
-                                                            <p class="u-text u-text-44"><span
-                                                                    class="u-file-icon u-icon"><img
-                                                                        src="images/8110713.png"
-                                                                        alt=""></span>&nbsp;Text with icon
-                                                            </p>
-                                                            <p class="u-text u-text-45"><span
-                                                                    class="u-file-icon u-icon"><img
-                                                                        src="images/747310.png"
-                                                                        alt=""></span>&nbsp;Text with icon
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="u-container-style u-list-item u-repeater-item">
-                                                        <div
-                                                            class="u-container-layout u-similar-container u-container-layout-21">
-                                                            <span class="u-file-icon u-icon u-icon-76"><img
-                                                                    src="images/3031707.png"
-                                                                    alt=""></span><span
-                                                                class="u-file-icon u-icon u-icon-77"><img
-                                                                    src="images/159604.png"
-                                                                    alt=""></span><span
-                                                                class="u-file-icon u-icon u-icon-78"><img
-                                                                    src="images/vectorstock_28525730.png"
-                                                                    alt=""></span>
-                                                            <h5 class="u-text u-text-46"> नमुना संसद अभ्यास
-                                                                कार्यक्रम सञ्चालन सम्बन्धमा</h5>
-                                                            <p class="u-text u-text-47"><span
-                                                                    class="u-file-icon u-icon"><img
-                                                                        src="images/8110713.png"
-                                                                        alt=""></span>&nbsp;Text with icon
-                                                            </p>
-                                                            <p class="u-text u-text-48"><span
-                                                                    class="u-file-icon u-icon"><img
-                                                                        src="images/747310.png"
-                                                                        alt=""></span>&nbsp;Text with icon
-                                                            </p>
-                                                        </div>
-                                                    </div>
+                                                    </div> 
+                                                    @endforeach
                                                 </div>
                                             </div>
                                         </div>

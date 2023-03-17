@@ -60,9 +60,9 @@
                     <div class="u-repeater u-repeater-1">
                         <div class="u-container-align-left-sm u-container-align-left-xs u-container-style u-list-item u-repeater-item">
                             <div class="u-container-layout u-similar-container u-container-layout-1">
-                                <a href="https://nicepage.review"
+                                <a href=""
                                     class="u-align-center-lg u-align-center-md u-align-center-xl u-align-left-sm u-align-left-xs u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-btn u-button-style u-custom-item u-none u-text-body-alt-color u-btn-1">
-                                    ०१६६३८१५२, ६६३५१३३
+                                    {{ $sitesetting->office_contact }}
                                 </a>
                                 <span class="u-align-left-sm u-align-left-xs u-custom-item u-file-icon u-icon u-text-white u-icon-4">
                                     <img src="images/151768-18d4dd19.png" alt="">
@@ -73,7 +73,7 @@
                             <div class="u-container-layout u-similar-container u-container-layout-2">
                                 <a href="https://nicepage.review"
                                     class="u-align-center-lg u-align-center-md u-align-center-xl u-align-left-sm u-align-left-xs u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-btn u-button-style u-custom-item u-none u-text-body-alt-color u-btn-2">
-                                    info@nyc.gov.np
+                                    {{ $sitesetting->office_mail }}
                                 </a>
                                 <span class="u-align-left-sm u-align-left-xs u-custom-item u-file-icon u-icon u-text-white u-icon-5">
                                   <img src="images/542689-e094886c.png" alt=""></span>
@@ -84,7 +84,7 @@
                             <div class="u-container-layout u-similar-container u-container-layout-3">
                                 <a href="https://nicepage.review"
                                     class="u-align-center-lg u-align-center-md u-align-center-xl u-align-left-sm u-align-left-xs u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-btn u-button-style u-custom-item u-none u-text-body-alt-color u-btn-3">
-                                    सानोठिमी, भक्तपुर
+                                    {{ $sitesetting->office_address }}
                                 </a>
                                 <span class="u-align-left-sm u-align-left-xs u-custom-item u-file-icon u-icon u-text-white u-icon-6">
                                     <img src="images/447031-74fd3a50.png" alt="">
@@ -115,9 +115,9 @@
         <div class="u-align-center-xs u-palette-4-dark-1 u-section-row u-sticky u-sticky-e2a9" id="sec-71fa">
             <div
                 class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-xl u-valign-middle-xs u-sheet-2">
-                <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="3000"
+                <a href="{{ route('home') }}" class="u-image u-logo u-image-1" data-image-width="3000"
                     data-image-height="2984">
-                    <img src="images/vectorstock_28525730.png" class="u-logo-image u-logo-image-1"
+                    <img src="{{ $sitesetting->main_logo }}" class="u-logo-image u-logo-image-1"
                         data-image-width="80">
                 </a>
                 <nav class="u-menu u-menu-hamburger u-offcanvas u-menu-1">
