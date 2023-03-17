@@ -101,10 +101,26 @@
                         </div>
                     </div>
                 </div>
-                <a href="#"
-                    class="u-active-palette-4-dark-1 u-border-none u-btn u-button-style u-palette-4-light-1 u-btn-4">EN</a>
-                <a href="#"
-                    class="u-border-none u-btn u-button-style u-palette-4-light-1 u-btn-5">NE</a>
+
+
+                {{-- <div class="lang-container">
+                    @foreach (config('app.languages') as $langLocale => $langName)
+                        <a class="lang-link"
+                            href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }}
+                        </a>
+                    @endforeach
+                </div> --}}
+
+                @foreach (config('app.languages') as $langLocale => $langName)
+                <a href="{{ url()->current() }}?change_language={{ $langLocale }}"
+                    class="u-active-palette-4-dark-1 u-border-none u-btn u-button-style u-palette-4-light-1 u-btn-4">
+                    {{ strtoupper($langLocale) }}
+                </a>
+                @endforeach
+
+
+                {{-- <a href="#"
+                    class="u-border-none u-btn u-button-style u-palette-4-light-1 u-btn-5">NE</a> --}}
                 <form action="#"
                     method="get"class="u-border-1 u-border-grey-30 u-search u-search-left u-white u-search-1">
                     <button class="u-search-button" type="submit">
@@ -399,7 +415,7 @@
             @endforeach
         </div>
     </div>
-</secton>
+</section>
 @endif
 
 
