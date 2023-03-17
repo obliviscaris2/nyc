@@ -48,9 +48,4 @@
 
     </div>
 
-    @include('portal.includes.land_contact')
-  
-
-    
-
 @endsection
