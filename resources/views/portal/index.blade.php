@@ -460,26 +460,186 @@ s80-35.8,80-80S124.2,0,80,0L80,0z">
                                     <li class="u-tab-item" role="presentation">
                                         <a class="active u-active-palette-1-base u-button-style u-grey-10 u-tab-link u-text-active-white u-text-black u-tab-link-1"
                                             id="link-tab-0da5" href="#tab-0da5" role="tab"
-                                            aria-controls="tab-0da5" aria-selected="true">Information</a>
+                                            aria-controls="tab-0da5" aria-selected="true">News</a>
                                     </li>
                                     <li class="u-tab-item" role="presentation">
                                         <a class="u-active-palette-1-base u-button-style u-grey-10 u-tab-link u-text-active-white u-text-black u-tab-link-2"
                                             id="link-tab-14b7" href="#tab-14b7" role="tab"
-                                            aria-controls="tab-14b7" aria-selected="false">Forms</a>
+                                            aria-controls="tab-14b7" aria-selected="false">Notice</a>
                                     </li>
                                     <li class="u-tab-item" role="presentation">
                                         <a class="u-active-palette-1-base u-button-style u-grey-10 u-tab-link u-text-active-white u-text-black u-tab-link-3"
                                             id="link-tab-2917" href="#tab-2917" role="tab"
-                                            aria-controls="tab-2917" aria-selected="false">Report</a>
+                                            aria-controls="tab-2917" aria-selected="false">Publications</a>
                                     </li>
                                     <li class="u-tab-item u-tab-item-4" role="presentation">
                                         <a class="u-active-palette-1-base u-button-style u-grey-10 u-tab-link u-text-active-white u-text-black u-tab-link-4"
                                             id="tab-93fc" href="#link-tab-93fc" role="tab"
-                                            aria-controls="link-tab-93fc" aria-selected="false">Press Release</a>
+                                            aria-controls="link-tab-93fc" aria-selected="false">Press Releases</a>
                                     </li>
                                 </ul>
                                 <div class="u-tab-content">
-                                    <div class="u-container-style u-tab-active u-tab-pane" id="tab-0da5"
+
+                                    <div class="u-container-style u-tab-pane" id="tab-0da5"
+                                        role="tabpanel" data-animation-name="" data-animation-duration="0"
+                                        data-animation-delay="0" data-animation-direction="">
+                                        <div
+                                            class="u-container-layout u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-17">
+                                            <div class="u-expanded-width u-list u-list-4">
+                                                <div class="u-repeater u-repeater-4">
+
+                                                    @foreach ($news as $new )
+                                                    <div class="u-container-style u-list-item u-repeater-item">
+                                                        <div
+                                                            class="u-container-layout u-similar-container u-container-layout-18">
+                                                            <span class="u-file-icon u-icon u-icon-61"><img
+                                                                    src="images/3031707.png"
+                                                                    alt=""></span><span
+                                                                class="u-file-icon u-icon u-icon-62"><img
+                                                                    src="images/159604.png"
+                                                                    alt=""></span><span
+                                                                class="u-file-icon u-icon u-icon-63"><img
+                                                                    src="images/vectorstock_28525730.png"
+                                                                    alt=""></span>
+                                                            <h5 class="u-text u-text-37">{{$new->title}}</h5>
+                                                            <p class="u-text u-text-38"><span
+                                                                    class="u-file-icon u-icon"><img
+                                                                        src="images/8110713.png"
+                                                                        alt=""></span>&nbsp;Text with icon
+                                                            </p>
+                                                            <p class="u-text u-text-39"><span
+                                                                    class="u-file-icon u-icon"><img
+                                                                        src="images/747310.png"
+                                                                        alt=""></span>&nbsp;Text with icon
+                                                            </p>
+                                                        </div>
+                                                    </div> 
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="u-container-style u-tab-pane" id="tab-14b7"
+                                        role="tabpanel" data-animation-name="" data-animation-duration="0"
+                                        data-animation-delay="0" data-animation-direction="">
+                                        <div
+                                            class="u-container-layout u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-17">
+                                            <div class="u-expanded-width u-list u-list-4">
+                                                <div class="u-repeater u-repeater-4">
+
+                                                    @foreach ($notices as $notice )
+                                                    <div class="u-container-style u-list-item u-repeater-item">
+                                                        <div
+                                                            class="u-container-layout u-similar-container u-container-layout-18">
+                                                            <span class="u-file-icon u-icon u-icon-61"><img
+                                                                    src="images/3031707.png"
+                                                                    alt=""></span><span
+                                                                class="u-file-icon u-icon u-icon-62"><img
+                                                                    src="images/159604.png"
+                                                                    alt=""></span><span
+                                                                class="u-file-icon u-icon u-icon-63"><img
+                                                                    src="images/vectorstock_28525730.png"
+                                                                    alt=""></span>
+                                                            <h5 class="u-text u-text-37">{{$notice->title}}</h5>
+                                                            <p class="u-text u-text-38"><span
+                                                                    class="u-file-icon u-icon"><img
+                                                                        src="images/8110713.png"
+                                                                        alt=""></span>&nbsp;Text with icon
+                                                            </p>
+                                                            <p class="u-text u-text-39"><span
+                                                                    class="u-file-icon u-icon"><img
+                                                                        src="images/747310.png"
+                                                                        alt=""></span>&nbsp;Text with icon
+                                                            </p>
+                                                        </div>
+                                                    </div> 
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="u-container-style u-tab-pane" id="tab-2917"
+                                        role="tabpanel" data-animation-name="" data-animation-duration="0"
+                                        data-animation-delay="0" data-animation-direction="">
+                                        <div
+                                            class="u-container-layout u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-17">
+                                            <div class="u-expanded-width u-list u-list-4">
+                                                <div class="u-repeater u-repeater-4">
+
+                                                    @foreach ($publications as $publication )
+                                                    <div class="u-container-style u-list-item u-repeater-item">
+                                                        <div
+                                                            class="u-container-layout u-similar-container u-container-layout-18">
+                                                            <span class="u-file-icon u-icon u-icon-61"><img
+                                                                    src="images/3031707.png"
+                                                                    alt=""></span><span
+                                                                class="u-file-icon u-icon u-icon-62"><img
+                                                                    src="images/159604.png"
+                                                                    alt=""></span><span
+                                                                class="u-file-icon u-icon u-icon-63"><img
+                                                                    src="images/vectorstock_28525730.png"
+                                                                    alt=""></span>
+                                                            <h5 class="u-text u-text-37">{{$publication->title}}</h5>
+                                                            <p class="u-text u-text-38"><span
+                                                                    class="u-file-icon u-icon"><img
+                                                                        src="images/8110713.png"
+                                                                        alt=""></span>&nbsp;Text with icon
+                                                            </p>
+                                                            <p class="u-text u-text-39"><span
+                                                                    class="u-file-icon u-icon"><img
+                                                                        src="images/747310.png"
+                                                                        alt=""></span>&nbsp;Text with icon
+                                                            </p>
+                                                        </div>
+                                                    </div> 
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="u-container-style u-tab-pane" id="link-tab-93fc"
+                                        role="tabpanel" data-animation-name="" data-animation-duration="0"
+                                        data-animation-delay="0" data-animation-direction="">
+                                        <div
+                                            class="u-container-layout u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-17">
+                                            <div class="u-expanded-width u-list u-list-4">
+                                                <div class="u-repeater u-repeater-4">
+
+                                                    @foreach ($press as $pre )
+                                                    <div class="u-container-style u-list-item u-repeater-item">
+                                                        <div
+                                                            class="u-container-layout u-similar-container u-container-layout-18">
+                                                            <span class="u-file-icon u-icon u-icon-61"><img
+                                                                    src="images/3031707.png"
+                                                                    alt=""></span><span
+                                                                class="u-file-icon u-icon u-icon-62"><img
+                                                                    src="images/159604.png"
+                                                                    alt=""></span><span
+                                                                class="u-file-icon u-icon u-icon-63"><img
+                                                                    src="images/vectorstock_28525730.png"
+                                                                    alt=""></span>
+                                                            <h5 class="u-text u-text-37">{{$pre->title}}</h5>
+                                                            <p class="u-text u-text-38"><span
+                                                                    class="u-file-icon u-icon"><img
+                                                                        src="images/8110713.png"
+                                                                        alt=""></span>&nbsp;Text with icon
+                                                            </p>
+                                                            <p class="u-text u-text-39"><span
+                                                                    class="u-file-icon u-icon"><img
+                                                                        src="images/747310.png"
+                                                                        alt=""></span>&nbsp;Text with icon
+                                                            </p>
+                                                        </div>
+                                                    </div> 
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{-- <div class="u-container-style u-tab-active u-tab-pane" id="tab-0da5"
                                         role="tabpanel" data-animation-name="" data-animation-duration="0"
                                         data-animation-delay="0" data-animation-direction="">
                                         <div class="u-container-layout u-valign-top u-container-layout-2">
@@ -595,8 +755,9 @@ s80-35.8,80-80S124.2,0,80,0L80,0z">
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="u-container-style u-tab-pane" id="tab-14b7" role="tabpanel"
+                                    </div> --}}
+                                    
+                                    {{-- <div class="u-container-style u-tab-pane" id="tab-14b7" role="tabpanel"
                                         data-animation-name="" data-animation-duration="0"
                                         data-animation-delay="0" data-animation-direction="">
                                         <div class="u-container-layout u-valign-top u-container-layout-7">
@@ -709,8 +870,9 @@ s80-35.8,80-80S124.2,0,80,0L80,0z">
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="u-container-style u-tab-pane" id="tab-2917" role="tabpanel"
+                                    </div> --}}
+                                    
+                                    {{-- <div class="u-container-style u-tab-pane" id="tab-2917" role="tabpanel"
                                         data-animation-name="" data-animation-duration="0"
                                         data-animation-delay="0" data-animation-direction="">
                                         <div class="u-container-layout u-valign-top u-container-layout-12">
@@ -823,46 +985,9 @@ s80-35.8,80-80S124.2,0,80,0L80,0z">
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="u-container-style u-tab-pane" id="link-tab-93fc"
-                                        role="tabpanel" data-animation-name="" data-animation-duration="0"
-                                        data-animation-delay="0" data-animation-direction="">
-                                        <div
-                                            class="u-container-layout u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-17">
-                                            <div class="u-expanded-width u-list u-list-4">
-                                                <div class="u-repeater u-repeater-4">
+                                    </div> --}}
 
-                                                    @foreach ($press as $pre )
-                                                    <div class="u-container-style u-list-item u-repeater-item">
-                                                        <div
-                                                            class="u-container-layout u-similar-container u-container-layout-18">
-                                                            <span class="u-file-icon u-icon u-icon-61"><img
-                                                                    src="images/3031707.png"
-                                                                    alt=""></span><span
-                                                                class="u-file-icon u-icon u-icon-62"><img
-                                                                    src="images/159604.png"
-                                                                    alt=""></span><span
-                                                                class="u-file-icon u-icon u-icon-63"><img
-                                                                    src="images/vectorstock_28525730.png"
-                                                                    alt=""></span>
-                                                            <h5 class="u-text u-text-37">{{$pre->title}}</h5>
-                                                            <p class="u-text u-text-38"><span
-                                                                    class="u-file-icon u-icon"><img
-                                                                        src="images/8110713.png"
-                                                                        alt=""></span>&nbsp;Text with icon
-                                                            </p>
-                                                            <p class="u-text u-text-39"><span
-                                                                    class="u-file-icon u-icon"><img
-                                                                        src="images/747310.png"
-                                                                        alt=""></span>&nbsp;Text with icon
-                                                            </p>
-                                                        </div>
-                                                    </div> 
-                                                    @endforeach
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>

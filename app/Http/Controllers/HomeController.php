@@ -49,7 +49,7 @@ class HomeController extends Controller
             'posts' => $posts,
             'sitesetting' => $sitesetting,
             'notices' => $notices,
-            'publication' => $publications,
+            'publications' => $publications,
             'press' => $press,
             'news' => $news
             
