@@ -1,6 +1,6 @@
 <header class=" u-clearfix u-header u-section-row-container" id="sec-05f6">
     <div class="u-section-rows">
-        <div class="u-align-center u-palette-4-dark-2 u-section-row u-sticky" id="sec-b03b">
+        <div class="u-align-center u-palette-4-dark-2 u-section-row" id="sec-b03b">
             <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-xl u-sheet-1">
                 <div class="u-social-icons u-spacing-10 u-social-icons-1">
                     <a class="u-social-url" title="facebook" target="_blank" href="https://facebook.com/name">
