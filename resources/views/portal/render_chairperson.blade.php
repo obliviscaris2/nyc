@@ -16,29 +16,18 @@
 
             @foreach ($chairperson as $ad )
             
+            <div class="col-md-6">
+                <img src="{{ asset("uploads/message/" . $ad->image) }}" class="chairman_card_image" alt="..."></a>
+
+            </div>
+
+            <div class="col-md-6">
+                {!!ucfirst($ad->description)!!}
+
+            </div>
                 
        
-            <div class="">
-                <div class="card">
-                    <img src="{{ asset("uploads/message/image/" . $ad->image) }}" class="card-img-top" alt="..."></a>
-                    <div class="d-flex ">
-
-                        <div class="p-2 w-100 blog_title">
-                            <p>
-                               {{ucfirst($ad->name)}}
-                            </p>
-                      
-                        </div>
-                        <div class="p-2 w-100 blog_title">
-                            <p>
-                               {!!ucfirst($ad->description)!!}
-                            </p>
-                      
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+         
           
 
             @endforeach
