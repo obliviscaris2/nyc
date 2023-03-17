@@ -103,20 +103,14 @@
                 </div>
 
 
-                {{-- <div class="lang-container">
-                    @foreach (config('app.languages') as $langLocale => $langName)
-                        <a class="lang-link"
-                            href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }}
-                        </a>
-                    @endforeach
-                </div> --}}
+             
 
-                @foreach (config('app.languages') as $langLocale => $langName)
+                {{-- @foreach (config('app.languages') as $langLocale => $langName)
                 <a href="{{ url()->current() }}?change_language={{ $langLocale }}"
                     class="u-active-palette-4-dark-1 u-border-none u-btn u-button-style u-palette-4-light-1 u-btn-4">
                     {{ strtoupper($langLocale) }}
                 </a>
-                @endforeach
+                @endforeach --}}
 
 
                 {{-- <a href="#"
@@ -141,8 +135,15 @@
                     <input class="u-search-input" type="search" name="search" value=""
                         placeholder="Search">
                 </form>
+
+                 @foreach (config('app.languages') as $langLocale => $langName)
+                <a href="{{ url()->current() }}?change_language={{ $langLocale }}"
+                    class="u-active-palette-4-dark-1 u-border-none u-btn u-button-style u-palette-4-light-1 u-btn-4">
+                    {{ strtoupper($langLocale) }}
+                </a>
+                @endforeach 
             </div>
-            </...........>
+            {{-- </...........> --}}
             <div class="u-align-center-xs u-palette-4-dark-1 u-section-row u-sticky u-sticky-e2a9" id="sec-71fa">
                 <div
                     class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-xl u-valign-middle-xs u-sheet-2">
