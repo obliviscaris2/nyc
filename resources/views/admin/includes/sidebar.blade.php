@@ -134,6 +134,11 @@
                                 </div>
                             </a>
                         </li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('admin.committeedetails.index') }}">
+                                <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Committee Members</span>
+                                </div>
+                            </a>
+                        </li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('admin.team.index') }}">
                                 <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Team</span>
                                 </div>
