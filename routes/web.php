@@ -89,7 +89,7 @@ Route::get('admin/committeedetails/index', [CommitteeDetailController::class, 'i
 Route::get('admin/committeedetails/edit/{id}', [CommitteeDetailController::class, 'edit'])->name('admin.committeedetails.edit');
 Route::post('admin/committeedetails/update', [CommitteeDetailController::class, 'update'])->name('admin.committeedetails.update');
 Route::get('admin/committeedetails/destroy/{id}', [CommitteeDetailController::class, 'destroy'])->name('admin.committeedetails.destroy');
-Route::get('file-import-export', [CommitteeDetailController::class, 'fileImportExport']);
+Route::get('file-import-export', [CommitteeDetailController::class, 'fileImportExport'])->name('committee.file');
 Route::post('file-import', [CommitteeDetailController::class, 'fileImport'])->name('file-import');
 Route::get('file-export', [CommitteeDetailController::class, 'fileExport'])->name('file-export');
 
