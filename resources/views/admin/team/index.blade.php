@@ -103,8 +103,13 @@
 
       @endforeach
 
-     
+      
     </table>
+
+    <div class="d-flex justify-content-center">
+      {!! $teams->links() !!}
+    </div>
+    
 
 
     @if (isset($links) && is_array($links))

@@ -59,5 +59,7 @@
             @endforeach
         </tbody>
     </table>
-
+    <div class="d-flex justify-content-center">
+        {!! $committeedetails->links() !!}
+    </div>
 @endsection

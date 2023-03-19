@@ -39,7 +39,7 @@ class ExecutiveDetailController extends Controller
     
     public function index()
     {
-        $executivedetails = ExecutiveDetail::all();
+        $executivedetails = ExecutiveDetail::paginate(10);
         return view('admin.executivedetail.index', [
             "page_title" => "Executive Details",
             "executivedetails" => $executivedetails

@@ -126,6 +126,10 @@
         @endforeach
     </table>
 
+    <div class="d-flex justify-content-center">
+      {!! $executivedetails->links() !!}
+    </div>
+
     <script>
 
       var myModal = document.getElementById('myModal')

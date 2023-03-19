@@ -43,7 +43,7 @@ class CommitteeDetailController extends Controller
      */
     public function index()
     {
-        $committeedetails = CommitteeDetail::all();
+        $committeedetails = CommitteeDetail::paginate(10);
         return view('admin.committeedetail.index',[
             "page_title" => "Committee Details",
             "committeedetails" => $committeedetails
