@@ -1,3 +1,7 @@
+*{
+  font-family:'Mukta', sans-serif;
+}
+
 .u-section-1 {
     background-image: none;
   }
@@ -34,6 +38,7 @@
     --animation-custom_in-rotate: 0deg;
     --animation-custom_in-scale: 1;
     margin: 0 30px;
+    font-family: 'Mukta', sans-serif;
   }
   
   .u-section-1 .u-btn-1 {
@@ -262,6 +267,7 @@
   
   .u-section-2 .u-text-1 {
     margin: 12px 1px 0;
+    font-family: 'Mukta', sans-serif;
   }
   
   .u-section-2 .u-icon-1 {
@@ -290,6 +296,7 @@
   
   .u-section-2 .u-text-2 {
     margin: 23px 5px 0;
+    font-family: 'Mukta', sans-serif;
   }
   
   .u-section-2 .u-text-3 {
@@ -357,6 +364,7 @@
   .u-section-2 .u-text-6 {
     font-size: 1.5rem;
     margin: 23px 5px 0;
+    font-family: 'Mukta', sans-serif;
   }
   
   .u-section-2 .u-text-7 {
@@ -850,7 +858,7 @@
     letter-spacing: 3px;
     background-image: none;
     font-weight: 700;
-    margin: 12px auto 0;
+    margin: 30px auto 0;
     padding: 5px 24px 6px 23px;
   }
   
@@ -968,7 +976,7 @@
   
     .u-section-3 .u-btn-1 {
       border-style: solid;
-      margin-top: 36px;
+      margin-top: 14px;
       padding-bottom: 5px;
     }
   } .u-section-4 {
@@ -2033,7 +2041,7 @@
   .u-section-5 .u-image-1 {
     min-height: 606px;
     height: auto;
-    background-image: url("images/facebooklai.PNG");
+    background-image: url("./img/facebooklai.PNG");
     margin-top: 0;
     margin-bottom: 0;
   }

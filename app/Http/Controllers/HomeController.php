@@ -29,7 +29,7 @@ class HomeController extends Controller
         $coverimages = Coverimage::latest()->get()->take(5);
         $links = Link::latest()->get()->take(5);
         $images = MyImage::latest()->get()->take(6);
-        $teams = Team::latest()->get()->take(3);
+        $teams = Team::get()->take(2);
         $about = About::first();
         $videos = Video::latest()->get()->take(4);
         $posts = Post::latest()->get()->take(6);
