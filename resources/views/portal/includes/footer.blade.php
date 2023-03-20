@@ -38,7 +38,7 @@
                         <div class="footer-widget">
                             <div class="footer-logo">
 
-                                <a href="{{ url('/') }}"><img src="{{ asset($sitesetting->main_logo) }}"
+                                <a href="{{ url('/') }}"><img src="{{ asset('uploads/sitesetting/' . $sitesetting->side_logo) }}"
                                         class="img-fluid" alt="logo"></a>
                             </div>
                             {{-- <div class="footer-text">
@@ -48,10 +48,10 @@
                             </div> --}}
                             <div class="footer-social-icon">
                                 <span>{{ __('Follow us') }}</span>
-                                <a href="https://www.facebook.com/ktm.logistic/"><i
+                                <a href="{{ $sitesetting->face_link }}" target="_blank"><i
                                         class="fab fa-facebook-f facebook-bg"></i></a>
-                                <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
-                                <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                                <a href="{{ $sitesetting->insta_link }}" target="_blank"><i class="fab fa-twitter twitter-bg"></i></a>
+                                <a href="{{ $sitesetting->social_link }}" target="_blank"><i class="fab fa-google-plus-g google-bg"></i></a>
                             </div>
                         </div>
                     </div>

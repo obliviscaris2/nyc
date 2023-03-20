@@ -1,12 +1,15 @@
 {
+   
     "Home" : "गृहपृष्ठ",
     "About Us" : "हाम्रो बारेमा",
     "Introduction" : "कार्यालयकाे परिचय",
     "Employee Details" : "कर्मचारी विवरण",
     "District Committees" : "जिल्ला समितीहरु",
     "Council Members" : "परिषद् सदस्य",
-    "Message from the Administrative Head" : "प्रशासकीय प्रमुखको सन्देश",
+    "Message from Administrative Head" : "प्रशासकीय प्रमुखको सन्देश",
     "Message from Chairperson" : "अध्यक्षको सन्देश",
+    "Chairperson" : "अध्यक्ष",
+    "Vice-Chairperson" : "उपाध्यक्ष",
     "Documents" : "दस्तावेज",
     "Notice" : "सुचना",
     "Publication" : "प्रकाशन",

@@ -14,7 +14,7 @@ use App\Models\Document;
 
 
 use App\Models\OtherPost;
-use App\Models\Coverimage;
+use App\Models\CoverImage;
 use App\Models\Information;
 use App\Models\SiteSetting;
 use Illuminate\Http\Request;
@@ -26,7 +26,7 @@ class HomeController extends Controller
     //
     public function index(Request $req){
 
-        $coverimages = Coverimage::latest()->get()->take(5);
+        $coverimages = CoverImage::latest()->get()->take(5);
         $links = Link::latest()->get()->take(5);
         $images = MyImage::latest()->get()->take(6);
         $teams = Team::get()->take(2);
@@ -58,3 +58,5 @@ class HomeController extends Controller
     }
 
 }
+
+

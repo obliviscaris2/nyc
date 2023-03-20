@@ -149,8 +149,8 @@
                     class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-xl u-valign-middle-xs u-sheet-2">
                     <a href="{{ route('home') }}" class="u-image u-logo u-image-1" data-image-width="3000"
                         data-image-height="2984">
-                        <img src="{{ $sitesetting->main_logo }}" class="u-logo-image u-logo-image-1"
-                            data-image-width="80">
+                        <img src="{{ asset('uploads/sitesetting/' .$sitesetting->main_logo) }}" class="u-logo-image u-logo-image-1"
+                            data-image-width="80" alt="main_logo">
                     </a>
                     <nav class="u-menu u-menu-hamburger u-offcanvas u-menu-1">
                         <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700;">
@@ -175,109 +175,99 @@
                             <ul class="u-nav u-spacing-20 u-unstyled u-nav-1">
                                 <li class="u-nav-item"><a
                                         class="u-active-white u-button-style u-hover-palette-4-light-1 u-nav-link u-text-active-palette-4-dark-1 u-text-body-alt-color u-text-hover-palette-4-base"
-                                        href="{{ route('home') }}" style="padding: 10px 16px;">गृहपृष्ठ</a>
+                                        href="{{ route('home') }}" style="padding: 10px 16px;">{{ __("Home") }}</a>
                                 </li>
                                 <li class="u-nav-item"><a
                                         class="u-active-white u-button-style u-hover-palette-4-light-1 u-nav-link u-text-active-palette-4-dark-1 u-text-body-alt-color u-text-hover-palette-4-base"
-                                        href="#" style="padding: 10px 16px;">हाम्रोबारे</a>
+                                        href="#" style="padding: 10px 16px;">{{ __("About Us") }}</a>
                                     <div class="u-nav-popup">
                                         <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-2">
                                             <li class="u-nav-item"><a href="{{ route('render_about') }}"
-                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">कार्यलयको
-                                                    परिचय</a>
+                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">{{ __("Introduction") }}</a>
                                             </li>
                                             <li class="u-nav-item"><a href="{{ route('render_team') }}"
-                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">कर्मचारी
-                                                    विवरण</a>
+                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">{{ __("Employee Details") }}</a>
                                             </li>
                                             <li class="u-nav-item"><a href="{{ route('render_committee') }}"
-                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">जिल्ला
-                                                    समितिहरु</a>
+                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">{{ __("District Committees") }}</a>
                                             </li>
                                             <li class="u-nav-item"><a href="{{ route('render_executive_members') }}"
-                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">परिषद
-                                                    सधस्यहारु</a>
+                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">{{ __("Council Members") }}</a>
                                             </li>
                                             <li class="u-nav-item"><a href="{{ route('render_administrative') }}"
-                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">प्रशासकिय
-                                                    प्रमुख को सन्देश</a>
+                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">{{ __("Message from Administrative Head") }}</a>
                                             </li>
                                             <li class="u-nav-item"><a href="{{ 'render_chairperson' }}"
-                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">अध्यक्षको
-                                                    सन्देश</a>
+                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">{{ __("Message from Chairperson") }}</a>
                                             </li>
                                         </ul>
                                     </div>
                                 </li>
                                 <li class="u-nav-item"><a
                                         class="u-active-white u-button-style u-hover-palette-4-light-1 u-nav-link u-text-active-palette-4-dark-1 u-text-body-alt-color u-text-hover-palette-4-base"
-                                        href="#" style="padding: 10px 16px;">दस्तावेज</a>
+                                        href="#" style="padding: 10px 16px;">{{ __("Documents") }}</a>
                                     <div class="u-nav-popup">
                                         <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-3">
                                             <li class="u-nav-item"><a href="{{ route('render_notice') }}"
-                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">सुचना</a>
+                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">{{ __("Notice") }}</a>
                                             </li>
                                             <li class="u-nav-item"><a href="{{ route('render_publication') }}"
-                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">प्रकाशन</a>
+                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">{{ __("Publication") }}</a>
                                             </li>
                                             <li class="u-nav-item"><a href="{{ route('render_tender') }}"
-                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">बोलपत्र</a>
+                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">{{ __("Tender") }}</a>
                                             </li>
                                         </ul>
                                     </div>
                                 </li>
                                 <li class="u-nav-item"><a
                                         class="u-active-white u-button-style u-hover-palette-4-light-1 u-nav-link u-text-active-palette-4-dark-1 u-text-body-alt-color u-text-hover-palette-4-base"
-                                        href="#" style="padding: 10px 16px;">जानकरी</a>
+                                        href="#" style="padding: 10px 16px;">{{ __("Information") }}</a>
                                     <div class="u-nav-popup">
                                         <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-4">
                                             <li class="u-nav-item"><a href="{{ route('render_rules') }}"
-                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">ऐन
-                                                    तथा नियमावली</a>
+                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">{{ __("Acts & Regulations") }}</a>
                                             </li>
                                             <li class="u-nav-item"><a href="{{ route('render_directot') }}"
-                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">निर्देशिका</a>
+                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">{{ __("Directory") }}</a>
                                             </li>
                                             <li class="u-nav-item"><a href="{{ route('render_press') }}"
-                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">प्रेश
-                                                    विज्ञप्ती</a>
+                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">{{ __("Press Release") }}</a>
                                             </li>
                                         </ul>
                                     </div>
                                 </li>
                                 <li class="u-nav-item"><a
                                         class="u-active-white u-button-style u-hover-palette-4-light-1 u-nav-link u-text-active-palette-4-dark-1 u-text-body-alt-color u-text-hover-palette-4-base"
-                                        href="#" style="padding: 10px 16px;">अन्य डाउनलोड</a>
+                                        href="#" style="padding: 10px 16px;">{{ __("Downloads") }}</a>
                                     <div class="u-nav-popup">
                                         <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-5">
                                             <li class="u-nav-item"><a href="{{ route('render_news') }}"
-                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">समाचार</a>
+                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">{{ __("News") }}</a>
                                             </li>
                                             <li class="u-nav-item"><a href="{{ route('render_other') }}"
-                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">अन्य</a>
+                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">{{ __("Others") }}</a>
                                             </li>
                                         </ul>
                                     </div>
                                 </li>
                                 <li class="u-nav-item"><a
                                         class="u-active-white u-button-style u-hover-palette-4-light-1 u-nav-link u-text-active-palette-4-dark-1 u-text-body-alt-color u-text-hover-palette-4-base"
-                                        href="#" style="padding: 10px 16px;">ग्यालेरी</a>
+                                        href="#" style="padding: 10px 16px;">{{ __("Gallery") }}</a>
                                     <div class="u-nav-popup">
                                         <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-6">
                                             <li class="u-nav-item"><a href="{{ route('render_images') }}"
-                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">फाेटाे
-                                                    ग्यालेरी</a>
+                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">{{ __("Photo Gallery") }}</a>
                                             </li>
                                             <li class="u-nav-item"><a href="{{ route('render_videos') }}"
-                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">भिडियो
-                                                    ग्यालेरी</a>
+                                                    class="u-active-palette-4-light-1 u-button-style u-nav-link u-white">{{ __("Video Gallery") }}</a>
                                             </li>
                                         </ul>
                                     </div>
                                 </li>
                                 <li class="u-nav-item"><a href="{{ route('contact_page') }}"
                                         class="u-active-white u-button-style u-hover-palette-4-light-1 u-nav-link u-text-active-palette-4-dark-1 u-text-body-alt-color u-text-hover-palette-4-base"
-                                        style="padding: 10px 18px 10px 16px;">सम्पर्क</a>
+                                        style="padding: 10px 18px 10px 16px;">{{ __("Contact") }}</a>
                                 </li>
                             </ul>
                         </div>
@@ -288,104 +278,97 @@
                                     <div class="u-menu-close"></div>
                                     <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-7">
                                         <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                                                href="{{ route('home') }}">गृहपृष्ठ</a>
+                                                href="{{ route('home') }}">{{ __("Home") }}</a>
                                         </li>
                                         <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                                                href="#">हाम्रोबारे</a>
+                                                href="#">{{ __("About Us") }}</a>
                                             <div class="u-nav-popup">
                                                 <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-8">
                                                     <li class="u-nav-item"><a href="{{ route('render_about') }}"
-                                                            class="u-button-style u-nav-link">कार्यलयको परिचय</a>
+                                                            class="u-button-style u-nav-link">{{ __("Introcution") }}</a>
                                                     </li>
                                                     <li class="u-nav-item"><a href="{{ route('render_team') }}"
-                                                            class="u-button-style u-nav-link">कर्मचारी विवरण</a>
+                                                            class="u-button-style u-nav-link">{{ __("Employee Details") }}</a>
                                                     </li>
                                                     <li class="u-nav-item"><a href="{{ route('render_committee') }}"
-                                                            class="u-button-style u-nav-link">जिल्ला
-                                                            समितिहरु</a>
+                                                            class="u-button-style u-nav-link">{{ __("District Committees") }}</a>
                                                     </li>
                                                     <li class="u-nav-item"><a
                                                             href="{{ route('render_executive_members') }}"
-                                                            class="u-button-style u-nav-link">परिषद
-                                                            साधस्यहारु</a>
+                                                            class="u-button-style u-nav-link">{{ __("Council Members") }}</a>
                                                     </li>
                                                     <li class="u-nav-item"><a
                                                             href="{{ route('render_administrative') }}"
-                                                            class="u-button-style u-nav-link">प्रशासकिय प्रमुख को
-                                                            सन्देश</a>
+                                                            class="u-button-style u-nav-link">{{ __("Message from Administrative Head") }}</a>
                                                     </li>
                                                     <li class="u-nav-item"><a
                                                             href="{{ route('render_chairperson') }}"
-                                                            class="u-button-style u-nav-link">अध्यक्षको सन्देश</a>
+                                                            class="u-button-style u-nav-link">{{ __("Message from Chairperson") }}</a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </li>
                                         <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                                                href="#l">दस्तावेज</a>
+                                                href="#l">{{ __("Documents") }}</a>
                                             <div class="u-nav-popup">
                                                 <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-9">
                                                     <li class="u-nav-item"><a href="{{ route('render_news') }}"
-                                                            class="u-button-style u-nav-link">सुचना</a>
+                                                            class="u-button-style u-nav-link">{{ __("Notice") }}</a>
                                                     </li>
                                                     <li class="u-nav-item"><a
                                                             href="{{ route('render_publication') }}"
-                                                            class="u-button-style u-nav-link">प्रकाशन</a>
+                                                            class="u-button-style u-nav-link">{{ __("Publication") }}</a>
                                                     </li>
                                                     <li class="u-nav-item"><a href="{{ route('render_tender') }}"
-                                                            class="u-button-style u-nav-link">बोलपत्र</a>
+                                                            class="u-button-style u-nav-link">{{ __("Tender") }}</a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </li>
                                         <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                                                href="about.html">जानकरी</a>
+                                                href="about.html">{{ __("Information") }}</a>
                                             <div class="u-nav-popup">
                                                 <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-10">
                                                     <li class="u-nav-item"><a href="{{ route('render_rules') }}"
-                                                            class="u-button-style u-nav-link">ऐन तथा
-                                                            नियमावली</a>
+                                                            class="u-button-style u-nav-link">{{ __("Acts & Regulations") }}</a>
                                                     </li>
                                                     <li class="u-nav-item"><a href="{{ route('render_directot') }}"
-                                                            class="u-button-style u-nav-link">निर्देशिका</a>
+                                                            class="u-button-style u-nav-link">{{ __("Directory") }}</a>
                                                     </li>
                                                     <li class="u-nav-item"><a href="{{ route('render_press') }}"
-                                                            class="u-button-style u-nav-link">प्रेश
-                                                            विज्ञप्ती</a>
+                                                        class="u-button-style u-nav-link">{{ __("Press Release") }}</a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </li>
                                         <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                                                href="#">अन्य डाउनलोड</a>
+                                                href="#">{{ __("Downloads") }}</a>
                                             <div class="u-nav-popup">
                                                 <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-11">
                                                     <li class="u-nav-item"><a href="{{ route('render_news') }}"
-                                                            class="u-button-style u-nav-link">समाचार</a>
+                                                        class="u-button-style u-nav-link">{{ __("News") }}</a>
                                                     </li>
                                                     <li class="u-nav-item"><a href="{{ route('render_other') }}"
-                                                            class="u-button-style u-nav-link">अन्य</a>
+                                                            class="u-button-style u-nav-link">{{ __("Others") }}</a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </li>
                                         <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                                                href="#">ग्यालेरी</a>
+                                                href="#">{{ __("Gallery") }}</a>
                                             <div class="u-nav-popup">
                                                 <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-12">
                                                     <li class="u-nav-item"><a href="{{ route('render_images') }}"
-                                                            class="u-button-style u-nav-link">फाेटाे
-                                                            ग्यालेरी</a>
+                                                            class="u-button-style u-nav-link">{{ __("Photo Gallery") }}</a>
                                                     </li>
                                                     <li class="u-nav-item"><a href="{{ route('render_videos') }}"
-                                                            class="u-button-style u-nav-link">भिडियो
-                                                            ग्यालेरी</a>
+                                                            class="u-button-style u-nav-link">{{ __("Video Gallery") }}</a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </li>
                                         <li class="u-nav-item"><a href="{{ route('contact_page') }}"
-                                                class="u-button-style u-nav-link">सम्पर्क</a>
+                                                class="u-button-style u-nav-link">{{ __("Contact") }}</a>
                                         </li>
                                     </ul>
                                 </div>

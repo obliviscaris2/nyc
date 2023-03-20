@@ -3,10 +3,15 @@
 
 @include('portal.includes.head')
 
-<body class="u-body u-xl-mode" data-lang="en">
-    @include('portal.includes.nav')
+<style>
+</style>
 
+<body class="u-body u-xl-mode" data-lang="en">
+   
+    @include('portal.includes.nav')
+    <section id="back">
     @yield('content')
+</section>
 
     @include("portal.includes.footer")
 

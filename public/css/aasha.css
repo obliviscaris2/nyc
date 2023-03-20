@@ -27769,7 +27769,7 @@ li.active > a.u-button-style.u-button-style.u-active-palette-1-base,
 li.active > a.u-button-style.u-button-style.u-active-palette-1-base[class*="u-border-"],
 input.u-field-input.u-field-input.u-active-palette-1-base:checked {
   color: #ffffff !important;
-  background-color: #47b8c9 !important;
+  background-color: #0b1f6d !important;
 }
 a.u-link.u-hover-palette-1-base:hover {
   color: #47b8c9 !important;
@@ -32812,7 +32812,7 @@ input.u-field-input.u-field-input.u-border-active-palette-1-light-3:checked {
 .u-border-palette-1-base.u-input,
 .u-border-palette-1-base.u-field-input.u-field-input,
 .u-separator-palette-1-base:after {
-  border-color: #47b8c9;
+  border-color: #0b1f6d;
   stroke: #47b8c9;
 }
 .u-button-style.u-border-palette-1-base {

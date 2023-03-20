@@ -8,15 +8,15 @@
                     <div class="u-layout-row">
                         <div class="u-align-center u-container-style u-layout-cell u-left-cell u-size-60 u-layout-cell-1">
                             <div class="u-container-layout u-container-layout-1">
-                                <img class="u-image u-image-1" src="{{ asset('img/National-Youth-Council-Nepal.png') }}"
+                                <img class="u-image u-image-1" src="{{ asset('uploads/sitesetting/' . $sitesetting->side_logo) }}"
                                     data-image-width="800" data-image-height="418">
                                 <h2 class="u-text u-text-1" data-animation-name="customAnimationIn"
-                                    data-animation-duration="1500">राष्ट्रिय युवा परिषद्<br>
+                                    data-animation-duration="1500">{{ __('National Youth Council') }}<br>
                                 </h2>
                                 <a href="{{ route('render_about') }}"
                                     class="u-active-palette-1-dark-2 u-align-left u-border-none u-btn u-btn-round u-button-style u-hover-palette-4-dark-1 u-palette-4-dark-2 u-radius-50 u-text-active-black u-text-body-alt-color u-text-hover-white u-btn-1"
                                     data-animation-name="customAnimationIn" data-animation-duration="1500"
-                                    data-animation-delay="500">read more</a>
+                                    data-animation-delay="500">{{ __('Contact Us') }}</a>
                             </div>
                         </div>
                     </div>
@@ -117,7 +117,7 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
                             <div
                                 class="u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-group u-palette-4-dark-1 u-group-1">
                                 <div class="u-container-layout u-container-layout-2">
-                                    <h3 class="u-align-center u-text u-text-1"> अध्यक्ष</h3>
+                                    <h3 class="u-align-center u-text u-text-1">{{ __('Chairperson') }}</h3>
                                 </div>
                             </div><span class="u-align-center-xs u-file-icon u-icon u-text-palette-1-base u-icon-1"
                                 data-animation-name="customAnimationIn" data-animation-duration="1500"
@@ -178,7 +178,7 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
                             <div
                                 class="u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-group u-palette-4-dark-1 u-group-3">
                                 <div class="u-container-layout u-container-layout-5">
-                                    <h3 class="u-align-center u-text u-text-5"> उपाध्यक्ष</h3>
+                                    <h3 class="u-align-center u-text u-text-5"> {{ __('Vice-Chairperson') }}</h3>
                                 </div>
                             </div><span class="u-align-center-xs u-file-icon u-icon u-icon-4"
                                 data-animation-name="customAnimationIn" data-animation-duration="1500"
@@ -238,7 +238,7 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
                             <div
                                 class="u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-group u-palette-4-dark-1 u-group-5">
                                 <div class="u-container-layout u-container-layout-8">
-                                    <h3 class="u-align-center u-text u-text-9">{{ $team->role}}</h3>
+                                    <h3 class="u-align-center u-text u-text-9">{{ __($team->role)}}</h3>
                                 </div>
                             </div><span class="u-align-center-xs u-file-icon u-icon u-icon-7"
                                 data-animation-name="customAnimationIn" data-animation-duration="1500"
@@ -247,7 +247,7 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
                             <div
                                 class="u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-palette-4-dark-1 u-group-6">
                                 <div class="u-container-layout u-container-layout-9">
-                                    <h4 class="u-align-center u-text u-text-10"> {{ $team->name}}</h4>
+                                    <h4 class="u-align-center u-text u-text-10"> {{ __($team->name)}}</h4>
                                     <p class="u-align-center u-text u-text-11"><span class="u-icon"><svg
                                                 class="u-svg-content" viewBox="0 0 60 60" x="0px" y="0px"
                                                 style="width: 1em; height: 1em;">
@@ -375,7 +375,7 @@ s80-35.8,80-80S124.2,0,80,0L80,0z">
             <div class="u-align-center u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-1"
                 data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750">
                 <div class="u-container-layout u-container-layout-1">
-                    <h3 class="u-text u-text-body-alt-color u-text-1"> {{ $about->title }}</h3>
+                    <h3 class="u-text u-text-body-alt-color u-text-1"> {{ __($about->title) }}</h3>
                     <p class="u-text u-text-body-alt-color u-text-2">{!! Str::substr($about->content, 0, 800) !!}</p>
                     <a href="{{ route('render_about') }}"
                         class="u-border-2 u-border-hover-palette-2-dark-1 u-border-palette-4-dark-1 u-btn u-btn-round u-button-style u-hover-palette-2-dark-1 u-palette-4-dark-1 u-radius-50 u-text-body-alt-color u-btn-1">read
@@ -458,22 +458,22 @@ s80-35.8,80-80S124.2,0,80,0L80,0z">
                                     <ul class="u-border-2 u-border-palette-1-base u-spacing-10 u-tab-list u-unstyled"
                                         role="tablist">
                                         <li class="u-tab-item" role="presentation">
-                                            <a class="active u-active-palette-1-base u-button-style u-grey-10 u-tab-link u-text-active-white u-text-black u-tab-link-1"
+                                            <a class="active u-active-palette-1-base u-button-style u-grey-10 u-tab-link u-text-active-white u-text-black u-tab-link-1 text-decoration-none"
                                                 id="link-tab-0da5" href="#tab-0da5" role="tab"
                                                 aria-controls="tab-0da5" aria-selected="true">News</a>
                                         </li>
                                         <li class="u-tab-item" role="presentation">
-                                            <a class="u-active-palette-1-base u-button-style u-grey-10 u-tab-link u-text-active-white u-text-black u-tab-link-2"
+                                            <a class="u-active-palette-1-base u-button-style u-grey-10 u-tab-link u-text-active-white u-text-black u-tab-link-2 text-decoration-none"
                                                 id="link-tab-14b7" href="#tab-14b7" role="tab"
                                                 aria-controls="tab-14b7" aria-selected="false">Notice</a>
                                         </li>
                                         <li class="u-tab-item" role="presentation">
-                                            <a class="u-active-palette-1-base u-button-style u-grey-10 u-tab-link u-text-active-white u-text-black u-tab-link-3"
+                                            <a class="u-active-palette-1-base u-button-style u-grey-10 u-tab-link u-text-active-white u-text-black u-tab-link-3 text-decoration-none"
                                                 id="link-tab-2917" href="#tab-2917" role="tab"
                                                 aria-controls="tab-2917" aria-selected="false">Publications</a>
                                         </li>
                                         <li class="u-tab-item u-tab-item-4" role="presentation">
-                                            <a class="u-active-palette-1-base u-button-style u-grey-10 u-tab-link u-text-active-white u-text-black u-tab-link-4"
+                                            <a class="u-active-palette-1-base u-button-style u-grey-10 u-tab-link u-text-active-white u-text-black u-tab-link-4 text-decoration-none"
                                                 id="tab-93fc" href="#link-tab-93fc" role="tab"
                                                 aria-controls="link-tab-93fc" aria-selected="false">Press Releases</a>
                                         </li>
@@ -492,28 +492,24 @@ s80-35.8,80-80S124.2,0,80,0L80,0z">
                                                             <div class="u-container-style u-list-item u-repeater-item">
                                                                 <div
                                                                     class="u-container-layout u-similar-container u-container-layout-18">
-                                                                    <span class="u-file-icon u-icon u-icon-61"><img
-                                                                            src="images/3031707.png"
-                                                                            alt=""></span><span
-                                                                        class="u-file-icon u-icon u-icon-62"><img
-                                                                            src="images/159604.png"
-                                                                            alt=""></span><span
+                                                                    <span class="u-file-icon u-icon u-icon-61"><i class="fa fa-download" aria-hidden="true"></i></span><span
+                                                                        class="u-file-icon u-icon u-icon-62"><i class="fa fa-eye" aria-hidden="true"></i>
+                                                                    </span><span
                                                                         class="u-file-icon u-icon u-icon-63"><img
-                                                                            src="images/vectorstock_28525730.png"
+                                                                            src="{{ asset('uploads/other/image/' . $new->image) }}"
                                                                             alt=""></span>
                                                                     <h5 class="u-text u-text-37">{{ $new->title }}</h5>
                                                                     <p class="u-text u-text-38"><span
-                                                                            class="u-file-icon u-icon"><img
-                                                                                src="images/8110713.png"
-                                                                                alt=""></span>&nbsp;Text with icon
+                                                                            class="u-file-icon u-icon"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></span>&nbsp;
+                                                                            
                                                                     </p>
                                                                     <p class="u-text u-text-39"><span
-                                                                            class="u-file-icon u-icon"><img
-                                                                                src="images/747310.png"
-                                                                                alt=""></span>&nbsp;Text with icon
+                                                                            class="u-file-icon u-icon"><i class="fa fa-calendar" aria-hidden="true"></i>
+                                                                        </span>&nbsp;{{ ($new->created_at) }}
                                                                     </p>
                                                                 </div>
                                                             </div>
+                                                          
                                                         @endforeach
                                                     </div>
                                                 </div>
@@ -530,31 +526,28 @@ s80-35.8,80-80S124.2,0,80,0L80,0z">
 
                                                         @foreach ($notices as $notice)
                                                             <div class="u-container-style u-list-item u-repeater-item">
+                                                               
                                                                 <div
                                                                     class="u-container-layout u-similar-container u-container-layout-18">
-                                                                    <span class="u-file-icon u-icon u-icon-61"><img
-                                                                            src="images/3031707.png"
-                                                                            alt=""></span><span
-                                                                        class="u-file-icon u-icon u-icon-62"><img
-                                                                            src="images/159604.png"
-                                                                            alt=""></span><span
-                                                                        class="u-file-icon u-icon u-icon-63"><img
-                                                                            src="images/vectorstock_28525730.png"
-                                                                            alt=""></span>
+                                                                    <span class="u-file-icon u-icon u-icon-61"><i class="fa fa-download" aria-hidden="true"></i></span><span
+                                                                        class="u-file-icon u-icon u-icon-62"><i class="fa fa-eye" aria-hidden="true"></i></span><span
+                                                                        class="u-file-icon u-icon u-icon-63">
+                                                                        <img
+                                                                            src="{{ asset('uploads/documents/image/' . $notice->image) }}"
+                                                                            alt="">
+                                                                        </span>
                                                                     <h5 class="u-text u-text-37">{{ $notice->title }}</h5>
                                                                     <p class="u-text u-text-38"><span
-                                                                            class="u-file-icon u-icon"><img
-                                                                                src="images/8110713.png"
-                                                                                alt=""></span>&nbsp;Text with icon
+                                                                            class="u-file-icon u-icon"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></span>&nbsp;Text with icon
                                                                     </p>
                                                                     <p class="u-text u-text-39"><span
-                                                                            class="u-file-icon u-icon"><img
-                                                                                src="images/747310.png"
-                                                                                alt=""></span>&nbsp;Text with icon
+                                                                            class="u-file-icon u-icon"><i class="fa fa-calendar" aria-hidden="true"></i></span>&nbsp;{{ $notice->created_at }}
                                                                     </p>
                                                                 </div>
+                                                             
                                                             </div>
-                                                        @endforeach
+                                                         
+                                                            @endforeach
                                                     </div>
                                                 </div>
                                             </div>
@@ -1182,19 +1175,20 @@ s80-35.8,80-80S124.2,0,80,0L80,0z">
                             <div class="u-absolute-hcenter u-expanded u-grey-light-2 u-map">
                                 <div class="embed-responsive">
                                     <iframe class="embed-responsive-item"
-                                        src="//maps.google.com/maps?output=embed&amp;q=Manhattan%2C%20New%20York&amp;z=10&amp;t=m"
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28263.06916784706!2d85.35562573700676!3d27.689990849126154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1b47d18015fd%3A0xbbd249f6c19d61b7!2sNational%20Youth%20Council!5e0!3m2!1sen!2snp!4v1679198875982!5m2!1sen!2snp"
                                         data-map="JTdCJTIyYWRkcmVzcyUyMiUzQSUyMk1hbmhhdHRhbiUyQyUyME5ldyUyMFlvcmslMjIlMkMlMjJ6b29tJTIyJTNBMTAlMkMlMjJ0eXBlSWQlMjIlM0ElMjJyb2FkJTIyJTJDJTIybGFuZyUyMiUzQW51bGwlMkMlMjJhcGlLZXklMjIlM0FudWxsJTJDJTIybWFya2VycyUyMiUzQSU1QiU1RCU3RA=="></iframe>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
                     <div class="u-align-left u-container-style u-layout-cell u-shape-rectangle u-size-23-lg u-size-23-xl u-size-30-md u-size-30-sm u-size-30-xs u-white u-layout-cell-2"
                         data-animation-name="customAnimationIn" data-animation-duration="1500"
                         data-animation-delay="500">
                         <div class="u-container-layout u-container-layout-2">
                             <h3 class="u-text u-text-1">Contact Us</h3>
                             <div class="u-expanded-width u-form u-form-1">
-                                <form action="https://forms.nicepagesrv.com/v2/form/process"
+                                <form action="#"
                                     class="u-clearfix u-form-spacing-27 u-form-vertical u-inner-form"
                                     style="padding: 0px;" source="email" name="form">
                                     <div class="u-form-group u-form-name u-label-none u-form-group-1">
@@ -1261,22 +1255,25 @@ s80-35.8,80-80S124.2,0,80,0L80,0z">
             <!--/blog_options_json-->
             <div class="u-blog u-expanded-width u-blog-1">
                 <div class="u-repeater u-repeater-1">
+
+                    @foreach ($posts as $post)
+              
                     <!--blog_post-->
                     <div
                         class="u-align-left u-blog-post u-container-style u-repeater-item u-video-cover u-white u-repeater-item-1">
                         <div
                             class="u-container-layout u-similar-container u-valign-top-sm u-valign-top-xs u-container-layout-1">
-                            <a class="u-post-header-link" href="blog/post-5.html">
+                            <a class="u-post-header-link" href="#">
                                 <!--blog_post_image-->
                                 <img alt=""
                                     class="u-blog-control u-expanded-width-xs u-image u-image-default u-image-1"
-                                    src="images/8ad73f3c.jpeg" data-image-width="567" data-image-height="696">
+                                    src="{{ asset('uploads/post/' . $post->image) }}" data-image-width="567" data-image-height="696">
                                 <!--/blog_post_image-->
                             </a>
                             <!--blog_post_header-->
                             <h4 class="u-blog-control u-text u-text-2">
                                 <a class="u-post-header-link" href="blog/post-5.html">
-                                    <!--blog_post_header_content-->Post 6 Headline
+                                    <!--blog_post_header_content-->{{ $post->title }}
                                     <!--/blog_post_header_content-->
                                 </a>
                             </h4>
@@ -1285,7 +1282,7 @@ s80-35.8,80-80S124.2,0,80,0L80,0z">
                             <div class="u-blog-control u-metadata u-text-grey-30 u-metadata-1">
                                 <!--blog_post_metadata_date-->
                                 <span class="u-meta-date u-meta-icon">
-                                    <!--blog_post_metadata_date_content-->Wed Mar 15 2023
+                                    <!--blog_post_metadata_date_content-->{{ $post->created_at }}
                                     <!--/blog_post_metadata_date_content-->
                                 </span>
                                 <!--/blog_post_metadata_date-->
@@ -1301,83 +1298,8 @@ s80-35.8,80-80S124.2,0,80,0L80,0z">
                     </div>
                     <!--/blog_post-->
                     <!--blog_post-->
-                    <div
-                        class="u-align-left u-blog-post u-container-style u-repeater-item u-video-cover u-white u-repeater-item-2">
-                        <div
-                            class="u-container-layout u-similar-container u-valign-top-sm u-valign-top-xs u-container-layout-2">
-                            <a class="u-post-header-link" href="blog/post-4.html">
-                                <!--blog_post_image-->
-                                <img alt=""
-                                    class="u-blog-control u-expanded-width-xs u-image u-image-default u-image-2"
-                                    src="images/68f64b9d.jpeg" data-image-width="567" data-image-height="696">
-                                <!--/blog_post_image-->
-                            </a>
-                            <!--blog_post_header-->
-                            <h4 class="u-blog-control u-text u-text-3">
-                                <a class="u-post-header-link" href="blog/post-4.html">
-                                    <!--blog_post_header_content-->Post 5 Headline
-                                    <!--/blog_post_header_content-->
-                                </a>
-                            </h4>
-                            <!--/blog_post_header-->
-                            <!--blog_post_metadata-->
-                            <div class="u-blog-control u-metadata u-text-grey-30 u-metadata-2">
-                                <!--blog_post_metadata_date-->
-                                <span class="u-meta-date u-meta-icon">
-                                    <!--blog_post_metadata_date_content-->Wed Mar 15 2023
-                                    <!--/blog_post_metadata_date_content-->
-                                </span>
-                                <!--/blog_post_metadata_date-->
-                                <!--blog_post_metadata_comments-->
-                                <span class="u-meta-comments u-meta-icon">
-                                    <!--blog_post_metadata_comments_content-->Comments (0)
-                                    <!--/blog_post_metadata_comments_content-->
-                                </span>
-                                <!--/blog_post_metadata_comments-->
-                            </div>
-                            <!--/blog_post_metadata-->
-                        </div>
-                    </div>
-                    <!--/blog_post-->
-                    <!--blog_post-->
-                    <div
-                        class="u-align-left u-blog-post u-container-style u-repeater-item u-video-cover u-white u-repeater-item-3">
-                        <div
-                            class="u-container-layout u-similar-container u-valign-top-sm u-valign-top-xs u-container-layout-3">
-                            <a class="u-post-header-link" href="blog/post-3.html">
-                                <!--blog_post_image-->
-                                <img alt=""
-                                    class="u-blog-control u-expanded-width-xs u-image u-image-default u-image-3"
-                                    src="images/0fd3416c.jpeg">
-                                <!--/blog_post_image-->
-                            </a>
-                            <!--blog_post_header-->
-                            <h4 class="u-blog-control u-text u-text-4">
-                                <a class="u-post-header-link" href="blog/post-3.html">
-                                    <!--blog_post_header_content-->Post 4 Headline
-                                    <!--/blog_post_header_content-->
-                                </a>
-                            </h4>
-                            <!--/blog_post_header-->
-                            <!--blog_post_metadata-->
-                            <div class="u-blog-control u-metadata u-text-grey-30 u-metadata-3">
-                                <!--blog_post_metadata_date-->
-                                <span class="u-meta-date u-meta-icon">
-                                    <!--blog_post_metadata_date_content-->Wed Mar 15 2023
-                                    <!--/blog_post_metadata_date_content-->
-                                </span>
-                                <!--/blog_post_metadata_date-->
-                                <!--blog_post_metadata_comments-->
-                                <span class="u-meta-comments u-meta-icon">
-                                    <!--blog_post_metadata_comments_content-->Comments (0)
-                                    <!--/blog_post_metadata_comments_content-->
-                                </span>
-                                <!--/blog_post_metadata_comments-->
-                            </div>
-                            <!--/blog_post_metadata-->
-                        </div>
-                    </div>
-                    <!--/blog_post-->
+                        
+                    @endforeach
                 </div>
             </div>
             <!--/blog-->

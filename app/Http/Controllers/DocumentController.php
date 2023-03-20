@@ -46,7 +46,7 @@ class DocumentController extends Controller
             "file" => "required|file|max:4000"
         ]); 
         
-        $newImage = time() . "-" . $request->title . "-" . $request->image->extension();
+        $newImage = time() . "-" . $request->title . "." . $request->image->extension();
         $request->image->move(public_path('uploads/documents/image/'), $newImage);
 
 
@@ -111,7 +111,7 @@ class DocumentController extends Controller
         
 
         if ($request->hasFile('image')) {
-            $newImageName = time() . '-' . $request->image->extension();
+            $newImageName = time() . '.' . $request->image->extension();
             $request->image->move(public_path('uploads/documents/image/'), $newImageName );
             Storage::delete('uploads/documents/image/' . $document->image);
             $document->image = $newImageName;

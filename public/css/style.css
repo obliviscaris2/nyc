@@ -742,7 +742,8 @@ nav ul li ul li a {
      padding: 0px;
    }
    .footer-section {
-    background-image: linear-gradient(to right top, #0c3c85, #0e3b7f, #103a78, #133972, #16386b);   position: relative;
+    background-color: #0b1f6d;
+       position: relative;
    /* box-shadow: rgba(33, 37, 109, 0.15); */
   
    }
