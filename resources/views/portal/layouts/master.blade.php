@@ -3,6 +3,7 @@
 
 @include('portal.includes.head')
 
+<<<<<<< HEAD
 <style>
 </style>
 
@@ -10,6 +11,11 @@
    
     @include('portal.includes.nav')
     <section id="back">
+=======
+<body class="u-body u-xl-mode" data-lang="en">
+    @include('portal.includes.nav')
+
+>>>>>>> b7741def0c905f8598fbb216231ec228e89b24a5
     @yield('content')
 </section>
 

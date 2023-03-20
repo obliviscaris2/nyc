@@ -27769,7 +27769,11 @@ li.active > a.u-button-style.u-button-style.u-active-palette-1-base,
 li.active > a.u-button-style.u-button-style.u-active-palette-1-base[class*="u-border-"],
 input.u-field-input.u-field-input.u-active-palette-1-base:checked {
   color: #ffffff !important;
+<<<<<<< HEAD
   background-color: #0b1f6d !important;
+=======
+  background-color: #47b8c9 !important;
+>>>>>>> b7741def0c905f8598fbb216231ec228e89b24a5
 }
 a.u-link.u-hover-palette-1-base:hover {
   color: #47b8c9 !important;
@@ -32812,7 +32816,11 @@ input.u-field-input.u-field-input.u-border-active-palette-1-light-3:checked {
 .u-border-palette-1-base.u-input,
 .u-border-palette-1-base.u-field-input.u-field-input,
 .u-separator-palette-1-base:after {
+<<<<<<< HEAD
   border-color: #0b1f6d;
+=======
+  border-color: #47b8c9;
+>>>>>>> b7741def0c905f8598fbb216231ec228e89b24a5
   stroke: #47b8c9;
 }
 .u-button-style.u-border-palette-1-base {

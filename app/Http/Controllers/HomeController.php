@@ -7,15 +7,6 @@ use App\Models\Post;
 use App\Models\Team;
 use App\Models\About;
 use App\Models\Image;
-use App\Models\Other;
-use App\Models\Video;
-use App\Models\MyImage;
-use App\Models\Document;
-
-
-use App\Models\OtherPost;
-use App\Models\CoverImage;
-use App\Models\Information;
 use App\Models\SiteSetting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -26,13 +17,7 @@ class HomeController extends Controller
     //
     public function index(Request $req){
 
-        $coverimages = CoverImage::latest()->get()->take(5);
-        $links = Link::latest()->get()->take(5);
-        $images = MyImage::latest()->get()->take(6);
-        $teams = Team::get()->take(2);
-        $about = About::first();
-        $videos = Video::latest()->get()->take(4);
-        $posts = Post::latest()->get()->take(6);
+        $links = Link::latest()->get()->take(4);
         $sitesetting = SiteSetting::first();
         $notices = Document::whereType('notice')->latest()->get()->take(5);
         $publications = Document::whereType('publication')->latest()->get()->take(5);

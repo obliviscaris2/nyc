@@ -2,11 +2,14 @@
   font-family:'Mukta', sans-serif;
 }
 
+<<<<<<< HEAD
 .back{
   background-image: url('./img/bak.png');
   background-position: fixed;
 }
 
+=======
+>>>>>>> b7741def0c905f8598fbb216231ec228e89b24a5
 .u-section-1 {
     background-image: none;
   }
@@ -340,8 +343,11 @@
   .u-section-2 .u-text-5 {
     font-size: 1.875rem;
     margin: 12px 1px 0;
+<<<<<<< HEAD
     font-family: 'Mukta', sans-serif;
     
+=======
+>>>>>>> b7741def0c905f8598fbb216231ec228e89b24a5
   }
   
   .u-section-2 .u-icon-4 {
@@ -379,7 +385,11 @@
   }
   
   .u-section-2 .u-text-8 {
+<<<<<<< HEAD
     /* margin: 12px 1px 0; */
+=======
+    margin: 12px 1px 0;
+>>>>>>> b7741def0c905f8598fbb216231ec228e89b24a5
   }
   
   .u-section-2 .u-list-item-3 {
@@ -410,7 +420,10 @@
   .u-section-2 .u-text-9 {
     font-size: 1.875rem;
     margin: 12px 1px 0;
+<<<<<<< HEAD
     font-family: 'Mukta', sans-serif;
+=======
+>>>>>>> b7741def0c905f8598fbb216231ec228e89b24a5
   }
   
   .u-section-2 .u-icon-7 {
@@ -440,7 +453,10 @@
   .u-section-2 .u-text-10 {
     font-size: 1.5rem;
     margin: 23px 5px 0;
+<<<<<<< HEAD
     font-family: 'Mukta', sans-serif;
+=======
+>>>>>>> b7741def0c905f8598fbb216231ec228e89b24a5
   }
   
   .u-section-2 .u-text-11 {
@@ -448,7 +464,11 @@
   }
   
   .u-section-2 .u-text-12 {
+<<<<<<< HEAD
     /* margin: 12px 1px 0; */
+=======
+    margin: 12px 1px 0;
+>>>>>>> b7741def0c905f8598fbb216231ec228e89b24a5
   }
   
   .u-section-2 .u-list-item-4 {

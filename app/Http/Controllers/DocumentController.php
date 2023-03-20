@@ -111,10 +111,8 @@ class DocumentController extends Controller
         
 
         if ($request->hasFile('image')) {
-            $newImageName = time() . '.' . $request->image->extension();
-            $request->image->move(public_path('uploads/documents/image/'), $newImageName );
-            Storage::delete('uploads/documents/image/' . $document->image);
-            $document->image = $newImageName;
+            $newImageName = time() . '-' . $request->image->extension();
+            $request->image->move(public_path('uploads/documents/image'), $newImageName );
         }
        
 
