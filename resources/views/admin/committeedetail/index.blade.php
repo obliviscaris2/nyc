@@ -9,7 +9,7 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1 class="m-0">{{ $page_title }}</h1>
-                    <a href="{{ route('file-import') }}"><button class="btn-primary btn-sm"><i class="fa fa-plus"></i>
+                    <a href="{{ route('committee.file') }}"><button class="btn-primary btn-sm"><i class="fa fa-plus"></i>
                             Add New</button></a>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
@@ -59,5 +59,7 @@
             @endforeach
         </tbody>
     </table>
-
+    <div class="d-flex justify-content-center">
+        {!! $committeedetails->links() !!}
+    </div>
 @endsection

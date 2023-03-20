@@ -13,7 +13,9 @@ class CommitteeDetailController extends Controller
 
     public function fileImportExport()
     {
-       return view('admin.committeedetail.upload');
+       return view('admin.committeedetail.upload', [
+        "page_title" => "Import Committee Members"
+       ]);
     }
    
     /**
@@ -41,7 +43,7 @@ class CommitteeDetailController extends Controller
      */
     public function index()
     {
-        $committeedetails = CommitteeDetail::all();
+        $committeedetails = CommitteeDetail::paginate(10);
         return view('admin.committeedetail.index',[
             "page_title" => "Committee Details",
             "committeedetails" => $committeedetails
