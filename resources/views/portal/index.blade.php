@@ -25,8 +25,13 @@
             <div class="u-carousel u-expanded-width-xs u-gallery u-gallery-slider u-layout-carousel u-lightbox u-no-transition u-show-text-on-hover u-gallery-1"
                 data-interval="5000" data-u-ride="carousel" id="carousel-cd60">
                 <ol class="u-absolute-hcenter u-carousel-indicators u-carousel-indicators-1">
+                    @foreach ($coverimages as $coverimage )
+                        
+                
                     <li data-u-target="#carousel-cd60" data-u-slide-to="0" class="u-active u-grey-70 u-shape-circle"
                         style="width: 10px; height: 10px;"></li>
+
+                        @endforeach
                     <li data-u-target="#carousel-cd60" data-u-slide-to="1" class="u-grey-70 u-shape-circle"
                         style="width: 10px; height: 10px;"></li>
                     <li data-u-target="#carousel-cd60" data-u-slide-to="2" class="u-grey-70 u-shape-circle"
